@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://scenes/OS/Programs.gd" type="Script" id=4]
+[ext_resource path="res://scenes/OS/Windows.gd" type="Script" id=4]
+[ext_resource path="res://scenes/minigames/ReportMinigame.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/OS/Window.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="ViewportContainer"]
 anchor_right = 1.0
@@ -37,9 +39,10 @@ margin_top = 39.1908
 margin_right = 42.2055
 margin_bottom = 39.1908
 _icon = ExtResource( 3 )
-_label = "Internet"
+_window = ExtResource( 5 )
+_label = "Report Writer"
 
-[node name="Programs" type="Control" parent="."]
+[node name="Windows" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -47,7 +50,9 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
+_window = ExtResource( 6 )
 
 [node name="Taskbar" parent="." instance=ExtResource( 1 )]
 [connection signal="clicked" from="Shortcuts/Shortcut" to="Taskbar" method="add_program"]
-[connection signal="create_window" from="Taskbar" to="Programs" method="_on_Taskbar_create_window"]
+[connection signal="create_window" from="Taskbar" to="Windows" method="_on_Taskbar_create_window"]
+[connection signal="toggle_window" from="Taskbar" to="Windows" method="_on_Taskbar_toggle_window"]

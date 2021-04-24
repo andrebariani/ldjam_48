@@ -1,14 +1,18 @@
 extends Control
 
-export(PackedScene) var _window
+var _id = 0
 signal clicked
 
-func setup(window, icon, label):
-	_window = window
+func setup(id, icon, label):
+	_id = id
 	$Icon.texture = icon
 	$Label.text = label
 
 
 func _on_Retangulo_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		emit_signal("clicked", self, _window, $Icon.texture, $Label.text)
+		emit_signal("clicked", _id)
+
+
+func get_id():
+	return _id
