@@ -13,6 +13,7 @@ func setup(id, window, icon, label):
 	_id = id
 	$Icon.texture = icon
 	$Label.text = label
+	new.setup(label)
 
 
 func get_id():
