@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="ldjam_48"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1152
+window/size/height=800
 
 [physics]
 
