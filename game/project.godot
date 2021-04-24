@@ -8,10 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
 [application]
 
 config/name="ldjam_48"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1152
+window/size/height=800
+window/size/resizable=false
 
 [physics]
 
