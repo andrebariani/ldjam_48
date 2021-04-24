@@ -70,7 +70,6 @@ margin_left = 789.436
 margin_top = -269.072
 margin_right = -3.5636
 margin_bottom = -32.0724
-
 [connection signal="clicked" from="Shortcuts/Report" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Report2" to="Taskbar" method="add_program"]
 [connection signal="closed_window" from="Windows" to="Taskbar" method="remove_program"]

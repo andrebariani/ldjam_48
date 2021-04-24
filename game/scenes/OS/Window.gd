@@ -3,7 +3,6 @@ extends Control
 var _id = 0
 var program = null
 
-
 signal closed
 signal minimized
 
