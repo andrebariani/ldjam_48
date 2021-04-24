@@ -36,7 +36,8 @@ func _on_force_closed():
 
 func _on_Close_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		close()
+		program.emit_signal("minigame_failed")
+		emit_signal("closed", self, _id)
 
 
 func _on_Minimize_gui_input(event):

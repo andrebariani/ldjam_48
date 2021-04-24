@@ -14,7 +14,7 @@ func _on_Taskbar_create_window(id, program, icon, label):
 	new.connect("minimized", self, "minimized_window")
 	
 	for child in get_children():
-		if child.get_id() == open_ids.back():
+		if child and child.get_id() == open_ids.back():
 			child.program.activated = false
 			
 	open_ids.append(id)

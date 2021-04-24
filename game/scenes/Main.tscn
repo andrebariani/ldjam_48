@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/minigames/ReportMinigame.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/OS/Window.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/minigames/MinigameSpawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/programs/Email.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="ViewportContainer"]
 anchor_right = 1.0
@@ -43,14 +44,14 @@ _icon = ExtResource( 3 )
 _window = ExtResource( 5 )
 _label = "Report Writer"
 
-[node name="Report2" parent="Shortcuts" instance=ExtResource( 2 )]
-margin_left = 43.5323
-margin_top = 153.963
-margin_right = 43.5323
-margin_bottom = 153.963
+[node name="Email" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 46.0346
+margin_top = 173.027
+margin_right = 46.0346
+margin_bottom = 173.027
 _icon = ExtResource( 3 )
-_window = ExtResource( 5 )
-_label = "ABC"
+_window = ExtResource( 8 )
+_label = "Gmail"
 
 [node name="Windows" type="Control" parent="."]
 anchor_right = 1.0
@@ -70,8 +71,9 @@ margin_left = 789.436
 margin_top = -269.072
 margin_right = -3.5636
 margin_bottom = -32.0724
+
 [connection signal="clicked" from="Shortcuts/Report" to="Taskbar" method="add_program"]
-[connection signal="clicked" from="Shortcuts/Report2" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Email" to="Taskbar" method="add_program"]
 [connection signal="closed_window" from="Windows" to="Taskbar" method="remove_program"]
 [connection signal="create_window" from="Taskbar" to="Windows" method="_on_Taskbar_create_window"]
 [connection signal="toggle_window" from="Taskbar" to="Windows" method="_on_Taskbar_toggle_window"]

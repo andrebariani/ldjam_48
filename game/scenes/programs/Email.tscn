@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/programs/Email.gd" type="Script" id=1]
+
+[node name="Email" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Login" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Login"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = 181.0
+margin_right = -200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Login/VBoxContainer"]
+margin_right = 752.0
+margin_bottom = 16.0
+text = "Welcome!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="email" type="LineEdit" parent="Login/VBoxContainer"]
+margin_top = 20.0
+margin_right = 752.0
+margin_bottom = 46.0
+
+[node name="password" type="LineEdit" parent="Login/VBoxContainer"]
+margin_top = 50.0
+margin_right = 752.0
+margin_bottom = 76.0
+
+[node name="confirm" type="Button" parent="Login/VBoxContainer"]
+margin_top = 80.0
+margin_right = 752.0
+margin_bottom = 102.0
+text = "Login"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reminder" type="Label" parent="Login/VBoxContainer"]
+visible = false
+margin_top = 395.0
+margin_right = 752.0
+margin_bottom = 411.0
+text = "Write email and password first"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inbox" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inbox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inbox/HBoxContainer"]
+margin_bottom = 700.0
+
+[node name="EmailList" type="VBoxContainer" parent="Inbox/HBoxContainer/ScrollContainer"]
+
+[connection signal="pressed" from="Login/VBoxContainer/confirm" to="." method="_on_confirm_pressed"]

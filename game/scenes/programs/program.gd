@@ -9,7 +9,6 @@ func setup(_label):
 	label = _label
 
 func set_activated(value: bool):
-	print_debug(label)
 	activated = value
 
 func is_activated():

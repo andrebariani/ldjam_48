@@ -10,8 +10,8 @@ var possible_prompts = [
 	{
 		"text":"Wipe Everything on Computer?",
 		"answer":false,
-		"right":"Wiping Everything up...",
-		"wrong":"Canceling...",
+		"right":"Canceling...",
+		"wrong":"Wiping Everything up...",
 	},
 	{
 		"text":"Vent Poison Gas?",
