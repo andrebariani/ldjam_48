@@ -35,6 +35,7 @@ func remove_program(id):
 			child.margin_right -= WIDTH
 	
 	if to_remove != null:
+		program_count -= 1
 		to_remove.queue_free()
 
 
