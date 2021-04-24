@@ -8,6 +8,7 @@
 font_data = ExtResource( 3 )
 
 [node name="Shortcut" type="Control"]
+mouse_filter = 1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,4 +35,4 @@ percent_visible = 1.25
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="gui_input" from="." to="." method="_on_Shortcut_gui_input"]
+[connection signal="gui_input" from="Texture" to="." method="_on_Texture_gui_input"]
