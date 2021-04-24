@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/minigames/PromptMinigame.gd" type="Script" id=1]
+
+[node name="PromptMinigame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prompt" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Confirm" type="Label" parent="."]
+margin_left = 1.12247
+margin_top = 49.3883
+margin_right = 41.1225
+margin_bottom = 63.3883
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FakeCmd" type="Label" parent="."]
+margin_left = 0.288284
+margin_top = 22.9806
+margin_right = 40.2883
+margin_bottom = 36.9806
+text = "_"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -11,6 +11,12 @@ onready var minigames = [
 		"icon": Texture.new(),
 		"window": preload("res://scenes/minigames/ReportMinigame.tscn"),
 		"label": "Report.txt"
+	},
+	{
+		"desc": """Execute next prompt!""",
+		"icon": Texture.new(),
+		"window":preload("res://scenes/minigames/PromptMinigame.tscn"),
+		"label": "cmd"
 	}
 ]
 

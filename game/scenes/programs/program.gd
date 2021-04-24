@@ -3,6 +3,8 @@ extends Node
 var activated := true setget set_activated, is_activated
 var label := ""
 
+signal force_closed
+
 func setup(_label):
 	label = _label
 

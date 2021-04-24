@@ -13,6 +13,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+max_time = 50
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

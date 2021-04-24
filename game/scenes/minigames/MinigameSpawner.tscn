@@ -17,6 +17,9 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -57,7 +60,7 @@ __meta__ = {
 }
 
 [node name="Next" type="Timer" parent="."]
-wait_time = 200.0
+wait_time = 3.0
 one_shot = true
 autostart = true
 
