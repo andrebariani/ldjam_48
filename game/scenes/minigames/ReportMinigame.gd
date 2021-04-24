@@ -59,7 +59,7 @@ func _ready():
 func _input(event):
 	if not done:
 		if event is InputEventKey:
-			if event.pressed:
+			if event.pressed and event.scancode != last_key:
 				report += complete_report[insert_id]
 				insert_id += 1
 				body.set_text(report)
