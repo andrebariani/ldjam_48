@@ -12,6 +12,11 @@ func _on_Taskbar_create_window(id, program, icon, label):
 	new.setup(id, program, icon, label)
 	new.connect("closed", self, "closed_window")
 	new.connect("minimized", self, "minimized_window")
+	
+	for child in get_children():
+		if child.get_id() == open_ids.back():
+			child.program.activated = false
+			
 	open_ids.append(id)
 
 
@@ -21,6 +26,7 @@ func _on_Taskbar_toggle_window(id):
 			if open_ids.empty() or id != open_ids.back():
 				move_child(child, get_child_count()-1)
 				child.visible = true
+				child.program.activated = true
 				if id in open_ids:
 					open_ids.erase(id)
 				open_ids.append(id)
@@ -34,5 +40,6 @@ func closed_window(window, id):
 	emit_signal("closed_window", id)
 
 func minimized_window(window, id):
+	window.program.activated = false
 	window.visible = false
 	open_ids.erase(id)
