@@ -1,5 +1,7 @@
 extends ColorRect
 
+const WIDTH = 180
+
 export(PackedScene) var program_scene
 var program_count = 0
 var id_count = 0
@@ -11,8 +13,8 @@ func add_program(window, icon, label):
 	var new = program_scene.instance()
 	add_child(new)
 	move_child(new, get_child_count()-1)
-	new.margin_left = 180*program_count
-	new.margin_right = 180 + 180*program_count
+	new.margin_left = WIDTH*program_count
+	new.margin_right = WIDTH + WIDTH*program_count
 	new.margin_bottom = 0
 	
 	new.connect("clicked", self, "clicked")
@@ -24,12 +26,17 @@ func add_program(window, icon, label):
 
 
 func remove_program(id):
+	var to_remove = null
 	for child in get_children():
 		if child.get_id() == id:
-			remove_child(child)
-			break
+			to_remove = child
+		elif to_remove != null:
+			child.margin_left -= WIDTH
+			child.margin_right -= WIDTH
+	
+	if to_remove != null:
+		to_remove.queue_free()
 
 
 func clicked(id):
-	print_debug("clicked "+ str(id))
 	emit_signal("toggle_window", id)

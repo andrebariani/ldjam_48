@@ -33,7 +33,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Shortcut" parent="Shortcuts" instance=ExtResource( 2 )]
+[node name="Report" parent="Shortcuts" instance=ExtResource( 2 )]
 margin_left = 42.2055
 margin_top = 39.1908
 margin_right = 42.2055
@@ -41,6 +41,15 @@ margin_bottom = 39.1908
 _icon = ExtResource( 3 )
 _window = ExtResource( 5 )
 _label = "Report Writer"
+
+[node name="Report2" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 43.5323
+margin_top = 153.963
+margin_right = 43.5323
+margin_bottom = 153.963
+_icon = ExtResource( 3 )
+_window = ExtResource( 5 )
+_label = "ABC"
 
 [node name="Windows" type="Control" parent="."]
 anchor_right = 1.0
@@ -53,6 +62,8 @@ __meta__ = {
 _window = ExtResource( 6 )
 
 [node name="Taskbar" parent="." instance=ExtResource( 1 )]
-[connection signal="clicked" from="Shortcuts/Shortcut" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Report" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Report2" to="Taskbar" method="add_program"]
+[connection signal="closed_window" from="Windows" to="Taskbar" method="remove_program"]
 [connection signal="create_window" from="Taskbar" to="Windows" method="_on_Taskbar_create_window"]
 [connection signal="toggle_window" from="Taskbar" to="Windows" method="_on_Taskbar_toggle_window"]

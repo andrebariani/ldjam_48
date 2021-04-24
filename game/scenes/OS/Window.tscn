@@ -12,6 +12,7 @@ anchor_right = 1.0
 rect_pivot_offset = Vector2( -667.889, -275.596 )
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -45,3 +46,31 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Close" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -30.3821
+margin_top = 1.67655
+margin_right = 33.6179
+margin_bottom = 65.6766
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minimize" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -62.5774
+margin_top = 2.28011
+margin_right = 1.42261
+margin_bottom = 66.2801
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="Close" to="." method="_on_Close_gui_input"]
+[connection signal="gui_input" from="Minimize" to="." method="_on_Minimize_gui_input"]
