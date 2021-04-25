@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/spritesfer/fechar.png" type="Texture" id=1]
 [ext_resource path="res://scenes/minigames/MinigameSpawner.gd" type="Script" id=2]
 
 [node name="MinigameSpawner" type="Control"]
@@ -60,12 +60,12 @@ __meta__ = {
 }
 
 [node name="Next" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 
 [node name="Begin" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 one_shot = true
 
 [connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]

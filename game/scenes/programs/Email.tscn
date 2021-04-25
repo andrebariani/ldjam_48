@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/programs/Email.gd" type="Script" id=1]
+[ext_resource path="res://assets/Images/email_interface.png" type="Texture" id=3]
 
 [node name="Email" type="Control"]
 anchor_right = 1.0
@@ -67,79 +68,170 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Inbox" type="Control" parent="."]
+[node name="Inbox" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 3 )
+
+[node name="ColorRect2" type="ColorRect" parent="Inbox"]
+margin_left = 527.0
+margin_top = 140.0
+margin_right = 1053.0
+margin_bottom = 177.0
+color = Color( 0.65098, 0.721569, 0.709804, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Inbox"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 3.0
+[node name="Sender" type="Label" parent="Inbox"]
+margin_left = 372.0
+margin_top = 72.0
+margin_right = 1144.0
+margin_bottom = 101.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "egfdgdfgdfgdsf"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Inbox/HBoxContainer"]
-margin_right = 300.0
-margin_bottom = 726.0
+[node name="From" type="Label" parent="Inbox"]
+margin_left = 336.0
+margin_top = 72.0
+margin_right = 371.0
+margin_bottom = 100.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "From:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Logout" type="Button" parent="Inbox/HBoxContainer/VBoxContainer2"]
-margin_right = 300.0
-margin_bottom = 22.0
+[node name="To" type="Label" parent="Inbox"]
+margin_left = 336.0
+margin_top = 101.0
+margin_right = 355.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "To:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loginAs" type="Label" parent="Inbox"]
+margin_left = 11.0
+margin_top = 69.0
+margin_right = 323.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Logged in as:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentEmail" type="Label" parent="Inbox"]
+margin_left = 99.0
+margin_top = 69.0
+margin_right = 323.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "edfghdfgh"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Receivers" type="Label" parent="Inbox"]
+margin_left = 357.0
+margin_top = 101.0
+margin_right = 1125.0
+margin_bottom = 132.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "egfdgdfgdfgdsf"
+autowrap = true
+
+[node name="Topic" type="Label" parent="Inbox"]
+margin_left = 382.0
+margin_top = 202.0
+margin_right = 1100.0
+margin_bottom = 249.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "egfdgdfgdfgdsf"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="Inbox"]
+margin_left = 335.0
+margin_top = 143.0
+margin_right = 442.0
+margin_bottom = 177.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "egfdgdfgdfgdsf"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Inbox"]
+margin_left = 11.0
+margin_top = 174.0
+margin_right = 320.0
+margin_bottom = 629.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inbox"]
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 174.0
+margin_right = 317.0
+margin_bottom = -11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmailList" type="VBoxContainer" parent="Inbox/ScrollContainer"]
+margin_right = 303.0
+size_flags_horizontal = 3
+
+[node name="Logout" type="Button" parent="Inbox"]
+margin_left = 8.0
+margin_top = 139.0
+margin_right = 323.0
+margin_bottom = 163.0
 text = "Logout"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Inbox/HBoxContainer/VBoxContainer2"]
-margin_top = 26.0
-margin_right = 300.0
-margin_bottom = 726.0
-rect_min_size = Vector2( 300, 700 )
+[node name="BodyContainer" type="ScrollContainer" parent="Inbox"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 382.0
+margin_top = -385.0
+margin_right = -53.0
+margin_bottom = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="EmailList" type="VBoxContainer" parent="Inbox/HBoxContainer/VBoxContainer2/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Inbox/BodyContainer"]
+margin_right = 717.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Inbox/HBoxContainer"]
-margin_left = 304.0
-margin_right = 399.0
-margin_bottom = 726.0
-alignment = 1
-
-[node name="Sender" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 294.0
-margin_right = 95.0
-margin_bottom = 310.0
-text = "egfdgdfgdfgdsf"
-
-[node name="Receivers" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 314.0
-margin_right = 95.0
-margin_bottom = 349.0
-text = "egfdgdfgdfgdsf"
+[node name="Body" type="Label" parent="Inbox/BodyContainer/VBoxContainer"]
+margin_right = 717.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "This is a body"
 autowrap = true
 
-[node name="Topic" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 353.0
-margin_right = 95.0
-margin_bottom = 369.0
-text = "egfdgdfgdfgdsf"
+[node name="Annex" type="TextureRect" parent="Inbox/BodyContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 717.0
+margin_bottom = 20.0
 
-[node name="Date" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 373.0
-margin_right = 95.0
-margin_bottom = 389.0
-text = "egfdgdfgdfgdsf"
-
-[node name="Body" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 393.0
-margin_right = 95.0
-margin_bottom = 428.0
-text = "egfdgdfgdfgdsf"
-autowrap = true
-
-[node name="Annex" type="TextureRect" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 432.0
-margin_right = 95.0
-margin_bottom = 432.0
 [connection signal="pressed" from="Login/VBoxContainer/confirm" to="." method="_on_confirm_pressed"]
-[connection signal="pressed" from="Inbox/HBoxContainer/VBoxContainer2/Logout" to="." method="_on_Logout_pressed"]
+[connection signal="pressed" from="Inbox/Logout" to="." method="_on_Logout_pressed"]
