@@ -62,6 +62,7 @@ func consume(list:Array):
 
 
 func get_person_name(gendered_list, pw_list):
+	randomize()
 	var first_name = consume(gendered_list)
 	var last_name = consume(surname_list)
 	var full_name = first_name + " " + last_name
