@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 const WIDTH = 180
 
