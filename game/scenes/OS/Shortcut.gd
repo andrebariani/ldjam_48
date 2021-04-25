@@ -28,7 +28,7 @@ func get_window():
 	
 	
 func _process(delta):
-	if EmailServer.has_new_email():
+	if receive_notif and EmailServer.has_new_email():
 		emailTimer.start()
 	
 	if mouse_on:

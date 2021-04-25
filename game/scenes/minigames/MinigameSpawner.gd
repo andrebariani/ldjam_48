@@ -25,7 +25,7 @@ onready var minigames = [
 var next_minigame
 
 func _ready():
-# warning-ignore:return_value_discarded
+	# warning-ignore:return_value_discarded
 	self.connect("spawn_minigame", taskbar, "add_program")
 
 
@@ -47,6 +47,9 @@ func _on_Begin_timeout():
 
 
 func spawn_minigame():
+	if taskbar.program_count >= 5:
+		print_debug("Not enough RAM!")
+		return
 	emit_signal("spawn_minigame", next_minigame.window, next_minigame.icon, \
 		next_minigame.label, next_minigame.max_time)
 
