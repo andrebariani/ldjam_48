@@ -25,6 +25,7 @@ onready var minigames = [
 var next_minigame
 
 func _ready():
+# warning-ignore:return_value_discarded
 	self.connect("spawn_minigame", taskbar, "add_program")
 
 

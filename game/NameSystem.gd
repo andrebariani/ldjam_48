@@ -73,3 +73,11 @@ func get_person_name(gendered_list, pw_list):
 
 func get_email(first_name, last_name):
 	return first_name.to_lower() + last_name.to_lower() + "@thaumaturgy.com"
+	
+	
+func get_random_first_name():
+	randomize()
+	if randi() % 2 == 1:
+		return full_male_list[randi() % full_male_list.size()]
+	else:
+		return full_female_list[randi() % full_female_list.size()]
