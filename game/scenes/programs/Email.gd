@@ -77,9 +77,9 @@ func load_inbox():
 	if confirmed_email:
 		emails_from_current_account = EmailServer.get_emails_from_account(confirmed_email)
 		
-		for email in emails_from_current_account:
+		for _email in emails_from_current_account:
 			var emailItem = emailListItem.instance()
-			emailItem.email = email
+			emailItem.email = _email
 			emailList.add_child(emailItem)
 			emailItem.connect("clicked", self, "_on_clicked")
 
@@ -89,14 +89,27 @@ func clear_inbox():
 		emails.queue_free()
 
 
-func _on_clicked(email):
+func _on_clicked(_email):
 	emailBody.visible = true
-	emailBody.get_node("Sender").set_text(email.sender)
-	#emailBody.get_node("Receivers").set_text(email.receivers)
-	emailBody.get_node("Topic").set_text(email.topic)
-	emailBody.get_node("Date").set_text(email.date)
-	emailBody.get_node("Body").set_text(email.body)
-
+	emailBody.get_node("Sender").set_text(_email.sender)
+	var receivers = ""
+	
+	for e in _email.receivers:
+		if receivers != "":
+			receivers += ", "
+		receivers += "%s" % e
+		
+	emailBody.get_node("Receivers").set_text(receivers)
+	emailBody.get_node("Topic").set_text(_email.topic)
+	emailBody.get_node("Date").set_text(_email.date)
+	emailBody.get_node("Body").set_text(_email.body)
+	
+	if "annex" in _email:
+		var image = ImageTexture.new()
+		image.load(_email.annex)
+		emailBody.get_node("Annex").texture = image
+	else:
+		emailBody.get_node("Annex").texture = Texture.new()
 
 func _on_Logout_pressed():
 	$Login.visible = true

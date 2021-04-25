@@ -9,12 +9,19 @@ var mouse_on = 0
 signal clicked
 signal dropped
 
+onready var emailTimer = Timer.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Texture.texture = _icon
 	$Label.text = _label
 	if receive_notif:
 		self.set_process(true)
+		emailTimer.one_shot = true
+		emailTimer.wait_time = 1
+		emailTimer.autostart = false
+		
+		add_child(emailTimer)
 
 
 func get_window():
@@ -26,7 +33,7 @@ func get_label():
 
 func _process(delta):
 	if EmailServer.has_new_email():
-		print_debug("You got new mail!")
+		emailTimer.start()
 	
 	if mouse_on:
 		mouse_on += delta
@@ -34,6 +41,9 @@ func _process(delta):
 			margin_left = get_viewport().get_mouse_position().x
 			margin_top = get_viewport().get_mouse_position().y
 
+
+func _on_email_timeout():
+	print_debug("You've got mail!")
 
 func _on_Texture_gui_input(event):
 	if event is InputEventMouseButton:

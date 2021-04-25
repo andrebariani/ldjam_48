@@ -37,7 +37,10 @@ func _on_force_closed():
 func _on_Close_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if program.has_method("fail"):
-			program.emit_signal("minigame_failed")
+			var _email = EmailServer.get_fail_email()
+			_email.topic = "You think you can just ignore your job huh?"
+			_email.body = """I am so angry right now! Such negligence won't go unoticed!"""
+			program.fail(_email)
 		emit_signal("closed", self, _id)
 
 
