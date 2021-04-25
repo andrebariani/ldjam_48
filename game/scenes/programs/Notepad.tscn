@@ -29,7 +29,10 @@ custom_colors/background_color = Color( 1, 1, 1, 1 )
 custom_colors/number_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
 syntax_highlighting = true
+wrap_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="setup" from="." to="." method="_on_Notepad_setup"]
 [connection signal="updated_activated" from="." to="." method="_on_Notepad_updated_activated"]
+[connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]

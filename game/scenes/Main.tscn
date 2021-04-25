@@ -55,14 +55,32 @@ _window = ExtResource( 8 )
 _label = "Gmail"
 receive_notif = true
 
-[node name="Notepad" parent="Shortcuts" instance=ExtResource( 2 )]
+[node name="Notes" parent="Shortcuts" instance=ExtResource( 2 )]
 margin_left = 46.0346
 margin_top = 288.263
 margin_right = 46.0346
 margin_bottom = 288.263
 _icon = ExtResource( 3 )
 _window = ExtResource( 10 )
-_label = "Notepad"
+_label = "Notes"
+
+[node name="Thaum" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 1038.21
+margin_top = 37.4475
+margin_right = 1038.21
+margin_bottom = 37.4475
+_icon = ExtResource( 3 )
+_window = ExtResource( 10 )
+_label = "Thaumaturgy Manual"
+
+[node name="Cognitohazard" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 1036.7
+margin_top = 156.527
+margin_right = 1036.7
+margin_bottom = 156.527
+_icon = ExtResource( 3 )
+_window = ExtResource( 10 )
+_label = "Transcript"
 
 [node name="Windows" type="Control" parent="."]
 anchor_right = 1.0
@@ -84,7 +102,9 @@ margin_right = -3.5636
 margin_bottom = -32.0724
 [connection signal="clicked" from="Shortcuts/Report" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Email" to="Taskbar" method="add_program"]
-[connection signal="clicked" from="Shortcuts/Notepad" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Notes" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Thaum" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Cognitohazard" to="Taskbar" method="add_program"]
 [connection signal="closed_window" from="Windows" to="Taskbar" method="remove_program"]
 [connection signal="updated_highlighted_window" from="Windows" to="Taskbar" method="highlight_program"]
 [connection signal="create_window" from="Taskbar" to="Windows" method="_on_Taskbar_create_window"]

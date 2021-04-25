@@ -1,16 +1,15 @@
 extends Node
 
+onready var texts = {
+	"Thaumaturgy Manual":"""Thaumaturgy is the art of bending reality via the employment of signs and icons in a precise and predetermined manner. It is most commonly associated with rituals, summoning circles and prayer groups, though that is only a small fraction of the whole thaumaturgical portfolio.
+Contrary to popular assumption, thaumaturgy does not necessarily require physical materials to activate. Successful thaumaturgical masters are known for working with a variety of signs and patterns, ranging from simple blood symbols to the distribution of music preferences inside a given age group.
+Thaumaturgy is considered to be a relatively accessible form of magic, especially the ancient and forbidden kind, given its general lack of need for specialized training or innate supernatural abilities.
+""",
+"Transcript":"""Freddy Grimm: Attention, viewer! Did YOU know that 1 of every 5 americans has already fallen prey to a cognitohazard at some point in their life? Here’s what YOU can do to protect yourself against these little buggers!
+Freddy Grimm: Cognitohazards are, for the laymen tuning in, a hazard against the senses. Through the use of paranormal procedures and spooky rituals, criminals can cause harm against you via sounds, images or any other object that interacts with one of your five senses!
+Gina Doppler: Wow, but how can we even protect ourselves against images and sounds? Isn’t that impossible?
+Freddy Grimm: I’m glad you asked! Luckily, our sponsors at Runic Solutions have the perfect product to...
+""",
+"Notes":NameSystem.OWNER[3] + "\n" + NameSystem.OWNER[4],
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+}
