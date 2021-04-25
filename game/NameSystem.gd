@@ -5,13 +5,16 @@ const full_male_list = [
 	"Silas", "Gary", "William", "Nicholas", "Ralph",
 	"Joseph", "Damian", "Bruce", "Adam", "Eugene",
 	"Arthur", "Lawrence", "Alan", "Christian", "Harry",
-	"Luke"
+	"Luke", "Tim", "Robert", "Eli", "Daniel", "Darren",
+	"Gabriel", "Vincent", "Aaron", "Baxter", "Albert",
+	"Benedict"
 ]
 
 const full_female_list = [
 	"Sarah", "Nellie", "Liza", "Agatha", "Sophia",
 	"Natalie", "Lindsay", "Mackenzie", "Mary", "Maggie",
-	"Nora", "Evelyn", "Olivia", "Phoebe", "Cora", "Cynthia"
+	"Nora", "Evelyn", "Olivia", "Phoebe", "Cora", "Cynthia",
+	"Violet", "Millie", "Eleanor", "Dahlia"
 ]
 
 const full_surname_list = [
@@ -21,7 +24,7 @@ const full_surname_list = [
 	"Powell", "Russell", "King", "Garfield", "Armstrong",
 	"Branch", "Abbott", "Macgregor", "Berry", "Heart", "Jones",
 	"Rossi", "Senna", "Blakewell", "Taylor", "Clark", "Teal",
-	"Green", "Brown", "Scott", "Bush", "Seymour"
+	"Green", "Brown", "Scott", "Bush", "Seymour", "Finch"
 ]
 
 const full_flavor_list = [
@@ -109,6 +112,14 @@ func get_random_first_name_consume():
 		return consume(male_list)
 	else:
 		return consume(female_list)
+
+func corrupt(word):
+	var new = word
+	var evil_letters = ["%", "$", "&", "*", "/"]
+	for i in len(new):
+		if randi() % 3 == 0:
+			new[i] = evil_letters[randi() % 5]
+	return new
 
 func get_random_first_name():
 	randomize()
