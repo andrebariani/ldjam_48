@@ -103,3 +103,9 @@ func _on_Timer_timeout():
 				_email.body = """I am sad now, and %s is also sad too. You jerk.""" % birthday_person
 				
 		fail(_email)
+
+
+func _on_PromptMinigame_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			activated = true

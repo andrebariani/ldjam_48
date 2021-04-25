@@ -1,28 +1,48 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/OS/TaskbarProgram.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/OS_Font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/OS/Retangulo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/Images/taksbar_on_the_loose.png" type="Texture" id=5]
 
 [node name="TaskbarProgram" type="Control"]
+anchor_right = 0.174
+anchor_bottom = 0.044
+margin_right = -0.448013
+margin_bottom = 0.199997
+size_flags_horizontal = 0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 200.0
+margin_bottom = 30.0
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Retangulo" parent="." instance=ExtResource( 3 )]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
 margin_right = 200.0
-margin_bottom = 30.0
-color = Color( 0.423529, 0.423529, 0.423529, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 31.0
 
 [node name="Time" type="ColorRect" parent="."]
 visible = false
-margin_right = 200.0
-margin_bottom = 31.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 198.0
+margin_bottom = 29.0
+mouse_filter = 2
 color = Color( 0, 0.156863, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -49,16 +69,6 @@ texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Retangulo" parent="." instance=ExtResource( 3 )]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 200.0
-margin_bottom = 31.0
 
 [node name="Tween" type="Tween" parent="."]
 

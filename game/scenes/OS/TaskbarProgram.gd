@@ -21,12 +21,19 @@ func _on_Retangulo_gui_input(event):
 		emit_signal("clicked", _id)
 
 
+func _on_Background_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		emit_signal("clicked", _id)
+
+
 func get_id():
 	return _id
 
 
 func set_highlight(hled):
 	if hled:
+		$Retangulo.visible = true
 		$Retangulo.set_border_color(Color.yellow)
 	else:
+		$Retangulo.visible = false
 		$Retangulo.set_border_color(Color.black)

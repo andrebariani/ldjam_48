@@ -106,16 +106,17 @@ margin_bottom = 726.0
 alignment = 1
 
 [node name="Sender" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 313.0
+margin_top = 294.0
 margin_right = 95.0
-margin_bottom = 329.0
+margin_bottom = 310.0
 text = "egfdgdfgdfgdsf"
 
 [node name="Receivers" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 333.0
+margin_top = 314.0
 margin_right = 95.0
 margin_bottom = 349.0
 text = "egfdgdfgdfgdsf"
+autowrap = true
 
 [node name="Topic" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
 margin_top = 353.0
@@ -132,13 +133,13 @@ text = "egfdgdfgdfgdsf"
 [node name="Body" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
 margin_top = 393.0
 margin_right = 95.0
-margin_bottom = 409.0
+margin_bottom = 428.0
 text = "egfdgdfgdfgdsf"
+autowrap = true
 
 [node name="Annex" type="TextureRect" parent="Inbox/HBoxContainer/VBoxContainer"]
-margin_top = 413.0
+margin_top = 432.0
 margin_right = 95.0
-margin_bottom = 413.0
-
+margin_bottom = 432.0
 [connection signal="pressed" from="Login/VBoxContainer/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="Inbox/HBoxContainer/VBoxContainer2/Logout" to="." method="_on_Logout_pressed"]

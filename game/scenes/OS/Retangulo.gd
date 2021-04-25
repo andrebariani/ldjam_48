@@ -1,10 +1,8 @@
-extends ColorRect
+extends TextureRect
 
-var original_color
 export(Color) var border_color
 
 func _ready():
-	original_color = color
 	set_border_color(border_color)
 
 

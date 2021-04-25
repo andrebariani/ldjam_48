@@ -63,3 +63,9 @@ func _input(event):
 				if (complete_report.length() - 1) == insert_id:
 					done = true
 					success()
+
+
+func _on_ReportMinigame_gui_input(event):
+	if event is InputEventMouseButton:
+			if event.pressed:
+				activated = true
