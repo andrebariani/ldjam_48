@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 const WIDTH = 180
 
@@ -18,7 +18,7 @@ func add_program(window, icon, label, time = 0):
 	new.margin_bottom = 0
 	
 	new.connect("clicked", self, "clicked")
-	new.setup(id_count, icon, label)
+	new.setup(id_count, icon, label, time)
 	emit_signal("create_window", id_count, window, icon, label)
 	
 	program_count += 1
