@@ -10,19 +10,22 @@ onready var minigames = [
 		"desc": """Write a report for me!""",
 		"icon": Texture.new(),
 		"window": preload("res://scenes/minigames/ReportMinigame.tscn"),
-		"label": "Report.txt"
+		"label": "Report.txt",
+		"max_time": 20
 	},
 	{
 		"desc": """Execute next prompt!""",
 		"icon": Texture.new(),
 		"window":preload("res://scenes/minigames/PromptMinigame.tscn"),
-		"label": "cmd"
+		"label": "cmd",
+		"max_time": 20
 	}
 ]
 
 var next_minigame
 
 func _ready():
+# warning-ignore:return_value_discarded
 	self.connect("spawn_minigame", taskbar, "add_program")
 
 

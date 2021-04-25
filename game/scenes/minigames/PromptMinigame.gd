@@ -1,5 +1,8 @@
 extends "minigame.gd"
 
+
+var birthday_person = NameSystem.get_random_first_name()
+
 var possible_prompts = [
 	{
 		"text":"Backup company server files?",
@@ -20,7 +23,7 @@ var possible_prompts = [
 		"wrong":"Not Venting gas...",
 	},
 	{
-		"text":"Send Happy Birthday Message to Liam?",
+		"text":"Send Happy Birthday Message to %s?" % birthday_person,
 		"answer":true,
 		"right":"Sending Happy Birthday...",
 		"wrong":"Sending Bad Birthday...",
@@ -30,10 +33,12 @@ var possible_prompts = [
 var answer = null
 var win = null
 var prompt
+var prompt_id
 
 func _ready():
 	randomize()
-	prompt = possible_prompts[randi() % possible_prompts.size()]
+	prompt_id = randi() % possible_prompts.size()
+	prompt = possible_prompts[prompt_id]
 	$Prompt.set_text(prompt.text)
 
 
@@ -68,6 +73,7 @@ func wait_confirm():
 	else:
 		$Confirm.set_text(prompt.wrong)
 		win = false
+	timer.stop()
 	$Timer.start()
 
 func _on_Timer_timeout():
@@ -76,4 +82,24 @@ func _on_Timer_timeout():
 		success()
 	else:
 		print_debug("oh no...")
-		fail()
+		var _email
+		match prompt_id:
+			0:
+				_email = EmailServer.get_fail_email()
+				_email.topic = "Why didn't you backup the files???"
+				_email.body = """I am sad now"""
+			1:
+				_email = EmailServer.get_fail_email()
+				_email.topic = "Why did you tried to erase your computer???"
+				_email.body = """Good thing our IT staff managed to cancel it"""
+			2:
+				_email = EmailServer.get_fail_email()
+				_email.topic = "*Cough* *Cough* You should vent the gas!"
+				_email.body = """Always Vent it! Otherwise it will 
+				go to some department!"""
+			3:
+				_email = EmailServer.get_fail_email()
+				_email.topic = "You forgot %s's birthday???" % birthday_person
+				_email.body = """I am sad now, and %s is also sad too. You jerk.""" % birthday_person
+				
+		fail(_email)

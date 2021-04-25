@@ -18,7 +18,7 @@ func add_program(window, icon, label, _time = 0):
 	new.margin_bottom = 0
 	
 	new.connect("clicked", self, "clicked")
-	new.setup(id_count, icon, label)
+	new.setup(id_count, icon, label, _time)
 	emit_signal("create_window", id_count, window, icon, label)
 	highlight_program(id_count, true)
 	

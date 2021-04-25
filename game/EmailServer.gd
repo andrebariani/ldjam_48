@@ -68,7 +68,8 @@ If you have any questions, reach me on my office line at 555-6160.
 
 Warm regards,
 """ + NameSystem.SUPERVISOR[2] + """, Thaumaturgy Incorporated
-Where your problems disappear"""
+Where your problems disappear""",
+		"annex": "res://icon.png"
 		},
 		{
 			"sender": "JOOOJ",
@@ -82,12 +83,14 @@ Where your problems disappear"""
 		{
 			"sender": "",
 			"receivers": ["", ""],
+			"topic": "gbgb",
 			"date": "",
-			"body": """"""
+			"body": """""",
 		},
 		{
 			"sender": "",
 			"receivers": ["", ""],
+			"topic": "gbgb",
 			"date": "",
 			"body": """"""
 		},
@@ -116,6 +119,17 @@ func get_emails_from_account(_email) -> Array:
 	return All_Emails[found_id]
 
 
+func get_fail_email():
+	var email = {
+			"sender": "chefe",
+			"receivers": [NameSystem.PLAYER[3]],
+			"date": "%d:%d" % [OS.get_datetime().hour, OS.get_datetime().minute],
+			"topic": "",
+			"body": """"""
+		}
+	return email 
+
+
 func send_email(_email):
 	All_Emails[0].append(_email)
 	new_email = true
@@ -126,3 +140,5 @@ func has_new_email():
 		new_email = false
 		return true
 	return false
+
+
