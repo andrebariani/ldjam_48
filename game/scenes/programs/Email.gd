@@ -7,16 +7,15 @@ onready var confirm = $Login/VBoxContainer/confirm
 onready var reminder = $Login/VBoxContainer/Reminder
 
 onready var inbox = $Inbox
-onready var emailList = $Inbox/HBoxContainer/VBoxContainer2/ScrollContainer/EmailList
-onready var emailBody = $Inbox/HBoxContainer/VBoxContainer
-onready var logout = $Inbox/HBoxContainer/VBoxContainer2/Logout
+onready var emailList = $Inbox/ScrollContainer/EmailList
+onready var emailBody = $Inbox
+onready var emailBodyContent = $Inbox/BodyContainer/VBoxContainer
+onready var logout = $Inbox/Logout
 
 onready var emailListItem = preload("res://scenes/programs/EmailUI/EmailListItem.tscn")
 
 var timerReminder = Timer.new()
 var timerLogin = Timer.new()
-
-
 var confirmed_email
 var emails_from_current_account
 
@@ -32,6 +31,9 @@ func _ready():
 	timerLogin.connect("timeout", self, "_on_login_timeout")
 	
 	add_child(timerLogin)
+	
+	confirmed_email = NameSystem.PLAYER[3]
+	load_inbox()
 
 
 func setup(_label):
@@ -75,6 +77,8 @@ func _on_login_timeout():
 	
 func load_inbox():
 	if confirmed_email:
+		$Inbox/CurrentEmail.set_text(confirmed_email)
+		
 		emails_from_current_account = EmailServer.get_emails_from_account(confirmed_email)
 		
 		for _email in emails_from_current_account:
@@ -102,14 +106,14 @@ func _on_clicked(_email):
 	emailBody.get_node("Receivers").set_text(receivers)
 	emailBody.get_node("Topic").set_text(_email.topic)
 	emailBody.get_node("Date").set_text(_email.date)
-	emailBody.get_node("Body").set_text(_email.body)
+	emailBodyContent.get_node("Body").set_text(_email.body)
 	
 	if "annex" in _email:
 		var image = ImageTexture.new()
 		image.load(_email.annex)
-		emailBody.get_node("Annex").texture = image
+		emailBodyContent.get_node("Annex").texture = image
 	else:
-		emailBody.get_node("Annex").texture = Texture.new()
+		emailBodyContent.get_node("Annex").texture = Texture.new()
 
 func _on_Logout_pressed():
 	$Login.visible = true
