@@ -34,14 +34,10 @@ texture = ExtResource( 2 )
 offset = Vector2( 415.4, 296.2 )
 
 [node name="Title" type="Label" parent="."]
-anchor_left = 0.002
-anchor_top = 0.09
-anchor_right = 1.0
-anchor_bottom = 0.159
-margin_left = -0.174739
-margin_top = -0.0415497
-margin_right = 2.12927
-margin_bottom = -0.341553
+margin_left = 332.936
+margin_top = 64.2431
+margin_right = 804.936
+margin_bottom = 112.243
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "WRITE YOUR REPORT!!!"
@@ -51,14 +47,10 @@ __meta__ = {
 }
 
 [node name="Body" type="Label" parent="."]
-anchor_left = 0.174
-anchor_top = 0.309
-anchor_right = 0.828
-anchor_bottom = 0.894
-margin_left = -0.448013
-margin_top = -0.300018
-margin_right = 0.143921
-margin_bottom = 0.199951
+margin_left = 195.0
+margin_top = 210.0
+margin_right = 950.0
+margin_bottom = 621.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {

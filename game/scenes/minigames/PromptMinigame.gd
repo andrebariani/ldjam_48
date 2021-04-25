@@ -37,7 +37,7 @@ func _ready():
 	$Prompt.set_text(prompt.text)
 
 
-func _process(delta):
+func _process(_delta):
 	if win == null:
 		if Input.is_action_just_released("confirm") and answer is bool:
 				print_debug("what")
