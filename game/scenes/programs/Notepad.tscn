@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/programs/Notepad.gd" type="Script" id=1]
+
+[node name="Notepad" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1155.0
+margin_bottom = 702.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 1126.0
+margin_bottom = 674.0
+custom_colors/symbol_color = Color( 0, 0, 0, 1 )
+custom_colors/caret_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/background_color = Color( 1, 1, 1, 1 )
+custom_colors/number_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
+syntax_highlighting = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="updated_activated" from="." to="." method="_on_Notepad_updated_activated"]

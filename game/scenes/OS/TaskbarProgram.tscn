@@ -67,6 +67,5 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 200.0
 margin_bottom = 31.0
-
 [connection signal="gui_input" from="Background" to="." method="_on_Background_gui_input"]
 [connection signal="gui_input" from="Retangulo" to="." method="_on_Retangulo_gui_input"]

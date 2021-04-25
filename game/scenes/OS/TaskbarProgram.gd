@@ -16,3 +16,10 @@ func _on_Retangulo_gui_input(event):
 
 func get_id():
 	return _id
+
+
+func set_highlight(hled):
+	if hled:
+		$Retangulo.set_border_color(Color.yellow)
+	else:
+		$Retangulo.set_border_color(Color.black)

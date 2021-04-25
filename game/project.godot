@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 NameSystem="*res://NameSystem.gd"
 EmailServer="*res://scenes/OS/EmailServer.tscn"
+FileSystem="*res://FileSystem.gd"
 
 [display]
 
