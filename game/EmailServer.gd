@@ -497,6 +497,52 @@ NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_
 NameSystem.BOSS[2] + ", Thaumaturgy Incorporated")
 		},
 	],
+	# ROGUE ============================================
+	[
+		{
+			"sender": NameSystem.COMPANY_OWNER[3],
+			"receivers": [NameSystem.ROGUE[3]],
+			"date": "04/06/1997",
+			"topic": "COME BACK",
+			"body": NameSystem.ROGUE[1] + """, don’t you dare try to run away from us. You know you can’t escape. You know you have no choice. The time to bargain has long passed and now it’s time for you to OBEY. You may live forever, but you can’t hide forever.
+Sooner or later, you’ll be one of us.
+Praise Thoon."""
+		},
+		{
+			"sender": NameSystem.CEO[3],
+			"receivers": [NameSystem.ROGUE[3]],
+			"date": "23/05/1997",
+			"topic": "Undermining my authority",
+			"body": "I found out about the memory wipes, " + NameSystem.ROGUE[0] + """, and I won’t put up with it anymore. I’m no longer your puppet - this company’s now mine.
+
+Referenced email:
+""" + NameSystem.CEO[1] + ", did you really think I wouldn’t find out about your secret withdrawals? What are you trying to do here?"
+		},
+		{
+			"sender": NameSystem.DOCTOR[3],
+			"receivers": [NameSystem.COMPANY_OWNER[3], NameSystem.ROGUE[3]],
+			"date": "20/03/1997",
+			"topic": "Subject 11's Status",
+			"body": ("Greetings, Lord " + NameSystem.COMPANY_OWNER[1] + ", Mr. " + NameSystem.ROGUE[1] + 
+			"""The studies and tests regarding the split between both of you are still running, although we are encountering several setbacks in the research. 
+I apologize for the lack of results, my Lord, but this is the first time that a ritual on this scale has been successfully made between an Outsider and a human. As I write this email, the only thing that is keeping Lord""" + 
+NameSystem.COMPANY_OWNER[1] + "and his subjects in this reality, is Mr." + NameSystem.ROGUE[1] + 
+"’s continued existence.\nAs that’s the case, I must ask that Mr. " + NameSystem.ROGUE[1] + """stay safe until the research has been completed. At the time of this writing, my team and I are still researching the final components and symbols for this ritual.
+Best regards,
+Dr. """ + NameSystem.DOCTOR[2])
+		},
+		{
+			"sender": NameSystem.DOCTOR[3],
+			"receivers": [NameSystem.ROGUE[3]],
+			"date": "07/10/1997",
+			"topic": "Summoning ritual",
+			"body": "Greetings, Mr. " + NameSystem.ROGUE[1] + """.
+The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately  executing the ritual on humans still causes the subject to perish.
+Annexed to this email you’ll find the instructions for this ritual.
+""" + "Best regards,\nDr." + NameSystem.DOCTOR[0],
+			"annex":preload("res://icon.png")
+		},
+	],
 ]
 
 var new_email = false

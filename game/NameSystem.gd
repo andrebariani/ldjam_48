@@ -19,7 +19,9 @@ const full_surname_list = [
 	"Olson", "Gray", "Murphy", "Stewart", "Wright",
 	"Robinson", "Alexander", "Coleman", "Brooks",
 	"Powell", "Russell", "King", "Garfield", "Armstrong",
-	"Branch", "Abbott", "Macgregor"
+	"Branch", "Abbott", "Macgregor", "Berry", "Heart", "Jones",
+	"Rossi", "Senna", "Blakewell", "Taylor", "Clark", "Teal",
+	"Green", "Brown", "Scott", "Bush", "Seymour"
 ]
 
 const full_flavor_list = [
