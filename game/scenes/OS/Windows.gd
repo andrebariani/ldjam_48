@@ -4,6 +4,7 @@ export(PackedScene) var _window
 var open_ids = []
 
 signal closed_window
+signal updated_highlighted_window
 
 func _on_Taskbar_create_window(id, program, icon, label):
 	var new = _window.instance()
@@ -14,7 +15,7 @@ func _on_Taskbar_create_window(id, program, icon, label):
 	new.connect("minimized", self, "minimized_window")
 	
 	for child in get_children():
-		if child and child.get_id() == open_ids.back():
+		if child and !open_ids.empty() and child.get_id() == open_ids.back():
 			child.program.activated = false
 			
 	open_ids.append(id)
@@ -45,9 +46,19 @@ func activate_window(window, id):
 	if id in open_ids:
 		open_ids.erase(id)
 	open_ids.append(id)
+	
+	emit_signal("updated_highlighted_window", id, true)
 
 
 func minimized_window(window, id):
 	window.program.set_activated(false)
 	window.visible = false
 	open_ids.erase(id)
+	
+	if !open_ids.empty():
+		for child in get_children():
+			if id == open_ids.back():
+				activate_window(child, id)
+				break
+	
+	emit_signal("updated_highlighted_window", id, false)

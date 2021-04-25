@@ -134,6 +134,5 @@ margin_top = 395.0
 margin_right = 95.0
 margin_bottom = 411.0
 text = "egfdgdfgdfgdsf"
-
 [connection signal="pressed" from="Login/VBoxContainer/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="Inbox/HBoxContainer/VBoxContainer2/Logout" to="." method="_on_Logout_pressed"]
