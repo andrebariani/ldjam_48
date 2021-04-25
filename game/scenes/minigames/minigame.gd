@@ -22,12 +22,11 @@ func _on_timeout():
 	var _email = EmailServer.get_fail_email()
 	match self.name:
 		"PromptMinigame":
-			_email.topic = "You did not execute the prompt in time!"
-			_email.body = """I am furious!"""
+			_email.topic = "Slow performance"
+			_email.body = "Your slow performance has been noted. "
 		"ReportMinigame":
-			_email.topic = "Where is my report?"
-			_email.body = """%s already done the report in your place...
-			This won't look good in your evaluation!'""" % NameSystem.get_random_first_name()
+			_email.topic = "Report"
+			_email.body = "You have failed to send in your report in time. "
 	fail(_email)
 
 
@@ -37,7 +36,6 @@ func success():
 
 func fail(_email):
 	email = _email
-	EmailServer.send_email(email)
-	emit_signal("minigame_failed")
+	emit_signal("minigame_failed", email)
 	emit_signal("force_closed")
 

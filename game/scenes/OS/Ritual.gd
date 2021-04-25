@@ -14,20 +14,20 @@ func thaum_updated():
 	var bottom = null
 	
 	for child in get_children():
-		if (275 <= child.margin_left and child.margin_left <= 300 and 
-			140 <= child.margin_top and child.margin_top <= 165):
+		if (255 <= child.margin_left and child.margin_left <= 320 and 
+			130 <= child.margin_top and child.margin_top <= 185):
 			left = child
 		
-		elif (550 <= child.margin_left and child.margin_left <= 570 and 
-			45 <= child.margin_top and child.margin_top <= 65):
+		elif (530 <= child.margin_left and child.margin_left <= 580 and 
+			35 <= child.margin_top and child.margin_top <= 95):
 			head = child
 		
-		elif (805 <= child.margin_left and child.margin_left <= 835 and 
-			145 <= child.margin_top and child.margin_top <= 165):
+		elif (795 <= child.margin_left and child.margin_left <= 845 and 
+			130 <= child.margin_top and child.margin_top <= 185):
 			right = child
 		
-		elif (555 <= child.margin_left and child.margin_left <= 570 and 
-			565 <= child.margin_top and child.margin_top <= 590):
+		elif (545 <= child.margin_left and child.margin_left <= 585 and 
+			555 <= child.margin_top and child.margin_top <= 605):
 			bottom = child
 	
 	if left and right and bottom:

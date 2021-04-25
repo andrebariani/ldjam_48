@@ -13,7 +13,7 @@ func add_program(window, icon, label, _time = 0):
 	if program_count < 5:
 		var new = program_scene.instance()
 		$HBoxContainer.add_child(new)
-		move_child(new, get_child_count()-1)
+		$HBoxContainer.move_child(new, get_child_count()-1)
 		#new.margin_left = WIDTH*program_count
 		#new.margin_right = WIDTH + WIDTH*program_count
 		#new.margin_bottom = 0
