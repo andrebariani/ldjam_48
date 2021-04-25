@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/minigames/MinigameSpawner.gd" type="Script" id=2]
+
+[node name="MinigameSpawner" type="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 793.0
+margin_top = -237.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -50.5
+margin_top = 37.0
+margin_right = 50.5
+margin_bottom = 51.0
+text = "You've got mail!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.0
+margin_top = -151.0
+margin_right = -44.0
+text = "Minigame description here"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="TextureButton" parent="."]
+margin_left = 334.577
+margin_top = 2.51978
+margin_right = 398.577
+margin_bottom = 66.5198
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="Timer" parent="."]
+wait_time = 99.0
+one_shot = true
+autostart = true
+
+[node name="Begin" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
+[connection signal="timeout" from="Next" to="." method="_on_Next_timeout"]
+[connection signal="timeout" from="Begin" to="." method="_on_Begin_timeout"]

@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 const WIDTH = 180
 
@@ -9,7 +9,7 @@ var id_count = 0
 signal create_window
 signal toggle_window
 
-func add_program(window, icon, label):
+func add_program(window, icon, label, time = 0):
 	var new = program_scene.instance()
 	add_child(new)
 	move_child(new, get_child_count()-1)
