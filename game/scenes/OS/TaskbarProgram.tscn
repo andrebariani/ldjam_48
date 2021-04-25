@@ -19,6 +19,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 201.0
+margin_bottom = 30.0
+fill_mode = 1
+tint_progress = Color( 0.133333, 0.137255, 0.501961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="TextureProgress"]
+margin_right = 200.0
+margin_bottom = 31.0
+color = Color( 0.105882, 0.113725, 0.572549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="."]
 margin_left = 28.7013
 margin_top = 6.53671

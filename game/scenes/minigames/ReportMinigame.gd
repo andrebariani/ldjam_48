@@ -65,5 +65,4 @@ func _input(event):
 				last_key = event.scancode
 				if (complete_report.length() - 1) == insert_id:
 					done = true
-					emit_signal("minigame_done")
-					emit_signal("force_closed")
+					success()

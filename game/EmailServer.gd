@@ -46,6 +46,9 @@ var All_Emails = [
 ]
 
 
+var new_email = false
+
+
 func login(email, password) -> bool:
 	for account in Accounts:
 		if account.email == email and \
@@ -64,3 +67,14 @@ func get_emails_from_account(_email) -> Array:
 	
 	return All_Emails[found_id]
 
+
+func send_email(_email):
+	All_Emails[0].append(_email)
+	new_email = true
+
+
+func has_new_email():
+	if new_email:
+		new_email = false
+		return true
+	return false
