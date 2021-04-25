@@ -23,6 +23,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 9 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -35,10 +36,10 @@ __meta__ = {
 }
 
 [node name="Report" parent="Shortcuts" instance=ExtResource( 2 )]
-margin_left = 42.2055
-margin_top = 39.1908
-margin_right = 42.2055
-margin_bottom = 39.1908
+margin_left = 47.2055
+margin_top = 45.1908
+margin_right = 47.2055
+margin_bottom = 45.1908
 _icon = ExtResource( 3 )
 _window = ExtResource( 5 )
 _label = "Report Writer"
