@@ -141,19 +141,31 @@ Good luck to all,
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "13/09/1997",
+			"date": "12/08/1997",
 			"topic": "Password changes",
 			"body": """Attention, employees.
 As per company standard, we’ll be changing all Level 2 passwords again, this time on August 16th. They will all be set to the secret information you’ve given in case of password loss (name of the first pet, favorite ice cream flavor or name of the first school).
 """ + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated\nWhere your problems disappear"
 		},
+		{
+			"sender": NameSystem.COLLEAGUE5[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
+			"date": "21/07/1997",
+			"topic": "LOOK EVERYONE",
+			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
+REST IN PEACE, CLOVER""",
+			"annex":preload("res://icon.png")
+		},
 	],
+	
+	# COLLEAGUE 1 ============================================
 	[
 		{
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.COLLEAGUE1[3]],
 			"date": "15/10/1997",
-			"topic": "About your computer",
+			"topic": "Digit Necron results",
 			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
 The computer plan didn’t work. It rejected the necronomicon as its new host. It still managed to absorb some of its contents, however, which might prove useful - we just need to test it with a guinea pig. Problem is, we can’t format it properly.
 My email and password ended up logged in there, so I need you to change my password from Yoggsaron to Asmodeus. We can’t be too careful with these things, especially now at this stage.
@@ -161,15 +173,133 @@ Thanks in advance,
 """ + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
 		},
 		{
-			"sender": NameSystem.BOSS[3],
+			"sender": NameSystem.TIGUY[3],
 			"receivers": [NameSystem.COLLEAGUE1[3]],
 			"date": "15/10/1997",
-			"topic": "About your computer",
-			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
-The computer plan didn’t work. It rejected the necronomicon as its new host. It still managed to absorb some of its contents, however, which might prove useful - we just need to test it with a guinea pig. Problem is, we can’t format it properly.
-My email and password ended up logged in there, so I need you to change my password from Yoggsaron to Asmodeus. We can’t be too careful with these things, especially now at this stage.
+			"topic": "Password change to " + NameSystem.get_random_school(),
+			"body": """Sorry, I’m not allowed to change passwords right now. Orders from above and stuff.
+
+Referenced email:
+Hi, """ + NameSystem.TIGUY[1] + """.
+Uh, I just realized I accidentally divulged my favorite ice cream flavor to one of my coworkers. Can you change it to my kindergarden school?
 Thanks in advance,
-""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
+""" + NameSystem.COLLEAGUE1[2]
+		},
+		{
+			"sender": NameSystem.COLLEAGUE5[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
+			"date": "17/09/1997",
+			"topic": "Birthday list",
+			"body": """Hey everyone!
+As the leader of the party planning committee, I just want to make sure everyone’s favorite desserts are accounted for. Here’s what I have - send me a reply if there’s something off with my list or your dessert is not in here.
+""" + (NameSystem.COLLEAGUE1[0] + ": Chocolate cake\n" +
+NameSystem.COLLEAGUE2[0] + ": Pudding\n" +
+NameSystem.COLLEAGUE3[0] + ": Coffee\n" +
+NameSystem.COLLEAGUE4[0] + ": " + NameSystem.COLLEAGUE4[4] + " ice cream\n" +
+NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
+		},
+		{
+			"sender": NameSystem.COLLEAGUE2[3],
+			"receivers": [NameSystem.COLLEAGUE1[3]],
+			"date": "01/09/1997",
+			"topic": NameSystem.COLLEAGUE3[0] + "'s Behavior",
+			"body": ("Yeah, I’m going to talk to <BOSS_NAME> tomorrow and ask him to reprimand him or something. " +
+			"That was crazy.\n\nReferenced Email:\n" + "Hi " + NameSystem.COLLEAGUE2[0] + """.
+			Did you see """ + NameSystem.COLLEAGUE3[0] + 
+			"""yesterday? I didn’t want to say anything, but why the fuck was he just staring at the wall and mumbling like that? It was so unnerving...
+""" + NameSystem.COLLEAGUE1[0])
+		},
+		{
+			"sender": NameSystem.BOSS[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
+			"date": "19/08/1997",
+			"topic": "Benedixmus Protocol",
+			"body": """Attention, employees.
+A reminder that the Benedixmus Protocol shall take place tomorrow, 4 PM. Remember to water your flower pots and sharpen all your pencils, just according to corporate policy. It’s a very important tradition to all of us, so I expect complete compliance from all of you.
+Good luck to all,
+""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated\nWhere your problems disappear"
+		},
+		{
+			"sender": NameSystem.BOSS[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
+			"date": "12/08/1997",
+			"topic": "Password changes",
+			"body": """Attention, employees.
+As per company standard, we’ll be changing all Level 2 passwords again, this time on August 16th. They will all be set to the secret information you’ve given in case of password loss (name of the first pet, favorite ice cream flavor or name of the first school).
+""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated\nWhere your problems disappear"
+		},
+		{
+			"sender": NameSystem.COLLEAGUE5[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
+			"date": "21/07/1997",
+			"topic": "LOOK EVERYONE",
+			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
+REST IN PEACE, CLOVER""",
+			"annex":preload("res://icon.png")
+		},
+	],
+	# COLLEAGUE4 --------------------------------------
+	[
+		{
+			"sender": NameSystem.COLLEAGUE5[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
+			"date": "17/09/1997",
+			"topic": "Birthday list",
+			"body": """Hey everyone!
+As the leader of the party planning committee, I just want to make sure everyone’s favorite desserts are accounted for. Here’s what I have - send me a reply if there’s something off with my list or your dessert is not in here.
+""" + (NameSystem.COLLEAGUE1[0] + ": Chocolate cake\n" +
+NameSystem.COLLEAGUE2[0] + ": Pudding\n" +
+NameSystem.COLLEAGUE3[0] + ": Coffee\n" +
+NameSystem.COLLEAGUE4[0] + ": " + NameSystem.COLLEAGUE4[4] + " ice cream\n" +
+NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
+		},
+		{
+			"sender": NameSystem.COLLEAGUE5[3],
+			"receivers": [NameSystem.COLLEAGUE4[3]],
+			"date": "19/08/1997",
+			"topic": "RE: Benedixmus Protocol?",
+			"body": """Nah, it’s just a company tradition, you know? They say it gives us good luck, and to be honest, ever since I joined Thauma I’ve felt luckier than ever. So I don’t know, maybe it works?
+
+Referenced email:
+Hi """ + NameSystem.COLLEAGUE5[0] + """.
+Uh, what’s this Benedixmus Protocol thing? It sounds so ominous...
+""" + NameSystem.COLLEAGUE4[0]
+		},
+		{
+			"sender": NameSystem.BOSS[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
+			"date": "19/08/1997",
+			"topic": "Benedixmus Protocol",
+			"body": """Attention, employees.
+A reminder that the Benedixmus Protocol shall take place tomorrow, 4 PM. Remember to water your flower pots and sharpen all your pencils, just according to corporate policy. It’s a very important tradition to all of us, so I expect complete compliance from all of you.
+Good luck to all,
+""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated\nWhere your problems disappear"
+		},
+		{
+			"sender": NameSystem.BOSS[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
+			"date": "12/08/1997",
+			"topic": "Password changes",
+			"body": """Attention, employees.
+As per company standard, we’ll be changing all Level 2 passwords again, this time on August 16th. They will all be set to the secret information you’ve given in case of password loss (name of the first pet, favorite ice cream flavor or name of the first school).
+""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated\nWhere your problems disappear"
+		},
+		{
+			"sender": NameSystem.COLLEAGUE5[3],
+			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
+				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
+			"date": "21/07/1997",
+			"topic": "LOOK EVERYONE",
+			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
+REST IN PEACE, CLOVER""",
+			"annex":preload("res://icon.png")
 		},
 	],
 ]
