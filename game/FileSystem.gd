@@ -11,5 +11,6 @@ Gina Doppler: Wow, but how can we even protect ourselves against images and soun
 Freddy Grimm: I’m glad you asked! Luckily, our sponsors at Runic Solutions have the perfect product to...
 """,
 "Notes":NameSystem.OWNER[3] + "\n" + NameSystem.OWNER[4],
+"*#&*%&¨*&$":NameSystem.corrupt(NameSystem.BOSS[3]) + "\n" + NameSystem.corrupt(NameSystem.BOSS[4]),
 
 }
