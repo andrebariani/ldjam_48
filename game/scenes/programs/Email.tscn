@@ -1,0 +1,144 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/programs/Email.gd" type="Script" id=1]
+
+[node name="Email" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Login" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Login"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = 181.0
+margin_right = -200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Login/VBoxContainer"]
+margin_right = 752.0
+margin_bottom = 16.0
+text = "Welcome!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="email" type="LineEdit" parent="Login/VBoxContainer"]
+margin_top = 20.0
+margin_right = 752.0
+margin_bottom = 46.0
+
+[node name="password" type="LineEdit" parent="Login/VBoxContainer"]
+margin_top = 50.0
+margin_right = 752.0
+margin_bottom = 76.0
+
+[node name="confirm" type="Button" parent="Login/VBoxContainer"]
+margin_top = 80.0
+margin_right = 752.0
+margin_bottom = 102.0
+text = "Login"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reminder" type="Label" parent="Login/VBoxContainer"]
+visible = false
+margin_top = 395.0
+margin_right = 752.0
+margin_bottom = 411.0
+text = "Write email and password first"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inbox" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inbox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Inbox/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 726.0
+
+[node name="Logout" type="Button" parent="Inbox/HBoxContainer/VBoxContainer2"]
+margin_right = 300.0
+margin_bottom = 22.0
+text = "Logout"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inbox/HBoxContainer/VBoxContainer2"]
+margin_top = 26.0
+margin_right = 300.0
+margin_bottom = 726.0
+rect_min_size = Vector2( 300, 700 )
+
+[node name="EmailList" type="VBoxContainer" parent="Inbox/HBoxContainer/VBoxContainer2/ScrollContainer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inbox/HBoxContainer"]
+margin_left = 304.0
+margin_right = 399.0
+margin_bottom = 726.0
+alignment = 1
+
+[node name="Sender" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 313.0
+margin_right = 95.0
+margin_bottom = 329.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Receivers" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 333.0
+margin_right = 95.0
+margin_bottom = 349.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Topic" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 353.0
+margin_right = 95.0
+margin_bottom = 369.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Date" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 373.0
+margin_right = 95.0
+margin_bottom = 389.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Body" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 393.0
+margin_right = 95.0
+margin_bottom = 409.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Annex" type="TextureRect" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 413.0
+margin_right = 95.0
+margin_bottom = 413.0
+
+[connection signal="pressed" from="Login/VBoxContainer/confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Inbox/HBoxContainer/VBoxContainer2/Logout" to="." method="_on_Logout_pressed"]

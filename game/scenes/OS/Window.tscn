@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/OS/Window.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/spritesfer/minimizar.png" type="Texture" id=4]
+[ext_resource path="res://assets/spritesfer/fechar.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -55,7 +57,7 @@ margin_top = 1.67655
 margin_right = 33.6179
 margin_bottom = 65.6766
 rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -68,7 +70,7 @@ margin_top = 2.28011
 margin_right = 1.42261
 margin_bottom = 66.2801
 rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

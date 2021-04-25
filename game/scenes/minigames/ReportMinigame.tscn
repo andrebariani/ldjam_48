@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/minigames/ReportMinigame.gd" type="Script" id=1]
+[ext_resource path="res://assets/spritesfer/reportWriter.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=3]
 
 [sub_resource type="Theme" id=1]
 /icons/ = null
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 38
+font_data = ExtResource( 3 )
 
 [node name="ReportMinigame" type="Control"]
 anchor_right = 1.0
@@ -14,19 +28,135 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="reportWriter" type="Sprite" parent="."]
+position = Vector2( 160.599, 23.8105 )
+texture = ExtResource( 2 )
+offset = Vector2( 415.4, 296.2 )
+
 [node name="Title" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -134.0
-margin_right = 134.0
-margin_bottom = 107.0
-text = "Relatório"
+margin_left = 332.936
+margin_top = 64.2431
+margin_right = 804.936
+margin_bottom = 112.243
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "WRITE YOUR REPORT!!!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Body" type="Label" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -510.0
+margin_left = 195.0
+margin_top = 210.0
+margin_right = 950.0
+margin_bottom = 621.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="File" type="Label" parent="."]
+anchor_right = 0.16
+anchor_bottom = 0.074
+margin_top = 1.0
+margin_right = -0.320007
+margin_bottom = 0.200001
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "File"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Edit" type="Label" parent="."]
+anchor_left = 0.165
+anchor_right = 0.325
+anchor_bottom = 0.074
+margin_left = 0.10289
+margin_top = 2.08167
+margin_right = -0.217133
+margin_bottom = 1.28167
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Edit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="View" type="Label" parent="."]
+anchor_left = 0.333
+anchor_top = 0.001
+anchor_right = 0.492
+anchor_bottom = 0.074
+margin_left = -0.538818
+margin_top = -0.00350499
+margin_right = 0.293213
+margin_bottom = -0.103504
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "View"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Insert" type="Label" parent="."]
+anchor_left = 0.498
+anchor_top = 0.001
+anchor_right = 0.658
+anchor_bottom = 0.074
+margin_left = -0.200073
+margin_top = -0.200923
+margin_right = -0.520081
+margin_bottom = -0.300922
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Insert"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tools" type="Label" parent="."]
+anchor_left = 0.663
+anchor_top = 0.001
+anchor_right = 0.823
+anchor_bottom = 0.074
+margin_left = 0.519714
+margin_top = 0.181191
+margin_right = 0.199768
+margin_bottom = 0.081192
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Tools"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Help" type="Label" parent="."]
+anchor_left = 0.835
+anchor_top = 0.001
+anchor_right = 0.995
+anchor_bottom = 0.074
+margin_left = -0.241699
+margin_top = 0.181191
+margin_right = -0.561768
+margin_bottom = 0.081192
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Help"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

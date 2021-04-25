@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -6,26 +6,88 @@
 [ext_resource path="res://scenes/OS/Windows.gd" type="Script" id=4]
 [ext_resource path="res://scenes/minigames/ReportMinigame.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/OS/Window.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/minigames/MinigameSpawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/programs/Email.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Images/wallpaper.png" type="Texture" id=9]
+[ext_resource path="res://scenes/programs/Notepad.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Username.gd" type="Script" id=11]
+[ext_resource path="res://scenes/OS/Ritual.gd" type="Script" id=12]
+[ext_resource path="res://scenes/Main.gd" type="Script" id=13]
 
 [node name="Main" type="ViewportContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Shortcuts" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 1
-color = Color( 0, 0.501961, 0.501961, 1 )
+mouse_filter = 2
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Shortcuts" type="Control" parent="."]
+[node name="Report" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 47.2055
+margin_top = 45.1908
+margin_right = 47.2055
+margin_bottom = 45.1908
+_icon = ExtResource( 3 )
+_window = ExtResource( 5 )
+_label = "Report Writer"
+
+[node name="Email" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 46.0346
+margin_top = 173.027
+margin_right = 46.0346
+margin_bottom = 173.027
+_icon = ExtResource( 3 )
+_window = ExtResource( 8 )
+_label = "Gmail"
+receive_notif = true
+
+[node name="Notes" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 46.0346
+margin_top = 288.263
+margin_right = 46.0346
+margin_bottom = 288.263
+_icon = ExtResource( 3 )
+_window = ExtResource( 10 )
+_label = "Notes"
+
+[node name="Thaum" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 1038.21
+margin_top = 37.4475
+margin_right = 1038.21
+margin_bottom = 37.4475
+_icon = ExtResource( 3 )
+_window = ExtResource( 10 )
+_label = "Thaumaturgy Manual"
+
+[node name="Cognitohazard" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 1036.7
+margin_top = 156.527
+margin_right = 1036.7
+margin_bottom = 156.527
+_icon = ExtResource( 3 )
+_window = ExtResource( 10 )
+_label = "Transcript"
+
+[node name="Misc" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -33,23 +95,22 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Report" parent="Shortcuts" instance=ExtResource( 2 )]
-margin_left = 42.2055
-margin_top = 39.1908
-margin_right = 42.2055
-margin_bottom = 39.1908
-_icon = ExtResource( 3 )
-_window = ExtResource( 5 )
-_label = "Report Writer"
+[node name="Username" type="Label" parent="Misc"]
+margin_left = 883.0
+margin_top = 625.0
+margin_right = 1142.0
+margin_bottom = 664.0
+align = 2
+valign = 2
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
-[node name="Report2" parent="Shortcuts" instance=ExtResource( 2 )]
-margin_left = 43.5323
-margin_top = 153.963
-margin_right = 43.5323
-margin_bottom = 153.963
-_icon = ExtResource( 3 )
-_window = ExtResource( 5 )
-_label = "ABC"
+[node name="Timer" type="Timer" parent="Misc/Username"]
+one_shot = true
+autostart = true
 
 [node name="Windows" type="Control" parent="."]
 anchor_right = 1.0
@@ -62,8 +123,21 @@ __meta__ = {
 _window = ExtResource( 6 )
 
 [node name="Taskbar" parent="." instance=ExtResource( 1 )]
+
+[node name="MinigameSpawner" parent="." instance=ExtResource( 7 )]
+visible = false
+margin_left = 789.436
+margin_top = -269.072
+margin_right = -3.5636
+margin_bottom = -32.0724
+[connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
 [connection signal="clicked" from="Shortcuts/Report" to="Taskbar" method="add_program"]
-[connection signal="clicked" from="Shortcuts/Report2" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Email" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Notes" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Thaum" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Cognitohazard" to="Taskbar" method="add_program"]
+[connection signal="timeout" from="Misc/Username/Timer" to="Misc/Username" method="_on_Timer_timeout"]
 [connection signal="closed_window" from="Windows" to="Taskbar" method="remove_program"]
+[connection signal="updated_highlighted_window" from="Windows" to="Taskbar" method="highlight_program"]
 [connection signal="create_window" from="Taskbar" to="Windows" method="_on_Taskbar_create_window"]
 [connection signal="toggle_window" from="Taskbar" to="Windows" method="_on_Taskbar_toggle_window"]

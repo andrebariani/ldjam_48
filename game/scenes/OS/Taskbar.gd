@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 const WIDTH = 180
 
@@ -9,7 +9,7 @@ var id_count = 0
 signal create_window
 signal toggle_window
 
-func add_program(window, icon, label):
+func add_program(window, icon, label, _time = 0):
 	var new = program_scene.instance()
 	add_child(new)
 	move_child(new, get_child_count()-1)
@@ -18,8 +18,9 @@ func add_program(window, icon, label):
 	new.margin_bottom = 0
 	
 	new.connect("clicked", self, "clicked")
-	new.setup(id_count, icon, label)
+	new.setup(id_count, icon, label, _time)
 	emit_signal("create_window", id_count, window, icon, label)
+	highlight_program(id_count, true)
 	
 	program_count += 1
 	id_count += 1
@@ -37,6 +38,12 @@ func remove_program(id):
 	if to_remove != null:
 		program_count -= 1
 		to_remove.queue_free()
+
+
+func highlight_program(id, new):
+	for child in get_children():
+		if child.get_id() == id:
+			child.set_highlight(new)
 
 
 func clicked(id):
