@@ -436,8 +436,7 @@ We investigated the computer and didn’t find any clear sign of major tampering
 Always at your service,
 """ + NameSystem.BOSS[2] + """
 
-PS.: We still weren’t able to properly format the computer. It seems the Necronomicon fragments are resisting the deletion attempts.
-""")
+PS.: We still weren’t able to properly format the computer. It seems the Necronomicon fragments are resisting the deletion attempts.""")
 		},
 		{
 			"sender": NameSystem.DOCTOR[3],
@@ -447,6 +446,55 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file, containing the following text:
 """ + NameSystem.haunted_key + "\nBest regards,\nDr." + NameSystem.DOCTOR[0],
 			"annex":preload("res://icon.png")
+		},
+		{
+			"sender": NameSystem.DOCTOR[3],
+			"receivers": [NameSystem.BOSS[3]],
+			"date": "26/09/1997",
+			"topic": "Subject 11's Status",
+			"body": ("Greetings, Mr. " + NameSystem.BOSS[1] + ".\nSubject 11 (" + NameSystem.COLLEAGUE3[2] + 
+")  is... stable, though somewhat non-functional. Subject 42 (" + NameSystem.COLLEAGUE2[2] + 
+""") already made two complaints against him (being subsequently administered a second Lacuna Treatment), and it seems the other employees are similarly dissatisfied with his performance.
+It seems repeated trials of the treatment erode the mental state of affected subjects over time, which does suggest a certain expiration date for our recycling program. It might be wise to start procuring more bodies for our project.
+The entire report is available at my office, and I’m available anytime for further analysis.""" + 
+"\nBest regards,\nDr. " + NameSystem.DOCTOR[2])
+		},
+		{
+			"sender": NameSystem.CEO[3],
+			"receivers": [NameSystem.BOSS[3]],
+			"date": "10/08/1997",
+			"topic": "Deposit",
+			"body": "Hey, " + NameSystem.BOSS[1] + """.
+Send the trucks as soon as possible. $87,633, everything in gold bars. Today I almost forgot my name.
+""" + NameSystem.CEO[2]
+		},
+	],
+	# TI GUY ============================================
+	[
+		{
+			"sender": NameSystem.BOSS[3],
+			"receivers": [NameSystem.TIGUY[3]],
+			"date": "12/08/1997",
+			"topic": "This semester's passwords",
+			"body": ("Greetings, " + NameSystem.TIGUY[2] + """.
+As per the Benedixmus Protocol, we need to change the employees’ passwords again to align with the next multiverse cycle. Here is the list of passwords you need to modify:""" + 
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
+NameSystem.ROGUE[3] + ": " + NameSystem.ROGUE[4] +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
+NameSystem.BOSS[2] + ", Thaumaturgy Incorporated")
 		},
 	],
 ]
