@@ -51,6 +51,7 @@ margin_bottom = 173.027
 _icon = ExtResource( 3 )
 _window = ExtResource( 8 )
 _label = "Gmail"
+receive_notif = true
 
 [node name="Windows" type="Control" parent="."]
 anchor_right = 1.0

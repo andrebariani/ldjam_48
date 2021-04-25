@@ -44,7 +44,8 @@ func _on_Begin_timeout():
 
 
 func spawn_minigame():
-	emit_signal("spawn_minigame", next_minigame.window, next_minigame.icon, next_minigame.label)
+	emit_signal("spawn_minigame", next_minigame.window, next_minigame.icon, \
+		next_minigame.label, next_minigame.max_time)
 
 
 func _on_Close_pressed():

@@ -73,8 +73,7 @@ func wait_confirm():
 func _on_Timer_timeout():
 	if win:
 		print_debug("yay!")
-		emit_signal("minigame_done")
+		success()
 	else:
 		print_debug("oh no...")
-		emit_signal("minigame_failed")
-	emit_signal("force_closed")
+		fail()

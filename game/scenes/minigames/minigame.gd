@@ -19,5 +19,14 @@ func setup(_label):
 
 func _on_timeout():
 	print_debug("failed!")
+	fail()
+	
+func success():
+	emit_signal("minigame_done")
+	emit_signal("force_closed")
+
+func fail():
+	EmailServer.send_email({})
 	emit_signal("minigame_failed")
 	emit_signal("force_closed")
+
