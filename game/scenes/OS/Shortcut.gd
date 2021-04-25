@@ -7,6 +7,7 @@ export var receive_notif = false
 var mouse_on = 0
 
 signal clicked
+signal dropped
 
 onready var emailTimer = Timer.new()
 
@@ -25,8 +26,11 @@ func _ready():
 
 func get_window():
 	return _window
-	
-	
+
+
+func get_label():
+	return _label
+
 func _process(delta):
 	if receive_notif and EmailServer.has_new_email():
 		emailTimer.start()
@@ -48,4 +52,6 @@ func _on_Texture_gui_input(event):
 		else:
 			if mouse_on < 1.25:
 				emit_signal("clicked", _window, _icon, _label)
+			else:
+				emit_signal("dropped")
 			mouse_on = 0

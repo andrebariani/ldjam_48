@@ -7,7 +7,7 @@ func _ready():
 
 func _on_Timer_timeout():
 	text = NameSystem.PLAYER[2]
-	if randi() % 10 == 0:
+	if randi() % 25 == 0:
 		text = NameSystem.OWNER[2]
 		$Timer.start(0.2)
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -11,11 +11,14 @@
 [ext_resource path="res://assets/Images/wallpaper.png" type="Texture" id=9]
 [ext_resource path="res://scenes/programs/Notepad.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Username.gd" type="Script" id=11]
+[ext_resource path="res://scenes/OS/Ritual.gd" type="Script" id=12]
+[ext_resource path="res://scenes/Main.gd" type="Script" id=13]
 
 [node name="Main" type="ViewportContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,6 +36,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -83,7 +87,15 @@ _icon = ExtResource( 3 )
 _window = ExtResource( 10 )
 _label = "Transcript"
 
-[node name="Username" type="Label" parent="Shortcuts"]
+[node name="Misc" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Username" type="Label" parent="Misc"]
 margin_left = 883.0
 margin_top = 625.0
 margin_right = 1142.0
@@ -92,10 +104,11 @@ align = 2
 valign = 2
 script = ExtResource( 11 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="Shortcuts/Username"]
+[node name="Timer" type="Timer" parent="Misc/Username"]
 one_shot = true
 autostart = true
 
@@ -117,12 +130,13 @@ margin_left = 789.436
 margin_top = -269.072
 margin_right = -3.5636
 margin_bottom = -32.0724
+[connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
 [connection signal="clicked" from="Shortcuts/Report" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Email" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Notes" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Thaum" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Cognitohazard" to="Taskbar" method="add_program"]
-[connection signal="timeout" from="Shortcuts/Username/Timer" to="Shortcuts/Username" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Misc/Username/Timer" to="Misc/Username" method="_on_Timer_timeout"]
 [connection signal="closed_window" from="Windows" to="Taskbar" method="remove_program"]
 [connection signal="updated_highlighted_window" from="Windows" to="Taskbar" method="highlight_program"]
 [connection signal="create_window" from="Taskbar" to="Windows" method="_on_Taskbar_create_window"]
