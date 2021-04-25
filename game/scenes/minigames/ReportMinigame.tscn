@@ -21,7 +21,8 @@ font_data = ExtResource( 3 )
 
 [node name="ReportMinigame" type="Control"]
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.911
+margin_bottom = 0.299927
 theme = SubResource( 1 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -160,3 +161,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="gui_input" from="." to="." method="_on_ReportMinigame_gui_input"]
