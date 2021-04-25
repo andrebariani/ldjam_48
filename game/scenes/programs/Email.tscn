@@ -77,13 +77,63 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="Inbox"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 3.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Inbox/HBoxContainer"]
-margin_bottom = 700.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="Inbox/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 726.0
 
-[node name="EmailList" type="VBoxContainer" parent="Inbox/HBoxContainer/ScrollContainer"]
+[node name="Logout" type="Button" parent="Inbox/HBoxContainer/VBoxContainer2"]
+margin_right = 300.0
+margin_bottom = 22.0
+text = "Logout"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inbox/HBoxContainer/VBoxContainer2"]
+margin_top = 26.0
+margin_right = 300.0
+margin_bottom = 726.0
+rect_min_size = Vector2( 300, 700 )
+
+[node name="EmailList" type="VBoxContainer" parent="Inbox/HBoxContainer/VBoxContainer2/ScrollContainer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inbox/HBoxContainer"]
+margin_left = 304.0
+margin_right = 399.0
+margin_bottom = 726.0
+alignment = 1
+
+[node name="Sender" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 315.0
+margin_right = 95.0
+margin_bottom = 331.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Receivers" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 335.0
+margin_right = 95.0
+margin_bottom = 351.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Topic" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 355.0
+margin_right = 95.0
+margin_bottom = 371.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Date" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 375.0
+margin_right = 95.0
+margin_bottom = 391.0
+text = "egfdgdfgdfgdsf"
+
+[node name="Body" type="Label" parent="Inbox/HBoxContainer/VBoxContainer"]
+margin_top = 395.0
+margin_right = 95.0
+margin_bottom = 411.0
+text = "egfdgdfgdfgdsf"
 
 [connection signal="pressed" from="Login/VBoxContainer/confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Inbox/HBoxContainer/VBoxContainer2/Logout" to="." method="_on_Logout_pressed"]

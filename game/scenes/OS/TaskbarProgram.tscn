@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/OS/TaskbarProgram.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/OS_Font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/OS/Retangulo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 2 )
 
 [node name="TaskbarProgram" type="Control"]
 script = ExtResource( 1 )
@@ -27,7 +24,7 @@ margin_left = 28.7013
 margin_top = 6.53671
 margin_right = 196.701
 margin_bottom = 25.5367
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 text = "Windows Media Player"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,5 +50,6 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 200.0
 margin_bottom = 31.0
+
 [connection signal="gui_input" from="Background" to="." method="_on_Background_gui_input"]
 [connection signal="gui_input" from="Retangulo" to="." method="_on_Retangulo_gui_input"]

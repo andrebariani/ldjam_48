@@ -7,7 +7,9 @@ onready var confirm = $Login/VBoxContainer/confirm
 onready var reminder = $Login/VBoxContainer/Reminder
 
 onready var inbox = $Inbox
-onready var emailList = $Inbox/HBoxContainer/ScrollContainer/EmailList
+onready var emailList = $Inbox/HBoxContainer/VBoxContainer2/ScrollContainer/EmailList
+onready var emailBody = $Inbox/HBoxContainer/VBoxContainer
+onready var logout = $Inbox/HBoxContainer/VBoxContainer2/Logout
 
 onready var emailListItem = preload("res://scenes/programs/EmailUI/EmailListItem.tscn")
 
@@ -41,6 +43,7 @@ func set_activated(value: bool):
 		email.release_focus()
 		password.release_focus()
 		confirm.release_focus()
+		logout.release_focus()
 	activated = value
 
 
@@ -74,9 +77,32 @@ func load_inbox():
 	if confirmed_email:
 		emails_from_current_account = EmailServer.get_emails_from_account(confirmed_email)
 		
-		print_debug(emails_from_current_account)
-		
 		for email in emails_from_current_account:
 			var emailItem = emailListItem.instance()
 			emailItem.email = email
 			emailList.add_child(emailItem)
+			emailItem.connect("clicked", self, "_on_clicked")
+
+
+func clear_inbox():
+	for emails in emailList.get_children():
+		emails.queue_free()
+
+
+func _on_clicked(email):
+	emailBody.visible = true
+	emailBody.get_node("Sender").set_text(email.sender)
+	#emailBody.get_node("Receivers").set_text(email.receivers)
+	emailBody.get_node("Topic").set_text(email.topic)
+	emailBody.get_node("Date").set_text(email.date)
+	emailBody.get_node("Body").set_text(email.body)
+
+
+func _on_Logout_pressed():
+	$Login.visible = true
+	$Inbox.visible = false
+	emailBody.visible = false
+	confirm.disabled = false
+	clear_inbox()
+
+
