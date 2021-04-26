@@ -15,7 +15,7 @@
 [ext_resource path="res://scenes/Main.gd" type="Script" id=13]
 [ext_resource path="res://assets/Images/game_over.png" type="Texture" id=14]
 [ext_resource path="res://scenes/shaders/glitchShader.tres" type="Material" id=15]
-[ext_resource path="res://assets/Images/main_simbol.png" type="Texture" id=16]
+[ext_resource path="res://assets/Images/simbol_new.png" type="Texture" id=16]
 [ext_resource path="res://assets/Images/simbol_1.png" type="Texture" id=17]
 [ext_resource path="res://assets/Images/simbol_2.png" type="Texture" id=18]
 [ext_resource path="res://assets/Images/simbol_5.png" type="Texture" id=19]
@@ -1302,6 +1302,7 @@ anims/boot = SubResource( 11 )
 
 [node name="startup" type="AudioStreamPlayer" parent="Bootup"]
 stream = ExtResource( 34 )
+
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
