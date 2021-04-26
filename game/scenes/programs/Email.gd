@@ -106,7 +106,7 @@ func _on_clicked(_email):
 	emailBody.get_node("Receivers").set_text(receivers)
 	emailBody.get_node("Topic").set_text(_email.topic)
 	emailBody.get_node("Date").set_text(_email.date)
-	emailBodyContent.get_node("Body").set_text(_email.body)
+	emailBodyContent.get_node("Body").set_body_text(_email.body)
 	
 	if "annex" in _email:
 		var image = ImageTexture.new()
