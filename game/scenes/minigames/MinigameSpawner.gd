@@ -20,6 +20,13 @@ onready var minigames = [
 		"window":preload("res://scenes/minigames/PromptMinigame.tscn"),
 		"label": "cmd",
 		"max_time": 20
+	},
+	{
+		"desc": """Calculate our balance!""",
+		"icon": Texture.new(),
+		"window":preload("res://scenes/minigames/CalculatorMinigame.tscn"),
+		"label": "Calculator",
+		"max_time": 20
 	}
 ]
 
