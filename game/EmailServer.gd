@@ -189,7 +189,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"body": """Yeah, I just got in a phone call with boss and he said it was just a new infrastructure thing. It sounded a bit weird, but hey, whaddya know, right?
 
 Referenced email:
-Hey """ + NameSystem.COLLEAGUE1[0] + """, can you recheck my numbers for me? According to my calculations, we just spent around 63k overnight!
+Hey """ + NameSystem.COLLEAGUE1[0] + """, can you recheck my numbers for me? According to my calculations, we just spent around 87k overnight!
 Thanks in advance,
 """ + NameSystem.OWNER[0]
 		},
@@ -282,7 +282,7 @@ Did you see """ + NameSystem.COLLEAGUE3[0] +
 			"receivers": [NameSystem.COLLEAGUE1[3]],
 			"date": "08/27/1997",
 			"topic": "Recheck my numbers?",
-			"body": "Hey " + NameSystem.COLLEAGUE1[0] + """, can you recheck my numbers for me? According to my calculations, we just spent around 63k overnight!
+			"body": "Hey " + NameSystem.COLLEAGUE1[0] + """, can you recheck my numbers for me? According to my calculations, we just spent around 87k overnight!
 Thanks in advance,
 """ + NameSystem.OWNER[0]
 		},
