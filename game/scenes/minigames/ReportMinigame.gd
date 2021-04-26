@@ -17,7 +17,28 @@ Thaumaturgy is considered to be a relatively accessible form of magic, especiall
 	almost everything. Let’s take a look at their history, shall we? 
 	The only planet confirmed to have been inhabited by the ancients is 
 	Halcandra, which is located in another dimension...""",
-	"When He looks, He sees. When He thinks, He imagines. The Great is knowledge, and knowledge is good, and good is power. And all worlds sees Him, as He is the slit that peers."
+	"When He looks, He sees. When He thinks, He imagines. The Great is knowledge, and knowledge is good, and good is power. And all worlds sees Him, as He is the slit that peers.",
+	"""
+	Sales for this trimester fell 15%, mostly due to the arrival of premade-sorcery kits inside college campuses. According to a study conducted by Alexia University, around 30% of students don't plan on pursuing a career in necromancy. The study also shows...
+	""",
+	"""
+	The One Who Looks Above doesn't only search for information, but devours it. If chaos is entropy, and entropy is information, what better way to create order than to summon Thoon? I ask, members of the council, that we pursue this matter further...
+	""",
+	"""
+	His last sightning occurred in July, at a bus stop near Pennsylvania. Authorities are still on the lookout for this strange individual, who according to witnesses seems 'old and young at the same time, I don't know man it was weird'
+	""",
+	"""
+	Once upon a time, there was a burglar. The burglar wanted a rich man's treasure, so he invaded his home through a window. However, when he passed through it, he thought, 'is a door a window?' He remember that in ancient times, windows had doors, and giants were numerous, so...
+	""",
+	"""
+	If someone cries, a more psychological approach assumes they're sad/distressed. In reality, we only make this assumption based on our own experience and what we're taught. We have no idea what their actual emotion is. And we can't know that.
+	""",
+	"""
+	Qualia is unsolvable. There's no discussing that - no matter how much you study or you learn, the experience of consciousness is inherently subjective. Thoon is a fool, people, and we are the masters now.
+	""",
+	"""
+	I hope you are happy with the results, because this has been a waste of money, in my opinion. Computers can't even think yet, and you want to put a cursed book in there? At least it helps me avoid the hell police...
+	"""
 ]
 
 
