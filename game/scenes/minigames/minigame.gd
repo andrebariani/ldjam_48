@@ -1,7 +1,7 @@
 extends "../programs/program.gd"
 
-signal minigame_done()
-signal minigame_failed()
+signal minigame_done
+signal minigame_failed
 
 export var max_time = 20
 
@@ -35,6 +35,7 @@ func success():
 	emit_signal("force_closed")
 
 func fail(_email):
+	print_debug("fail")
 	email = _email
 	emit_signal("minigame_failed", email)
 	emit_signal("force_closed")

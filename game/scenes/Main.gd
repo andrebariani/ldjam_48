@@ -40,11 +40,12 @@ onready var endings = {NameSystem.ROGUE[2]:0, "Thoon":1, NameSystem.BOSS[2]:2, N
 
 
 func _on_Windows_minigame_failed(email):
+	print("AAAAA")
 	fails += 1
 	email.body += "Remember, fail " + str(6-fails) + " more time(s) and measures shall need to be taken."
 	$Cognitohazard.visible = true
 	if fails <= 5:
-		$Timer.start(0.1)
+		$Timer.start(0.5)
 		EmailServer.send_email(email)
 	else:
 		$Timer.start(10)
@@ -53,3 +54,5 @@ func _on_Windows_minigame_failed(email):
 func _on_Timer_timeout():
 	if fails > 5:
 		get_tree().reload_current_scene()
+	else:
+		$Cognitohazard.visible = false
