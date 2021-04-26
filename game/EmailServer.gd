@@ -545,7 +545,7 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 			"date": "10/07/1997",
 			"topic": "Unlocking ritual",
 			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file containing only the following text:
-""" + NameSystem.haunted_key + "\nThe icons on both sides of the cross may be any file you wish. At the end of the ritual, the icon on the bottom will be transformed into the decrypted file." + "\nBest regards,\nDr. " + NameSystem.DOCTOR[2],
+""" + NameSystem.haunted_key + "\nThe icons on both sides of the cross may be any file you wish. At the end of the ritual, the icon on the bottom will be transformed into the decrypted file. Please note that open windows may interfere with the procedure, so I recommend closing everything prior to its execution." + "\nBest regards,\nDr. " + NameSystem.DOCTOR[2],
 			"annex":ritual1
 		},
 		{
@@ -700,7 +700,8 @@ The ThaumOS project is going well, so far. Our newest implementation of the summ
 Annexed to this email you’ll find the instructions for this ritual.
 """ + "Best regards,\nDr. " + NameSystem.DOCTOR[2] + """
 
-Place any 3 icons on each of the cross' corners. Then, type into a text file the full name of your target. Finally, place this final file on top of the cross, just as the image suggests.""",
+Place any 3 icons on each of the cross' corners. Then, type into a text file the full name of your target. Finally, place this final file on top of the cross, just as the image suggests.
+Please note that open windows may interfere with the procedure, so I recommend closing everything prior to its execution.""",
 			"annex":ritual2
 		},
 	],

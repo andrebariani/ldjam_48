@@ -44,6 +44,9 @@ func stop_spawning():
 	self.visible = false
 
 
+func start_spawning():
+	$Next.start()
+
 
 var tick = 0
 

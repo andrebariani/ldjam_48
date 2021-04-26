@@ -120,6 +120,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if endings.has(text_body):
 		if anim_name == "begin" or anim_name == "begin_no_reload":
 			emit_signal("ending", endings[text_body])
+	else:
+		$MinigameSpawner.start_spawning()
 
 
 func stop_game():
