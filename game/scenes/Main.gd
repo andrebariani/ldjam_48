@@ -3,9 +3,10 @@ extends ViewportContainer
 var fails = 0
 var liberated = false
 signal ending
+var text_body
 
 func _on_Shortcuts_ritual_activated(is_summon, text_label):
-	var text_body = FileSystem.texts[text_label]
+	text_body = FileSystem.texts[text_label]
 	
 	if !is_summon and !liberated:
 		if text_body == NameSystem.haunted_key:
@@ -29,10 +30,12 @@ func _on_Shortcuts_ritual_activated(is_summon, text_label):
 			NameSystem.COLLEAGUE1[0] + " has been wiped. I am seeing shadows in the corner of my eyes. I fear that they found me. " +
 			"I have faith in whoever is reading this can finish what we started.\n\nTHERE MUST BE A WAY TO STOP THEM.\n\n" + 
 			NameSystem.OWNER[2] + "\n\n" + NameSystem.TIGUY[3] + "\n" + NameSystem.TIGUY[4])
+			$Ritual/AnimationPlayer.play("begin")
 
 	else:
 		if endings.has(text_body):
-			emit_signal("ending", endings[text_body])
+			$Ritual/AnimationPlayer.play("begin")
+			
 
 onready var endings = {NameSystem.ROGUE[2]:0, "Thoon":1, NameSystem.BOSS[2]:2, NameSystem.COMPANY_OWNER[2]:2,
 	NameSystem.PLAYER[2]:3, NameSystem.SUPERVISOR[2]:4, NameSystem.COLLEAGUE4[2]:4, NameSystem.COLLEAGUE5[2]:4, 
@@ -56,3 +59,8 @@ func _on_Timer_timeout():
 		get_tree().reload_current_scene()
 	else:
 		$Cognitohazard.visible = false
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "begin":
+		emit_signal("ending", endings[text_body])
