@@ -28,7 +28,7 @@
 size = 64
 font_data = ExtResource( 22 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=2]
 resource_name = "flash"
 length = 0.5
 tracks/0/type = "value"
@@ -44,8 +44,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "quick_fade"
+[sub_resource type="Animation" id=3]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Image:modulate")
@@ -60,7 +59,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.184314 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=4]
 resource_name = "slow_fade"
 length = 5.0
 tracks/0/type = "value"
@@ -76,7 +75,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.772549 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 length = 11.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:visible")
@@ -259,7 +258,7 @@ tracks/14/keys = {
 "values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 length = 11.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:visible")
@@ -442,13 +441,13 @@ tracks/14/keys = {
 "values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 size = 48
 font_data = ExtResource( 22 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texto:modulate")
@@ -648,9 +647,9 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cognitohazard"]
-anims/flash = SubResource( 8 )
-anims/quick_fade = SubResource( 2 )
-anims/slow_fade = SubResource( 9 )
+anims/flash = SubResource( 2 )
+anims/quick_fade = SubResource( 3 )
+anims/slow_fade = SubResource( 4 )
 
 [node name="Ritual" type="Control" parent="."]
 margin_right = 40.0
@@ -735,8 +734,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ritual"]
-anims/begin = SubResource( 3 )
-anims/begin_no_reload = SubResource( 4 )
+anims/begin = SubResource( 5 )
+anims/begin_no_reload = SubResource( 6 )
 
 [node name="Ending" type="Control" parent="."]
 visible = false
@@ -759,7 +758,7 @@ margin_left = 126.747
 margin_top = 155.989
 margin_right = 989.747
 margin_bottom = 548.989
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "No"
 align = 1
 valign = 1
@@ -769,8 +768,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ending"]
-anims/FadeIn = SubResource( 6 )
-anims/Texto = SubResource( 7 )
+anims/FadeIn = SubResource( 8 )
+anims/Texto = SubResource( 9 )
 
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
