@@ -157,7 +157,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":preload("res://assets/Images/clover.png")
+			"annex":"res://assets/Images/clover.png"
 		},
 	],
 	
@@ -253,7 +253,7 @@ Have you heard the recent news on """ + NameSystem.ROGUE[1] + """? They said the
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":preload("res://assets/Images/clover.png")
+			"annex":"res://assets/Images/clover.png"
 		},
 	],
 	# COLLEAGUE4 --------------------------------------
@@ -331,7 +331,7 @@ Wow, that’s a very big cat! Did you have to feed it a lot? Unfortunately I nev
 Referenced email:
 LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":preload("res://assets/Images/clover.png")
+			"annex":"res://assets/Images/clover.png"
 		},
 		{
 			"sender": NameSystem.COLLEAGUE5[3],
@@ -341,7 +341,7 @@ REST IN PEACE, CLOVER""",
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":preload("res://assets/Images/clover.png")
+			"annex":"res://assets/Images/clover.png"
 		},
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
@@ -420,7 +420,7 @@ NameSystem.COLLEAGUE5[0])
 Referenced email:
 LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":preload("res://assets/Images/clover.png")
+			"annex":"res://assets/Images/clover.png"
 		},
 	],
 	
@@ -447,7 +447,7 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 			"topic": "Unlocking ritual",
 			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file, containing the following text:
 """ + NameSystem.haunted_key + "\nBest regards,\nDr." + NameSystem.DOCTOR[0],
-			"annex":preload("res://icon.png")
+			"annex":"res://icon.png"
 		},
 		{
 			"sender": NameSystem.DOCTOR[3],
@@ -542,7 +542,7 @@ Dr. """ + NameSystem.DOCTOR[2])
 The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately  executing the ritual on humans still causes the subject to perish.
 Annexed to this email you’ll find the instructions for this ritual.
 """ + "Best regards,\nDr." + NameSystem.DOCTOR[0],
-			"annex":preload("res://icon.png")
+			"annex":"res://icon.png"
 		},
 	],
 ]
