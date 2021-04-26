@@ -30,10 +30,16 @@ func _on_Shortcuts_ritual_activated(is_summon, text_label):
 			NameSystem.COLLEAGUE1[0] + " has been wiped. I am seeing shadows in the corner of my eyes. I fear that they found me. " +
 			"I have faith in whoever is reading this can finish what we started.\n\nTHERE MUST BE A WAY TO STOP THEM.\n\n" + 
 			NameSystem.OWNER[2] + "\n\n" + NameSystem.TIGUY[3] + "\n" + NameSystem.TIGUY[4])
-			$Ritual/AnimationPlayer.play("begin")
+			$MinigameSpawner.stop_spawning()
+			$Windows.close_all_for_ritual()
+			$Taskbar.close_all_for_ritual()
+			$Ritual/AnimationPlayer.play("begin_no_reload")
 
 	else:
 		if endings.has(text_body):
+			$MinigameSpawner.stop_spawning()
+			$Windows.close_all_for_ritual()
+			$Taskbar.close_all_for_ritual()
 			$Ritual/AnimationPlayer.play("begin")
 			
 
@@ -63,4 +69,7 @@ func _on_Timer_timeout():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "begin" and endings.has(text_body):
+		get_tree().reload_current_scene()
+		emit_signal("ending", endings[text_body])
+	if anim_name == "begin_no_reload" and endings.has(text_body):
 		emit_signal("ending", endings[text_body])

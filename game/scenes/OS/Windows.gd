@@ -39,6 +39,11 @@ func closed_window(window, id):
 	emit_signal("closed_window", id)
 
 
+func close_all_for_ritual():
+	for child in get_children():
+		child.queue_free()
+
+
 func activate_window(window, id):
 	for child in get_children():
 		child.program.set_activated(false)
