@@ -25,6 +25,11 @@ onready var minigames = [
 var next_minigame
 
 
+func stop_spawning():
+	$Next.stop()
+	$Begin.stop()
+
+
 func _on_Next_timeout():
 	next_minigame = minigames[randi() % minigames.size()]
 	self.visible = true
