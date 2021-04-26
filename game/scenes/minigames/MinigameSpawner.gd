@@ -41,6 +41,7 @@ func _ready():
 func stop_spawning():
 	$Next.stop()
 	$Begin.stop()
+	self.visible = false
 
 
 
