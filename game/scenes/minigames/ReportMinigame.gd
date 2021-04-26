@@ -16,15 +16,7 @@ Thaumaturgy is considered to be a relatively accessible form of magic, especiall
 	The ancients are iconic in the lore for being affiliated with 
 	almost everything. Let’s take a look at their history, shall we? 
 	The only planet confirmed to have been inhabited by the ancients is 
-	Halcandra, which is located in another dimension. Now, that’s not to 
-	say they didn’t inhabit Kirby’s dimension, as several of the ancients’ 
-	creations can be found there. Regardless, the ancients were highly 
-	advanced in science, as they created many legendary pieces of technology.
-	According to Magolor, the Lor Starcutter, a ship that can traverse 
-	through space and time, was crafted by the ancients using an incredible 
-	power. He also states that they created “clockwork stars that 
-	soar the cosmos” using the same power.
-	""",
+	Halcandra, which is located in another dimension...""",
 	"When He looks, He sees. When He thinks, He imagines. The Great is knowledge, and knowledge is good, and good is power. And all worlds sees Him, as He is the slit that peers."
 ]
 

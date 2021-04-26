@@ -1,10 +1,10 @@
 extends "program.gd"
 
 
-onready var email = $Login/VBoxContainer/email
-onready var password = $Login/VBoxContainer/password
-onready var confirm = $Login/VBoxContainer/confirm
-onready var reminder = $Login/VBoxContainer/Reminder
+onready var email = $Login/email
+onready var password = $Login/password
+onready var confirm = $Login/confirm
+onready var reminder = $Login/Reminder
 
 onready var inbox = $Inbox
 onready var emailList = $Inbox/ScrollContainer/EmailList

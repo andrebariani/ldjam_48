@@ -447,7 +447,7 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 			"topic": "Unlocking ritual",
 			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file, containing the following text:
 """ + NameSystem.haunted_key + "\nBest regards,\nDr." + NameSystem.DOCTOR[0],
-			"annex":"res://icon.png"
+			"annex":"res://assets/Images/ritual_1_pisxel.png"
 		},
 		{
 			"sender": NameSystem.DOCTOR[3],
@@ -474,6 +474,18 @@ Send the trucks as soon as possible. $87,633, everything in gold bars. Today I a
 	# TI GUY ============================================
 	[
 		{
+			"sender": NameSystem.BOSS[3],
+			"receivers": [NameSystem.TIGUY[3]],
+			"date": "08/10/1997",
+			"topic": "Help",
+			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
+I received a phone call offering a very good proposal from another enterprise, where both of the sides could benefit by selling a very good shampoo brand. The man convinced me of buying 100 boxes (each containing 30 units) of said shampoo.
+The problem is that it has been a week and the boxes haven't arrived yet and the number the enterprise called isn't responding anymore.
+I would like you to trace down the name and address of the culprits behind this scandal, so I can call the Police and solve this matter.
+""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
+		},
+		{
+			
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.TIGUY[3]],
 			"date": "08/12/1997",
@@ -542,7 +554,7 @@ Dr. """ + NameSystem.DOCTOR[2])
 The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately  executing the ritual on humans still causes the subject to perish.
 Annexed to this email you’ll find the instructions for this ritual.
 """ + "Best regards,\nDr." + NameSystem.DOCTOR[0],
-			"annex":"res://icon.png"
+			"annex":"res://assets/Images/ritual_2_pisxel.png"
 		},
 	],
 ]
@@ -591,4 +603,22 @@ func has_new_email():
 		return true
 	return false
 
+func reset():
+	All_Emails[0] = [{
+			"sender": NameSystem.SUPERVISOR[3],
+			"receivers": [NameSystem.PLAYER[3]],
+			"date": "10/30/1997",
+			"topic": "Welcome!",
+			"body": ("Dear " +  NameSystem.PLAYER[2] + """
+Welcome to the hive!
+It is a genuine pleasure to welcome you to the team. We really hope you enjoy being part of our big family, and we are excited to see what you can do!
+I know you’re probably excited to get started now, but before you do, remember! DO NOT OPEN ANY FILES PRESENT IN THE COMPUTER.
+As soon as we’re able, we will begin to send assignments for you to complete. As one of our company’s mottos, “time wasted is really bad”, we expect that you don’t miss any of our deadlines!
+If you have any questions, reach me on my office line at 555-6160.
 
+Warm regards,
+""" + NameSystem.SUPERVISOR[2] + """, Thaumaturgy Incorporated
+Where your problems disappear
+
+PS.: By the way, in case you lose it, your password is “"""+ NameSystem.PLAYER[4] +"”. Don’t lose it!")
+		}]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/icons/Email.png" type="Texture" id=3]
 [ext_resource path="res://scenes/OS/Windows.gd" type="Script" id=4]
-[ext_resource path="res://scenes/minigames/ReportMinigame.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/icons/bloco_de_texto.png" type="Texture" id=5]
 [ext_resource path="res://scenes/OS/Window.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/minigames/MinigameSpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/programs/Email.tscn" type="PackedScene" id=8]
@@ -21,9 +21,198 @@
 [ext_resource path="res://assets/Images/simbol_5.png" type="Texture" id=19]
 [ext_resource path="res://assets/Images/simbol_3.png" type="Texture" id=20]
 [ext_resource path="res://assets/Images/simbol_4.png" type="Texture" id=21]
+[ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=22]
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 22 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "begin"
+length = 11.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MainSymbol:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("s1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6, 5.5, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("s2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5, 5.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("s3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.2, 5.5, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("s4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.1, 5.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("s5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 4, 5.5, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("s1:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 7, 7.5, 7.8, 8.1, 8.4, 8.7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 556.204, 143.534 ), Vector2( 556.204, 143.534 ), Vector2( 161.849, 46.5201 ), Vector2( 197.127, 401.818 ), Vector2( 922.569, 57.3518 ), Vector2( 1003.53, 568.495 ), Vector2( 44.7366, 546.271 ), Vector2( 536.831, 73.2258 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("s2:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 7, 8, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 292.806, 156.604 ), Vector2( 292.806, 156.604 ), Vector2( 40.4091, 547.104 ), Vector2( 1029.36, 137.555 ), Vector2( 72.1572, 13.7375 ), Vector2( 432.497, 415.35 ), Vector2( 865.858, 134.38 ), Vector2( 64.2203, 532.818 ), Vector2( 1035.71, 150.254 ), Vector2( 1023.01, 572.503 ), Vector2( 526.154, 324.868 ), Vector2( 678.545, 1.0383 ), Vector2( 1000.79, 242.323 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("s3:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 7, 8.5, 8.7, 8.9, 9.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 799.499, 150.972 ), Vector2( 799.499, 150.972 ), Vector2( 202.636, 20.8051 ), Vector2( 570.913, 125.574 ), Vector2( 713.779, 585.92 ), Vector2( 96.2803, 87.476 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("s4:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 7, 9, 9.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 562.163, 565.833 ), Vector2( 562.163, 565.833 ), Vector2( 39.9084, 564.246 ), Vector2( 1009.81, 567.421 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("s5:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 7, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 557.342, 34.2335 ), Vector2( 557.342, 34.2335 ), Vector2( 63.6602, 548.551 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("ColorRect:material:shader_param/shake_power")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 3.9, 5.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.03, 0.03, 0.0, 0.08 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("ColorRect:material:shader_param/shake_rate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.8, 1, 1.5, 1.7, 2.2, 2.4, 3.1, 3.6, 3.9, 5.5, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "begin_no_reload"
 length = 11.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:visible")
@@ -236,40 +425,49 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Report" parent="Shortcuts" instance=ExtResource( 2 )]
-margin_left = 47.2055
-margin_top = 45.1908
-margin_right = 47.2055
-margin_bottom = 45.1908
-_icon = ExtResource( 18 )
-_window = ExtResource( 5 )
-_label = "Report Writer"
-
 [node name="Email" parent="Shortcuts" instance=ExtResource( 2 )]
-margin_left = 46.0346
-margin_top = 173.027
-margin_right = 46.0346
-margin_bottom = 173.027
+margin_left = 44.8682
+margin_top = 48.2266
+margin_right = 44.8682
+margin_bottom = 48.2266
 _icon = ExtResource( 3 )
 _window = ExtResource( 8 )
 _label = "Gmail"
 receive_notif = true
 
 [node name="Notes" parent="Shortcuts" instance=ExtResource( 2 )]
-margin_left = 46.0346
-margin_top = 288.263
-margin_right = 46.0346
-margin_bottom = 288.263
-_icon = ExtResource( 3 )
+margin_left = 44.8682
+margin_top = 163.463
+margin_right = 44.8682
+margin_bottom = 163.463
+_icon = ExtResource( 5 )
 _window = ExtResource( 10 )
 _label = "Notes"
 
+[node name="Credits" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 38.0663
+margin_top = 560.695
+margin_right = 38.0663
+margin_bottom = 560.695
+_icon = ExtResource( 5 )
+_window = ExtResource( 10 )
+_label = "Credits"
+
+[node name="Tombstone" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 1055.1
+margin_top = 516.792
+margin_right = 1055.1
+margin_bottom = 516.792
+_icon = ExtResource( 5 )
+_window = ExtResource( 10 )
+_label = "Tombstone"
+
 [node name="*#&*%&¨*&$" parent="Shortcuts" instance=ExtResource( 2 )]
-margin_left = 43.5791
-margin_top = 398.76
-margin_right = 43.5791
-margin_bottom = 398.76
-_icon = ExtResource( 3 )
+margin_left = 42.4127
+margin_top = 273.96
+margin_right = 42.4127
+margin_bottom = 273.96
+_icon = ExtResource( 5 )
 _window = ExtResource( 10 )
 _label = "*#&*%&¨*&$"
 
@@ -278,7 +476,7 @@ margin_left = 1038.21
 margin_top = 37.4475
 margin_right = 1038.21
 margin_bottom = 37.4475
-_icon = ExtResource( 3 )
+_icon = ExtResource( 5 )
 _window = ExtResource( 10 )
 _label = "Thaumaturgy Manual"
 
@@ -287,7 +485,7 @@ margin_left = 1036.7
 margin_top = 156.527
 margin_right = 1036.7
 margin_bottom = 156.527
-_icon = ExtResource( 3 )
+_icon = ExtResource( 5 )
 _window = ExtResource( 10 )
 _label = "Transcript"
 
@@ -357,6 +555,23 @@ mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="Cognitohazard"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -425.84
+margin_top = -118.208
+margin_right = 417.16
+margin_bottom = 136.792
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+autowrap = true
 
 [node name="Ritual" type="Control" parent="."]
 margin_right = 40.0
@@ -441,14 +656,14 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ritual"]
-autoplay = "begin"
 anims/begin = SubResource( 1 )
-
+anims/begin_no_reload = SubResource( 2 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
-[connection signal="clicked" from="Shortcuts/Report" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Email" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Notes" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Credits" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Tombstone" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/*#&*%&¨*&$" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Thaum" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Cognitohazard" to="Taskbar" method="add_program"]
