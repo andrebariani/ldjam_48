@@ -38,6 +38,10 @@ onready var Accounts = [
 		"email": NameSystem.ROGUE[3],
 		"password": NameSystem.ROGUE[4]
 	},
+	{
+		"email": NameSystem.CEO[3],
+		"password": NameSystem.CEO[4]
+	},
 ]
 
 onready var All_Emails = [
@@ -129,6 +133,18 @@ NameSystem.COLLEAGUE4[0] + ": " + NameSystem.COLLEAGUE4[4] + " ice cream\n" +
 NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 		},
 		{
+			"sender": NameSystem.COLLEAGUE1[3],
+			"receivers": [NameSystem.OWNER[3]],
+			"date": "08/28/1997",
+			"topic": "RE: Recheck my numbers?",
+			"body": """Yeah, I just got in a phone call with boss and he said it was just a new infrastructure thing. It sounded a bit weird, but hey, whaddya know, right?
+
+Referenced email:
+, """ + NameSystem.COLLEAGUE1[0] + """, can you recheck my numbers for me? According to my calculations, we just spent around 63k overnight!
+Thanks in advance,
+""" + NameSystem.OWNER[0]
+		},
+		{
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
@@ -177,7 +193,7 @@ Thanks in advance,
 		{
 			"sender": NameSystem.TIGUY[3],
 			"receivers": [NameSystem.COLLEAGUE1[3]],
-			"date": "10/15/1997",
+			"date": "09/18/1997",
 			"topic": "Password change to " + NameSystem.get_random_school(),
 			"body": """Sorry, I’m not allowed to change passwords right now. Orders from above and stuff.
 
@@ -206,11 +222,21 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"receivers": [NameSystem.COLLEAGUE1[3]],
 			"date": "09/01/1997",
 			"topic": NameSystem.COLLEAGUE3[0] + "'s Behavior",
-			"body": ("Yeah, I’m going to talk to <BOSS_NAME> tomorrow and ask him to reprimand him or something. " +
+			"body": ("Yeah, I’m going to talk to " + NameSystem.BOSS[0] +  "tomorrow and ask him to reprimand him or something. " +
 			"That was crazy.\n\nReferenced Email:\n" + "Hi " + NameSystem.COLLEAGUE2[0] + """.
 			Did you see """ + NameSystem.COLLEAGUE3[0] + 
 			"""yesterday? I didn’t want to say anything, but why the fuck was he just staring at the wall and mumbling like that? It was so unnerving...
 """ + NameSystem.COLLEAGUE1[0])
+		},
+		{
+			"sender": NameSystem.OWNER[3],
+			"receivers": [NameSystem.COLLEAGUE1[3]],
+			"date": "08/27/1997",
+			"topic": "Recheck my numbers?",
+			"body": "Hey, " + NameSystem.COLLEAGUE1[0] + """.
+Can you recheck my numbers for me? According to my calculations, we just spent around 63k overnight!
+Thanks in advance,
+""" + NameSystem.OWNER[0]
 		},
 		{
 			"sender": NameSystem.BOSS[3],
@@ -236,7 +262,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
 			"receivers": [NameSystem.COLLEAGUE1[3]],
-			"date": "08/19/1997",
+			"date": "08/02/1997",
 			"topic": "RE: News on " + NameSystem.ROGUE[2],
 			"body": """Yeah, keep this on the down low, but... I heard he stole some company secrets and then left. Apparently was a veteran employee, too.
 
@@ -255,6 +281,17 @@ Have you heard the recent news on """ + NameSystem.ROGUE[1] + """? They said the
 REST IN PEACE, CLOVER""",
 			"annex":"res://assets/Images/clover.png"
 		},
+		{
+			"sender": NameSystem.BOSS[3],
+			"receivers": [NameSystem.COLLEAGUE1[3]],
+			"date": "07/10/1997",
+			"topic": "The printer isn't working",
+			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
+The printer at my office isn't working. Can you repair it for me?
+Thanks in advance,
+""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
+		},
+		
 	],
 	# COLLEAGUE4 --------------------------------------
 	[
@@ -398,7 +435,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
 			"receivers": [NameSystem.COLLEAGUE5[3]],
-			"date": "08/09/1997",
+			"date": "07/29/1997",
 			"topic": "RE: Company lines",
 			"body": ("I’ll send you the list, just remember it this time, okay?" +
 			"\n\nReferenced Email:\n" +
@@ -432,7 +469,7 @@ REST IN PEACE, CLOVER""",
 			"receivers": [NameSystem.BOSS[3]],
 			"date": "10/28/1997",
 			"topic": "RE: Regarding the recent incident",
-			"body": ("Acknowledged.\n\nReferenced email:\nGreetings, Lord.\n" +
+			"body": ("Acknowl&dged.\n\nReferenced email:\nGreetings, Lord.\n" +
 "The two perpetrators have already been caught and captured, my Lord. The computer was seized and their identities were changed to " +
 NameSystem.PLAYER[2] + " and " + NameSystem.SUPERVISOR[2] + """.
 We investigated the computer and didn’t find any clear sign of major tampering or divulgation of sensitive information. As such, we’ll continue with our original plan.
@@ -465,19 +502,52 @@ The entire report is available at my office, and I’m available anytime for fur
 		{
 			"sender": NameSystem.CEO[3],
 			"receivers": [NameSystem.BOSS[3]],
-			"date": "08/10/1997",
+			"date": "08/25/1997",
 			"topic": "Deposit",
 			"body": "Hey, " + NameSystem.BOSS[1] + """.
 Send the trucks as soon as possible. $87,633, everything in gold bars. Today I almost forgot my name.
-""" + NameSystem.CEO[2]
+""" + NameSystem.CEO[2] + ", Thaumaturgy Incorporated"
+		},
+		{
+			"sender": NameSystem.COLLEAGUE1[3],
+			"receivers": [NameSystem.BOSS[3]],
+			"date": "07/11/1997",
+			"topic": "RE: The printer isn't working",
+			"body": "Boss, I think you mixed up my email and " + NameSystem.TIGUY[1] + """'s email. Our first name is the same, but we're not the same person...
+
+Referenced email:
+""" + "Greetings, " + NameSystem.TIGUY[2] + """.
+The printer at my office isn't working. Can you repair it for me?
+Thanks in advance,
+""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
+		},
+		{
+			"sender": NameSystem.COMPANY_OWNER[3],
+			"receivers": [NameSystem.BOSS[3], NameSystem.EXEC1[3], NameSystem.EXEC2[3], NameSystem.EXEC3[3],
+			NameSystem.DOCTOR[3]],
+			"date": "06/06/1997",
+			"topic": "Update on the recent incident",
+			"body": ("""Attent%on.
+Our old benefac#or is now on th& run. Given the curre%t situation, I will take ov%r the
+dutie$ of m#nage&ent until th*s situ%tion is r&solved, while """ + NameSystem.CEO[2] + 
+""" will persi%t in #is role of CEO.
+Rem&mber: capturing our b&nefactor is now of utmo$t pr*ority.
+""" + NameSystem.COMPANY_OWNER[2])
 		},
 	],
 	# TI GUY ============================================
 	[
 		{
+			"sender": "henri-wincott@tmail.com",
+			"receivers": [NameSystem.TIGUY[3]],
+			"date": "10/22/1997",
+			"topic": "The love of your life is in your dimension!",
+			"body": "Are YOU looking to meet the most important person of your life? Are YOU tired of going on lonely nights in a bar? Fear not my friend, just send an email to this address: esoteros@salem.us.dim616 and you will meet the love of your life! It is free of charge! What are you waiting for? Just send an email containing your name and your zodiac sign and we will 100% find the love of your life!"
+		},
+		{
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.TIGUY[3]],
-			"date": "08/10/1997",
+			"date": "09/15/1997",
 			"topic": "Help",
 			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
 I received a phone call offering a very good proposal from another enterprise, where both of the sides could benefit by selling a very good shampoo brand. The man convinced me of buying 100 boxes (each containing 30 units) of said shampoo.
@@ -492,24 +562,36 @@ I would like you to trace down the name and address of the culprits behind this 
 			"date": "08/12/1997",
 			"topic": "This semester's passwords",
 			"body": ("Greetings, " + NameSystem.TIGUY[2] + """.
-As per the Benedixmus Protocol, we need to change the employees’ passwords again to align with the next multiverse cycle. Here is the list of passwords you need to modify:""" + 
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
-NameSystem.ROGUE[3] + ": " + NameSystem.ROGUE[4] +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() +
-NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() +
+As per the Benedixmus Protocol, we need to change some accounts’ passwords again to align with the next multiverse cycle. Here is the list of passwords you need to modify:""" + 
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() + "\n" +
+NameSystem.OWNER[3] + ": " + NameSystem.OWNER[4] + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() + "\n" +
+NameSystem.CEO[3] + ": " + NameSystem.CEO[4] + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() + "\n" +
+NameSystem.COLLEAGUE4[3] + ": " + NameSystem.COLLEAGUE4[4] + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() + "\n" +
+NameSystem.ROGUE[3] + ": " + NameSystem.ROGUE[4] + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() + "\n" +
+NameSystem.COLLEAGUE1[3] + ": " + NameSystem.COLLEAGUE1[4] + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() + "\n" +
+NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_pet() + "\n" +
 NameSystem.BOSS[2] + ", Thaumaturgy Incorporated")
+		},
+		{
+			"sender": NameSystem.BOSS[3],
+			"receivers": [NameSystem.TIGUY[3]],
+			"date": "07/13/1997",
+			"topic": "The printer isn't working",
+			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
+The printer at my office isn't working. Can you repair it for me?
+Thanks in advance,
+""" + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
 		},
 	],
 	# ROGUE ============================================
@@ -527,7 +609,7 @@ Praise Thoon."""
 			"sender": NameSystem.CEO[3],
 			"receivers": [NameSystem.ROGUE[3]],
 			"date": "05/23/1997",
-			"topic": "Undermining my authority",
+			"topic": "RE: Undermining my authority",
 			"body": "I found out about the memory wipes, " + NameSystem.ROGUE[0] + """, and I won’t put up with it anymore. I’m no longer your puppet - this company’s now mine.
 
 Referenced email:
@@ -537,10 +619,10 @@ Referenced email:
 			"sender": NameSystem.DOCTOR[3],
 			"receivers": [NameSystem.COMPANY_OWNER[3], NameSystem.ROGUE[3]],
 			"date": "03/20/1997",
-			"topic": "Subject 11's Status",
+			"topic": "Regarding your soul link",
 			"body": ("Greetings, Lord " + NameSystem.COMPANY_OWNER[1] + ", Mr. " + NameSystem.ROGUE[1] + 
-			"""The studies and tests regarding the split between both of you are still running, although we are encountering several setbacks in the research. 
-I apologize for the lack of results, my Lord, but this is the first time that a ritual on this scale has been successfully made between an Outsider and a human. As I write this email, the only thing that is keeping Lord""" + 
+			"""The studies and tests regarding the soul link between both of you are still running, although we are encountering several setbacks in the research. 
+I apologize for the lack of results, my Lord, but this is the first time that a ritual on this scale has been successfully made between an Outsider and a human. As I write this email, the only thing keeping Lord """ + 
 NameSystem.COMPANY_OWNER[1] + "and his subjects in this reality, is Mr." + NameSystem.ROGUE[1] + 
 "’s continued existence.\nAs that’s the case, I must ask that Mr. " + NameSystem.ROGUE[1] + """stay safe until the research has been completed. At the time of this writing, my team and I are still researching the final components and symbols for this ritual.
 Best regards,
@@ -552,12 +634,51 @@ Dr. """ + NameSystem.DOCTOR[2])
 			"date": "10/07/1997",
 			"topic": "Summoning ritual",
 			"body": "Greetings, Mr. " + NameSystem.ROGUE[1] + """.
-The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately  executing the ritual on humans still causes the subject to perish.
+The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately executing the ritual on humans still causes the subject to perish.
 Annexed to this email you’ll find the instructions for this ritual.
-""" + "Best regards,\nDr." + NameSystem.DOCTOR[0] + """
+""" + "Best regards,\nDr." + NameSystem.DOCTOR[2] + """
 
 Place any 3 icons on each of the cross' corners. Then, type into a text file the full name of your target. Finally, place this final file on top of the cross, just as the image suggests.""",
 			"annex":"res://assets/Images/ritual_2_pisxel.png"
+		},
+	],
+	
+	# CEO ============================================
+	[
+		{
+			"sender": NameSystem.DOCTOR[3],
+			"receivers": [NameSystem.CEO[3]],
+			"date": "09/19/1997",
+			"topic": "RE: Just summon him!",
+			"body": ("As I said, sir, the ritual still doesn't work properly on humans. Summoning him would probably result only in his demise." +
+"\n\nReferenced email:\n" + "Hey doc, why don't we just summon that bastard here and get this over with?" +
+"We've been at it for months now and he keeps escaping every time!\n" +
+			NameSystem.CEO[2] + ", Thaumaturgy Incorporated")
+		},
+		{
+			"sender": NameSystem.DOCTOR[3],
+			"receivers": [NameSystem.CEO[3]],
+			"date": "08/21/1997",
+			"topic": "Measurement results",
+			"body": ("Greetings, Mr. " + NameSystem.CEO[1] + """.
+Our weight measurement exams are done. You currently weigh exactly 87,633 kilograms, sir.
+""" + "Best regards,\nDr." + NameSystem.DOCTOR[2])
+		},
+		{
+			"sender": NameSystem.ROGUE[3],
+			"receivers": [NameSystem.CEO[3]],
+			"date": "05/22/1997",
+			"topic": "Undermining my authority",
+			"body": NameSystem.CEO[1] + ", did you really think I wouldn’t find out about your secret withdrawals? What are you trying to do here?"
+		},
+		{
+			"sender": NameSystem.COMPANY_OWNER[3],
+			"receivers": [NameSystem.CEO[3]],
+			"date": "04/10/1997",
+			"topic": "Measurement results",
+			"body": ("16th of t%is month. Don't be lat&.\n\nReferenced email:\nHey Lord " + NameSystem.COMPANY_OWNER[1] + """,
+Could I maybe arrange a session with you? Without """ + NameSystem.ROGUE[1] + """, if that's possible. I want to negotiate a pact.
+""" + NameSystem.CEO[2] + ", Thaumaturgy Incorporated")
 		},
 	],
 ]
