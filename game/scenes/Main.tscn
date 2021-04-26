@@ -987,6 +987,8 @@ visible = false
 
 [node name="MinigameSpawner" parent="." instance=ExtResource( 7 )]
 visible = false
+anchor_top = 1.00286
+anchor_bottom = 1.00286
 margin_left = 789.436
 margin_top = -269.072
 margin_right = -3.5636
@@ -1208,6 +1210,7 @@ __meta__ = {
 }
 
 [node name="bg" type="TextureRect" parent="Bootup"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 31 )
@@ -1223,9 +1226,9 @@ __meta__ = {
 }
 
 [node name="simbol_1" type="TextureRect" parent="Bootup"]
+visible = false
 margin_right = 1152.0
 margin_bottom = 700.0
-rect_rotation = 197.946
 rect_pivot_offset = Vector2( 591, 108 )
 texture = ExtResource( 33 )
 __meta__ = {
@@ -1233,11 +1236,11 @@ __meta__ = {
 }
 
 [node name="simbol_2" type="TextureRect" parent="Bootup"]
+visible = false
 margin_left = -9.30041e-09
 margin_top = 4.59519e-05
 margin_right = 1152.0
 margin_bottom = 700.0
-rect_rotation = 197.946
 rect_pivot_offset = Vector2( 719.927, 360.388 )
 texture = ExtResource( 32 )
 __meta__ = {
@@ -1245,11 +1248,11 @@ __meta__ = {
 }
 
 [node name="simbol_3" type="TextureRect" parent="Bootup"]
+visible = false
 margin_left = 1.24971e-07
 margin_top = -4.66471e-05
 margin_right = 1152.0
 margin_bottom = 700.0
-rect_rotation = 197.946
 rect_pivot_offset = Vector2( 454.204, 359.547 )
 texture = ExtResource( 35 )
 __meta__ = {
@@ -1257,9 +1260,9 @@ __meta__ = {
 }
 
 [node name="simbol_4" type="TextureRect" parent="Bootup"]
+visible = false
 margin_right = 1152.0
 margin_bottom = 700.0
-rect_rotation = -69.281
 rect_pivot_offset = Vector2( 590, 270 )
 texture = ExtResource( 36 )
 __meta__ = {
