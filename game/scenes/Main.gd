@@ -5,6 +5,24 @@ var liberated = false
 signal ending
 var text_body
 
+var demon_ending = ["The ground crackles; the windows break.",
+"As small jolts of lightning surround the screen, you slowly distance yourself from the computer.",
+"Suddenly, a crimson red demon materializes in front of you. For a split second, he seems confused.",
+"Then, he’s not confused anymore. He's angry.",
+"A second split second is all he needs to summon a stone spike from behind you, impaling you instantly.",
+"As he slowly approaches you, you hear only a whisper:",
+"“Praise Thoon.”"
+]
+
+var prison_ending = ["The ground crackles; the windows break.",
+"As small jolts of lightning surround the screen, you slowly distance yourself from the computer.",
+"Suddenly, a deceased, almost completely carbonized body materializes in front of you, to both your shock and horror.",
+"The tremors quickly attract the attention of curious passersby, who immediately call the police upon seeing that body.",
+"You are cuffed, apprehended, imprisoned and put on trial.",
+"All your shouts and objections regarding devils in disguise and thaumaturgical conspiracies fall on deaf ears.",
+"You are judged Not Guilty. By insanity.",
+]
+
 func _on_Shortcuts_ritual_activated(is_summon, text_label):
 	text_body = FileSystem.texts[text_label]
 	
@@ -30,26 +48,51 @@ func _on_Shortcuts_ritual_activated(is_summon, text_label):
 			NameSystem.COLLEAGUE1[0] + " has been wiped. I am seeing shadows in the corner of my eyes. I fear that they found me. " +
 			"I have faith in whoever is reading this can finish what we started.\n\nTHERE MUST BE A WAY TO STOP THEM.\n\n" + 
 			NameSystem.OWNER[2] + "\n\n" + NameSystem.TIGUY[3] + "\n" + NameSystem.TIGUY[4])
-			$MinigameSpawner.stop_spawning()
-			$Windows.close_all_for_ritual()
-			$Taskbar.close_all_for_ritual()
+			stop_game()
 			$Ritual/AnimationPlayer.play("begin_no_reload")
 
 	else:
 		if endings.has(text_body):
-			$MinigameSpawner.stop_spawning()
-			$Windows.close_all_for_ritual()
-			$Taskbar.close_all_for_ritual()
+			stop_game()
 			$Ritual/AnimationPlayer.play("begin")
 			
 
-onready var endings = {NameSystem.ROGUE[2]:0, "Thoon":1, NameSystem.BOSS[2]:2, NameSystem.COMPANY_OWNER[2]:2,
-	NameSystem.PLAYER[2]:3, NameSystem.SUPERVISOR[2]:4, NameSystem.COLLEAGUE4[2]:4, NameSystem.COLLEAGUE5[2]:4, 
-	NameSystem.TIGUY[2]:4, NameSystem.DOCTOR[2]:4}
+onready var endings = {
+	NameSystem.ROGUE[2]:["The ground crackles; the windows break.", 
+"As small jolts of lightning surround the screen, you slowly distance yourself from the computer.",
+"Suddenly, the body of an old, decrepit man materializes in front of you, almost completely carbonized.",
+"It is most certainly " + NameSystem.ROGUE[0] + ".",
+"Bombastic news soon follow - overnight, almost the entire executive branch of Thaumaturgy Inc. disappeared.",
+"Then, the masquerade falls, the conspiracy is revealed, and the remaining executives are locked up in prison.",
+"For now, the world is safe.",
+"For now."], 
+	"Thoon":["The ground crackles; the windows break.", 
+"As small jolts of lightning surround the screen, you slowly distance yourself from the computer.",
+"Suddenly, the color of the sky shifts. Shades of purple, green and a tint you’ve never seen before flash over the entire city.",
+"Then, the eye. That damned eye.",
+"In an instant, the entire collective sanity of everyone present vanishes. Local reality bends and wobbles.",
+"No one is safe now."
+], 
+	NameSystem.BOSS[2]:demon_ending,
+	NameSystem.COMPANY_OWNER[2]:demon_ending,
+	NameSystem.PLAYER[2]:["The ground crackles; the windows break.",
+"As small jolts of lightning surround the screen, you slowly distance yourself from the computer.",
+"Then, you stop. For a moment, everything stops. But only for a moment.",
+"Right as you think the ritual failed, your mind warps from multiverse to multiverse, at a rate of thousands, or even millions, every second.",
+"When you finally stop teleporting, you find yourself in the exact same room as before. However, you see yourself. Another version of yourself.",
+"Now, you’re carbonizing.",
+"Now, you’re carbonized.",
+"“...executing the ritual on humans still causes the subject to perish”.",
+"So that’s what that meant."
+	], 
+	NameSystem.SUPERVISOR[2]:prison_ending, 
+	NameSystem.COLLEAGUE4[2]:prison_ending, 
+	NameSystem.COLLEAGUE5[2]:prison_ending, 
+	NameSystem.TIGUY[2]:prison_ending,
+	NameSystem.DOCTOR[2]:prison_ending}
 
 
 func _on_Windows_minigame_failed(email):
-	print("AAAAA")
 	fails += 1
 	email.body += "Remember, fail " + str(6-fails) + " more time(s) and measures shall need to be taken."
 	$Cognitohazard.visible = true
@@ -70,15 +113,22 @@ func _on_Timer_timeout():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "begin" and endings.has(text_body):
-		get_tree().reload_current_scene()
-		emit_signal("ending", endings[text_body])
-	if anim_name == "begin_no_reload" and endings.has(text_body):
-		emit_signal("ending", endings[text_body])
+	if endings.has(text_body):
+		if anim_name == "begin" or anim_name == "begin_no_reload":
+			emit_signal("ending", endings[text_body])
 
+
+func stop_game():
+	$MinigameSpawner.stop_spawning()
+	$Windows.close_all_for_ritual()
+	$Taskbar.close_all_for_ritual()
 
 func reload_game():
 	NameSystem.reset()
 	EmailServer.reset()
 	FileSystem.reset()
 	get_tree().reload_current_scene()
+
+
+func _on_Ending_done():
+	reload_game()

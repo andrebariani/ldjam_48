@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://assets/Images/simbol_3.png" type="Texture" id=20]
 [ext_resource path="res://assets/Images/simbol_4.png" type="Texture" id=21]
 [ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=22]
+[ext_resource path="res://scenes/Ending.gd" type="Script" id=23]
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
@@ -395,6 +396,29 @@ tracks/14/keys = {
 "values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
 }
 
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 22 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "FadeIn"
+
+[sub_resource type="Animation" id=6]
+resource_name = "Texto"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1, 2.9, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Main" type="ViewportContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -658,6 +682,41 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ritual"]
 anims/begin = SubResource( 1 )
 anims/begin_no_reload = SubResource( 2 )
+
+[node name="Ending" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 23 )
+
+[node name="ColorRect" type="ColorRect" parent="Ending"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texto" type="Label" parent="Ending"]
+margin_left = 126.747
+margin_top = 155.989
+margin_right = 989.747
+margin_bottom = 548.989
+custom_fonts/font = SubResource( 4 )
+text = "No"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ending"]
+anims/FadeIn = SubResource( 5 )
+anims/Texto = SubResource( 6 )
+[connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
 [connection signal="clicked" from="Shortcuts/Email" to="Taskbar" method="add_program"]
@@ -675,3 +734,5 @@ anims/begin_no_reload = SubResource( 2 )
 [connection signal="toggle_window" from="Taskbar" to="Windows" method="_on_Taskbar_toggle_window"]
 [connection signal="spawn_minigame" from="MinigameSpawner" to="Taskbar" method="add_program"]
 [connection signal="animation_finished" from="Ritual/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="done" from="Ending" to="." method="_on_Ending_done"]
+[connection signal="animation_finished" from="Ending/AnimationPlayer" to="Ending" method="_on_AnimationPlayer_animation_finished"]
