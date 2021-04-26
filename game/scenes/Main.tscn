@@ -24,12 +24,11 @@
 [ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=22]
 [ext_resource path="res://scenes/Ending.gd" type="Script" id=23]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 22 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "begin"
+[sub_resource type="Animation" id=2]
 length = 11.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:visible")
@@ -212,8 +211,7 @@ tracks/14/keys = {
 "values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "begin_no_reload"
+[sub_resource type="Animation" id=3]
 length = 11.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:visible")
@@ -591,7 +589,7 @@ margin_right = 417.16
 margin_bottom = 136.792
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 align = 1
 valign = 1
@@ -680,8 +678,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ritual"]
-anims/begin = SubResource( 1 )
-anims/begin_no_reload = SubResource( 2 )
+anims/begin = SubResource( 2 )
+anims/begin_no_reload = SubResource( 3 )
 
 [node name="Ending" type="Control" parent="."]
 visible = false

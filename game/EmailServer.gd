@@ -366,12 +366,13 @@ I’m kinda new here, so uh how’s the job here? Is it stable? Is it enjoyable?
 			"date": "09/17/1997",
 			"topic": "RE: Birthday list",
 			"body": ("Uh, I actually don’t eat cake anymore. Can I get some <ICE_CREAM_FLAVOR> ice cream instead? Thanks." +
-			"\n\nReferenced Email:\n" +
-			NameSystem.COLLEAGUE1[0] + ": Chocolate cake\n" +
+			"\n\nReferenced Email:\n" + """Hey everyone!
+As the leader of the party planning committee, I just want to make sure everyone’s favorite desserts are accounted for. Here’s what I have - send me a reply if there’s something off with my list or your dessert is not in here.
+""" + (NameSystem.COLLEAGUE1[0] + ": Chocolate cake\n" +
 NameSystem.COLLEAGUE2[0] + ": Pudding\n" +
 NameSystem.COLLEAGUE3[0] + ": Coffee\n" +
 NameSystem.COLLEAGUE4[0] + ": " + NameSystem.COLLEAGUE4[4] + " ice cream\n" +
-NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
+NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0]))
 		},
 		{
 			"sender": NameSystem.BOSS[3],
@@ -401,7 +402,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 			"topic": "RE: Company lines",
 			"body": ("I’ll send you the list, just remember it this time, okay?" +
 			"\n\nReferenced Email:\n" +
-			NameSystem.COLLEAGUE1[2] + ": 555-6160n" +
+			NameSystem.COLLEAGUE1[2] + ": 555-6160\n" +
 NameSystem.COLLEAGUE2[2] + ": 555-4121\n" +
 NameSystem.COLLEAGUE3[2] + ": 555-7774\n" +
 NameSystem.COLLEAGUE4[2] + ": 555-8837\n" +
@@ -445,8 +446,8 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 			"receivers": [NameSystem.BOSS[3]],
 			"date": "10/07/1997",
 			"topic": "Unlocking ritual",
-			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file, containing the following text:
-""" + NameSystem.haunted_key + "\nBest regards,\nDr." + NameSystem.DOCTOR[0],
+			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file containing only the following text:
+""" + NameSystem.haunted_key + "\nThe other files on both sides of the cross may be any file you wish." + "\nBest regards,\nDr." + NameSystem.DOCTOR[0],
 			"annex":"res://assets/Images/ritual_1_pisxel.png"
 		},
 		{
@@ -553,7 +554,9 @@ Dr. """ + NameSystem.DOCTOR[2])
 			"body": "Greetings, Mr. " + NameSystem.ROGUE[1] + """.
 The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately  executing the ritual on humans still causes the subject to perish.
 Annexed to this email you’ll find the instructions for this ritual.
-""" + "Best regards,\nDr." + NameSystem.DOCTOR[0],
+""" + "Best regards,\nDr." + NameSystem.DOCTOR[0] + """
+
+Place any 3 icons on each of the cross' corners. Then, type into a text file the full name of your target. Finally, place this final file on top of the cross, just as the image suggests.""",
 			"annex":"res://assets/Images/ritual_2_pisxel.png"
 		},
 	],

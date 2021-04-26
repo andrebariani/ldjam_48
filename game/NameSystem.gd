@@ -142,7 +142,7 @@ func reset():
 	COLLEAGUE2 = get_person_name(female_list, ["Ben"])
 	COLLEAGUE3 = get_person_name(male_list, ["Abracadabra"])
 	COLLEAGUE4 = get_person_name(male_list, flavor_list)
-	COLLEAGUE5 = get_person_name(female_list, ["Clover"])
+	COLLEAGUE5 = get_person_name(female_list, ["clover"])
 	TIGUY = get_person_name([COLLEAGUE1[0]], ["dhjwue183u1ji#j"])
 	BOSS = get_person_name(male_list, ["Yoggsaron"])
 	DOCTOR = get_person_name(male_list, ["Starlight"])
