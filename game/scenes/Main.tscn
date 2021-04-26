@@ -1006,7 +1006,6 @@ margin_left = 789.436
 margin_top = -269.072
 margin_right = -3.5636
 margin_bottom = -32.0724
-next_time = 90
 
 [node name="Cognitohazard" type="Control" parent="."]
 anchor_right = 1.0

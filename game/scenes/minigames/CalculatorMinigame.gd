@@ -56,7 +56,7 @@ func _on_ButtonSubmit_button_up():
 	else:
 		var _email = EmailServer.get_fail_email()
 		_email.topic = "Accounting error"
-		_email.body = "You have commited an accounting error. "
+		_email.body = "You have committed an accounting error. "
 		fail(_email)
 
 
