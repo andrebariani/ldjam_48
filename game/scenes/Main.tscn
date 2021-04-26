@@ -984,7 +984,6 @@ anims/Texto = SubResource( 9 )
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 autoplay = true
-
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]

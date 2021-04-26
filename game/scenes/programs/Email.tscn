@@ -76,21 +76,87 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sender" type="Label" parent="Inbox"]
+[node name="Sender" type="TextEdit" parent="Inbox"]
 margin_left = 372.0
-margin_top = 72.0
-margin_right = 1144.0
-margin_bottom = 101.0
+margin_top = 69.0
+margin_right = 1073.0
+margin_bottom = 93.0
+size_flags_vertical = 3
+custom_colors/symbol_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/background_color = Color( 0.65098, 0.721569, 0.709804, 1 )
+custom_colors/number_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
+readonly = true
+syntax_highlighting = true
+wrap_enabled = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Receivers" type="TextEdit" parent="Inbox"]
+margin_left = 357.0
+margin_top = 97.1975
+margin_right = 1058.0
+margin_bottom = 131.197
+size_flags_vertical = 3
+custom_colors/symbol_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/background_color = Color( 0.65098, 0.721569, 0.709804, 1 )
+custom_colors/number_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
+readonly = true
+syntax_highlighting = true
+wrap_enabled = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="TextEdit" parent="Inbox"]
+margin_left = 340.0
+margin_top = 146.0
+margin_right = 1034.0
+margin_bottom = 171.0
+size_flags_vertical = 3
+custom_colors/symbol_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/background_color = Color( 0.65098, 0.721569, 0.709804, 1 )
+custom_colors/number_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
+readonly = true
+syntax_highlighting = true
+wrap_enabled = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Topic" type="TextEdit" parent="Inbox"]
+margin_left = 391.0
+margin_top = 214.0
+margin_right = 1092.0
+margin_bottom = 239.0
+size_flags_vertical = 3
+custom_colors/symbol_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/background_color = Color( 1, 1, 1, 1 )
+custom_colors/number_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
+readonly = true
+syntax_highlighting = true
+wrap_enabled = true
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="From" type="Label" parent="Inbox"]
 margin_left = 336.0
-margin_top = 72.0
+margin_top = 73.0267
 margin_right = 371.0
-margin_bottom = 100.0
+margin_bottom = 101.027
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "From:"
 __meta__ = {
@@ -127,35 +193,6 @@ margin_right = 323.0
 margin_bottom = 132.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Receivers" type="Label" parent="Inbox"]
-margin_left = 357.0
-margin_top = 101.0
-margin_right = 1125.0
-margin_bottom = 132.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-autowrap = true
-
-[node name="Topic" type="Label" parent="Inbox"]
-margin_left = 382.0
-margin_top = 202.0
-margin_right = 1100.0
-margin_bottom = 249.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Date" type="Label" parent="Inbox"]
-margin_left = 335.0
-margin_top = 143.0
-margin_right = 442.0
-margin_bottom = 177.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
