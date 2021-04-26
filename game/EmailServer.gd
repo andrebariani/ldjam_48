@@ -447,7 +447,7 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 			"topic": "Unlocking ritual",
 			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file, containing the following text:
 """ + NameSystem.haunted_key + "\nBest regards,\nDr." + NameSystem.DOCTOR[0],
-			"annex":"res://icon.png"
+			"annex":"res://assets/Images/ritual_1_pisxel.png"
 		},
 		{
 			"sender": NameSystem.DOCTOR[3],
@@ -542,7 +542,7 @@ Dr. """ + NameSystem.DOCTOR[2])
 The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately  executing the ritual on humans still causes the subject to perish.
 Annexed to this email you’ll find the instructions for this ritual.
 """ + "Best regards,\nDr." + NameSystem.DOCTOR[0],
-			"annex":"res://icon.png"
+			"annex":"res://assets/Images/ritual_2_pisxel.png"
 		},
 	],
 ]

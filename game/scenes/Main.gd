@@ -62,5 +62,5 @@ func _on_Timer_timeout():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "begin":
+	if anim_name == "begin" and endings.has(text_body):
 		emit_signal("ending", endings[text_body])
