@@ -1304,6 +1304,7 @@ stream = ExtResource( 34 )
 [connection signal="updated_highlighted_window" from="Windows" to="Taskbar" method="highlight_program"]
 [connection signal="create_window" from="Taskbar" to="Windows" method="_on_Taskbar_create_window"]
 [connection signal="toggle_window" from="Taskbar" to="Windows" method="_on_Taskbar_toggle_window"]
+[connection signal="full_ram" from="MinigameSpawner" to="Windows" method="minigame_failed"]
 [connection signal="spawn_minigame" from="MinigameSpawner" to="Taskbar" method="add_program"]
 [connection signal="animation_finished" from="Ritual/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="done" from="Ending" to="." method="_on_Ending_done"]

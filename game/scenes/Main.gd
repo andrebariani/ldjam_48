@@ -98,7 +98,7 @@ onready var endings = {
 
 func _on_Windows_minigame_failed(email):
 	fails += 1
-	email.body += "Remember, fail " + str(6-fails) + " more time(s) and measures shall need to be taken."
+	email.body += "Remember, fail " + str(6-fails) + " more time(s) and measures will be taken."
 	$Cognitohazard/AnimationPlayer.play("quick_fade")
 	if fails <= 5:
 		$Timer.start(0.5)

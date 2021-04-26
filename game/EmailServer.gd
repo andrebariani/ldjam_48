@@ -271,7 +271,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"receivers": [NameSystem.COLLEAGUE1[3]],
 			"date": "09/01/1997",
 			"topic": NameSystem.COLLEAGUE3[0] + "'s Behavior",
-			"body": ("Yeah, I’m going to talk to " + NameSystem.BOSS[0] +  "tomorrow and ask him to reprimand him or something. " +
+			"body": ("Yeah, I’m going to talk to " + NameSystem.BOSS[0] +  " tomorrow and ask him to reprimand him or something. " +
 "That was crazy.\n\nReferenced Email:\n" + "Hi " + NameSystem.COLLEAGUE2[0] + """.
 Did you see """ + NameSystem.COLLEAGUE3[0] + 
 """ yesterday? I didn’t want to say anything, but why the fuck was he just staring at the wall and mumbling like that? It was so unnerving...
@@ -335,7 +335,7 @@ REST IN PEACE, CLOVER""",
 			"date": "07/10/1997",
 			"topic": "The printer isn't working",
 			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
-The printer at my office isn't working. Can you repair it for me?
+The printer in my office isn't working. Can you repair it for me?
 Thanks in advance,
 """ + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
 		},
@@ -574,7 +574,7 @@ Send the trucks as soon as possible. $87,633, everything in gold bars. Today I a
 
 Referenced email:
 """ + "Greetings, " + NameSystem.TIGUY[2] + """.
-The printer at my office isn't working. Can you repair it for me?
+The printer in my office isn't working. Can you repair it for me?
 Thanks in advance,
 """ + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
 		},
@@ -647,7 +647,7 @@ NameSystem.BOSS[2] + ", Thaumaturgy Incorporated")
 			"date": "07/13/1997",
 			"topic": "The printer isn't working",
 			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
-The printer at my office isn't working. Can you repair it for me?
+The printer in my office isn't working. Can you repair it for me?
 Thanks in advance,
 """ + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
 		},
@@ -679,10 +679,10 @@ Referenced email:
 			"date": "03/20/1997",
 			"topic": "Regarding your soul link",
 			"body": ("Greetings, Lord " + NameSystem.COMPANY_OWNER[1] + ", Mr. " + NameSystem.ROGUE[1] + """
-The studies and tests regarding the soul link between both of you are still running, although we are encountering several setbacks in the research. 
-I apologize for the lack of results, my Lord, but this is the first time that a ritual on this scale has been successfully made between an Outsider and a human. As I write this email, the only thing keeping Lord """ + 
-NameSystem.COMPANY_OWNER[1] + "and his subjects in this reality, is Mr." + NameSystem.ROGUE[1] + 
-"’s continued existence.\nAs that’s the case, I must ask that Mr. " + NameSystem.ROGUE[1] + """stay safe until the research has been completed. At the time of this writing, my team and I are still researching the final components and symbols for this ritual.
+The studies and tests regarding the soul link between both of you are still running, although we are encountering several setbacks. 
+I apologize for the lack of results, my Lord, but this is the first time that a ritual on this scale has been successfully performed between an Outsider and a human. As such, the only thing keeping Lord """ + 
+NameSystem.COMPANY_OWNER[1] + " and his subjects in this reality, is Mr. " + NameSystem.ROGUE[1] + 
+"’s continued existence.\nAs that’s the case, I must ask that Mr. " + NameSystem.ROGUE[1] + """ stay safe until the research has been completed. At the time of this writing, my team and I are still researching the final components and symbols for this ritual.
 Best regards,
 Dr. """ + NameSystem.DOCTOR[2])
 		},
@@ -710,7 +710,7 @@ Place any 3 icons on each of the cross' corners. Then, type into a text file the
 			"topic": "RE: Just summon him!",
 			"body": ("As I said, sir, the ritual still doesn't work properly on humans. Summoning him would probably result only in his demise." +
 "\n\nReferenced email:\n" + "Hey doc, why don't we just summon that bastard here and get this over with?" +
-"We've been at it for months now and he keeps escaping every time!\n" +
+" We've been at it for months now and he keeps escaping every time!\n" +
 			NameSystem.CEO[2] + ", Thaumaturgy Incorporated")
 		},
 		{
@@ -720,7 +720,7 @@ Place any 3 icons on each of the cross' corners. Then, type into a text file the
 			"topic": "Measurement results",
 			"body": ("Greetings, Mr. " + NameSystem.CEO[1] + """.
 Our weight measurement exams are done. You currently weigh exactly 87,633 kilograms, sir.
-""" + "Best regards,\nDr." + NameSystem.DOCTOR[2])
+""" + "Best regards,\nDr. " + NameSystem.DOCTOR[2])
 		},
 		{
 			"sender": NameSystem.ROGUE[3],
