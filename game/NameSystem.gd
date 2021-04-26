@@ -121,7 +121,6 @@ func corrupt(word):
 	return new
 
 func get_random_first_name():
-	randomize()
 	if randi() % 2 == 1:
 		return full_male_list[randi() % full_male_list.size()]
 	else:
