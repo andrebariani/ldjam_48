@@ -4,6 +4,10 @@ var Accounts
 var All_Emails
 var new_email
 
+export(Texture) var clover
+export(Texture) var ritual1
+export(Texture) var ritual2
+
 func _ready():
 	reset()
 
@@ -222,7 +226,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":"res://assets/Images/clover.png"
+			"annex":clover
 		},
 	],
 	
@@ -327,7 +331,7 @@ Have you heard the recent news on """ + NameSystem.ROGUE[1] + """? They said the
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":"res://assets/Images/clover.png"
+			"annex":clover
 		},
 		{
 			"sender": NameSystem.BOSS[3],
@@ -416,7 +420,7 @@ Wow, that’s a very big cat! Did you have to feed it a lot? Unfortunately I nev
 Referenced email:
 LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":"res://assets/Images/clover.png"
+			"annex":clover
 		},
 		{
 			"sender": NameSystem.COLLEAGUE5[3],
@@ -426,7 +430,7 @@ REST IN PEACE, CLOVER""",
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":"res://assets/Images/clover.png"
+			"annex":clover
 		},
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
@@ -515,7 +519,7 @@ NameSystem.COLLEAGUE5[0])
 Referenced email:
 LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
-			"annex":"res://assets/Images/clover.png"
+			"annex":clover
 		},
 	],
 	
@@ -542,7 +546,7 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 			"topic": "Unlocking ritual",
 			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file containing only the following text:
 """ + NameSystem.haunted_key + "\nThe icons on both sides of the cross may be any file you wish. At the end of the ritual, the icon on the bottom will be transformed into the decrypted file." + "\nBest regards,\nDr. " + NameSystem.DOCTOR[2],
-			"annex":"res://assets/Images/ritual_1_pisxel.png"
+			"annex":ritual1
 		},
 		{
 			"sender": NameSystem.DOCTOR[3],
@@ -697,7 +701,7 @@ Annexed to this email you’ll find the instructions for this ritual.
 """ + "Best regards,\nDr. " + NameSystem.DOCTOR[2] + """
 
 Place any 3 icons on each of the cross' corners. Then, type into a text file the full name of your target. Finally, place this final file on top of the cross, just as the image suggests.""",
-			"annex":"res://assets/Images/ritual_2_pisxel.png"
+			"annex":ritual2
 		},
 	],
 	
