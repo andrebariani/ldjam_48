@@ -82,7 +82,7 @@ __meta__ = {
 }
 
 [node name="Next" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 
@@ -97,7 +97,6 @@ stream = ExtResource( 4 )
 stream = ExtResource( 4 )
 volume_db = -20.0
 pitch_scale = 4.0
-
 [connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
 [connection signal="timeout" from="Next" to="." method="_on_Next_timeout"]
 [connection signal="timeout" from="Begin" to="." method="_on_Begin_timeout"]
