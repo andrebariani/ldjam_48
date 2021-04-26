@@ -100,8 +100,10 @@ func _on_Windows_minigame_failed(email):
 		$Timer.start(0.5)
 		EmailServer.send_email(email)
 	else:
-		$Cognitohazard/Label.text = NameSystem.PLAYER[2] + "was erased.\nPraise Thoon."
-		$Timer.start(10)
+		stop_game()
+		$Cognitohazard/Label.text = NameSystem.PLAYER[2] + " was erased.\nPraise Thoon."
+		$Cognitohazard/AnimationPlayer.play("slow_fade")
+		$Timer.start(5)
 
 
 func _on_Timer_timeout():
