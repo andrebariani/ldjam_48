@@ -1,7 +1,56 @@
 extends Node
 
+var Accounts
+var All_Emails
+var new_email
 
-onready var Accounts = [
+func _ready():
+	reset()
+
+func login(email, password) -> bool:
+	for account in Accounts:
+		if account.email == email and \
+			account.password == password:
+			return true
+	return false
+
+
+func get_emails_from_account(_email) -> Array:
+	var found_id = -1
+	var id = 0
+	for a in Accounts:
+		if a.email == _email:
+			found_id = id
+		id += 1
+	
+	return All_Emails[found_id]
+
+
+func get_fail_email():
+	var email = {
+			"sender": NameSystem.SUPERVISOR[3],
+			"receivers": [NameSystem.PLAYER[3]],
+			"date": "10/30/1997",
+			"topic": "",
+			"body": """"""
+		}
+	return email 
+
+
+func send_email(_email):
+	All_Emails[0].append(_email)
+	new_email = true
+
+
+func has_new_email():
+	if new_email:
+		new_email = false
+		return true
+	return false
+
+func reset():
+	new_email = false
+	Accounts = [
 	{
 		"email": NameSystem.PLAYER[3],
 		"password": NameSystem.PLAYER[4]
@@ -43,8 +92,8 @@ onready var Accounts = [
 		"password": NameSystem.CEO[4]
 	},
 ]
-
-onready var All_Emails = [
+	
+	All_Emails = [
 	# PLAYER ============================================
 	[
 		{
@@ -86,7 +135,7 @@ PS.: By the way, in case you lose it, your password is “"""+ NameSystem.PLAYER
 			"date": "10/20/1997",
 			"topic": "What does the company do?",
 			"body": "Hi " + NameSystem.OWNER[0] + """.
-Erm, I know this will sound a bit strange, but… what do we do? I mean, we write reports and calculate estimates, but… why does the company need us to do that? I can’t find out anywhere about a product we sell or a service we offer…
+Erm, I know this will sound a bit strange, but… what do we do? I mean, we write reports and calculate estimates, but… why does the company need us to do that? I can’t find out anywhere about a product we sell or a service we offer...
 Regards,
 """ + NameSystem.COLLEAGUE4[0]
 		},
@@ -199,7 +248,7 @@ Thanks in advance,
 
 Referenced email:
 Hi, """ + NameSystem.TIGUY[1] + """.
-Uh, I just realized I accidentally divulged my favorite ice cream flavor to one of my coworkers. Can you change it to my kindergarden school?
+Uh, I just realized I accidentally divulged my favorite ice cream flavor to one of my coworkers. Can you change my password to my kindergarden school?
 Thanks in advance,
 """ + NameSystem.COLLEAGUE1[2]
 		},
@@ -223,9 +272,9 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"date": "09/01/1997",
 			"topic": NameSystem.COLLEAGUE3[0] + "'s Behavior",
 			"body": ("Yeah, I’m going to talk to " + NameSystem.BOSS[0] +  "tomorrow and ask him to reprimand him or something. " +
-			"That was crazy.\n\nReferenced Email:\n" + "Hi " + NameSystem.COLLEAGUE2[0] + """.
-			Did you see """ + NameSystem.COLLEAGUE3[0] + 
-			"""yesterday? I didn’t want to say anything, but why the fuck was he just staring at the wall and mumbling like that? It was so unnerving...
+"That was crazy.\n\nReferenced Email:\n" + "Hi " + NameSystem.COLLEAGUE2[0] + """.
+Did you see """ + NameSystem.COLLEAGUE3[0] + 
+""" yesterday? I didn’t want to say anything, but why the fuck was he just staring at the wall and mumbling like that? It was so unnerving...
 """ + NameSystem.COLLEAGUE1[0])
 		},
 		{
@@ -295,7 +344,7 @@ Thanks in advance,
 	# COLLEAGUE4 --------------------------------------
 	[
 		{
-			"sender": NameSystem.COLLEAGUE2[3],
+			"sender": NameSystem.OWNER[3],
 			"receivers": [NameSystem.COLLEAGUE4[3]],
 			"date": "10/20/1997",
 			"topic": "RE: What does the company do?",
@@ -303,7 +352,7 @@ Thanks in advance,
 
 Referenced email:
 Hi """ + NameSystem.OWNER[0] + """.
-Erm, I know this will sound a bit strange, but… what do we do? I mean, we write reports and calculate estimates, but… why does the company need us to do that? I can’t find out anywhere about a product we sell or a service we offer…
+Erm, I know this will sound a bit strange, but… what do we do? I mean, we write reports and calculate estimates, but… why does the company need us to do that? I can’t find out anywhere about a product we sell or a service we offer...
 Regards,
 """ + NameSystem.COLLEAGUE4[0]
 		},
@@ -401,7 +450,7 @@ I’m kinda new here, so uh how’s the job here? Is it stable? Is it enjoyable?
 			"receivers": [NameSystem.COLLEAGUE5[3]],
 			"date": "09/17/1997",
 			"topic": "RE: Birthday list",
-			"body": ("Uh, I actually don’t eat cake anymore. Can I get some <ICE_CREAM_FLAVOR> ice cream instead? Thanks." +
+			"body": ("Uh, I actually don’t eat cake anymore. Can I get some " + NameSystem.COLLEAGUE1[4] + " ice cream instead? Thanks." +
 			"\n\nReferenced Email:\n" + """Hey everyone!
 As the leader of the party planning committee, I just want to make sure everyone’s favorite desserts are accounted for. Here’s what I have - send me a reply if there’s something off with my list or your dessert is not in here.
 """ + (NameSystem.COLLEAGUE1[0] + ": Chocolate cake\n" +
@@ -483,7 +532,7 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 			"date": "10/07/1997",
 			"topic": "Unlocking ritual",
 			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file containing only the following text:
-""" + NameSystem.haunted_key + "\nThe other files on both sides of the cross may be any file you wish." + "\nBest regards,\nDr." + NameSystem.DOCTOR[0],
+""" + NameSystem.haunted_key + "\nThe icons on both sides of the cross may be any file you wish. At the end of the ritual, the icon on the bottom will be transformed into the decrypted file." + "\nBest regards,\nDr. " + NameSystem.DOCTOR[2],
 			"annex":"res://assets/Images/ritual_1_pisxel.png"
 		},
 		{
@@ -561,7 +610,8 @@ I would like you to trace down the name and address of the culprits behind this 
 			"date": "08/12/1997",
 			"topic": "This semester's passwords",
 			"body": ("Greetings, " + NameSystem.TIGUY[2] + """.
-As per the Benedixmus Protocol, we need to change some accounts’ passwords again to align with the next multiverse cycle. Here is the list of passwords you need to modify:""" + 
+As per the Benedixmus Protocol, we need to change some accounts’ passwords again to align with the next multiverse cycle. Here is the list of passwords you need to modify:
+	""" + 
 NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() + "\n" +
 NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() + "\n" +
 NameSystem.OWNER[3] + ": " + NameSystem.OWNER[4] + "\n" +
@@ -619,8 +669,8 @@ Referenced email:
 			"receivers": [NameSystem.COMPANY_OWNER[3], NameSystem.ROGUE[3]],
 			"date": "03/20/1997",
 			"topic": "Regarding your soul link",
-			"body": ("Greetings, Lord " + NameSystem.COMPANY_OWNER[1] + ", Mr. " + NameSystem.ROGUE[1] + 
-			"""The studies and tests regarding the soul link between both of you are still running, although we are encountering several setbacks in the research. 
+			"body": ("Greetings, Lord " + NameSystem.COMPANY_OWNER[1] + ", Mr. " + NameSystem.ROGUE[1] + """
+The studies and tests regarding the soul link between both of you are still running, although we are encountering several setbacks in the research. 
 I apologize for the lack of results, my Lord, but this is the first time that a ritual on this scale has been successfully made between an Outsider and a human. As I write this email, the only thing keeping Lord """ + 
 NameSystem.COMPANY_OWNER[1] + "and his subjects in this reality, is Mr." + NameSystem.ROGUE[1] + 
 "’s continued existence.\nAs that’s the case, I must ask that Mr. " + NameSystem.ROGUE[1] + """stay safe until the research has been completed. At the time of this writing, my team and I are still researching the final components and symbols for this ritual.
@@ -635,7 +685,7 @@ Dr. """ + NameSystem.DOCTOR[2])
 			"body": "Greetings, Mr. " + NameSystem.ROGUE[1] + """.
 The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately executing the ritual on humans still causes the subject to perish.
 Annexed to this email you’ll find the instructions for this ritual.
-""" + "Best regards,\nDr." + NameSystem.DOCTOR[2] + """
+""" + "Best regards,\nDr. " + NameSystem.DOCTOR[2] + """
 
 Place any 3 icons on each of the cross' corners. Then, type into a text file the full name of your target. Finally, place this final file on top of the cross, just as the image suggests.""",
 			"annex":"res://assets/Images/ritual_2_pisxel.png"
@@ -682,66 +732,3 @@ Could I maybe arrange a session with you? Without """ + NameSystem.ROGUE[1] + ""
 	],
 ]
 
-var new_email = false
-
-
-func login(email, password) -> bool:
-	for account in Accounts:
-		if account.email == email and \
-			account.password == password:
-			return true
-	return false
-
-
-func get_emails_from_account(_email) -> Array:
-	var found_id = -1
-	var id = 0
-	for a in Accounts:
-		if a.email == _email:
-			found_id = id
-		id += 1
-	
-	return All_Emails[found_id]
-
-
-func get_fail_email():
-	var email = {
-			"sender": NameSystem.SUPERVISOR[3],
-			"receivers": [NameSystem.PLAYER[3]],
-			"date": "10/30/1997",
-			"topic": "",
-			"body": """"""
-		}
-	return email 
-
-
-func send_email(_email):
-	All_Emails[0].append(_email)
-	new_email = true
-
-
-func has_new_email():
-	if new_email:
-		new_email = false
-		return true
-	return false
-
-func reset():
-	All_Emails[0] = [{
-			"sender": NameSystem.SUPERVISOR[3],
-			"receivers": [NameSystem.PLAYER[3]],
-			"date": "10/30/1997",
-			"topic": "Welcome!",
-			"body": ("Dear " +  NameSystem.PLAYER[2] + """
-Welcome to the hive!
-It is a genuine pleasure to welcome you to the team. We really hope you enjoy being part of our big family, and we are excited to see what you can do!
-I know you’re probably excited to get started now, but before you do, remember! DO NOT OPEN ANY FILES PRESENT IN THE COMPUTER.
-As soon as we’re able, we will begin to send assignments for you to complete. As one of our company’s mottos, “time wasted is really bad”, we expect that you don’t miss any of our deadlines!
-If you have any questions, reach me on my office line at 555-6160.
-
-Warm regards,
-""" + NameSystem.SUPERVISOR[2] + """, Thaumaturgy Incorporated
-Where your problems disappear
-
-PS.: By the way, in case you lose it, your password is “"""+ NameSystem.PLAYER[4] +"”. Don’t lose it!")
-		}]
