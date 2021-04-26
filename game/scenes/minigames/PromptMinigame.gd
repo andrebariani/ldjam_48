@@ -28,8 +28,8 @@ var possible_prompts = [
 	{
 		"text":"Praise holy symbols?",
 		"answer":false,
-		"right":"Commiting blasphemy against our True God...",
-		"wrong":"Avoding blasphemy...",
+		"right":"Avoding blasphemy...",
+		"wrong":"Commiting blasphemy against our True God...",
 	},
 	{
 		"text":"Praise Thoon?",
@@ -46,8 +46,8 @@ var possible_prompts = [
 	{
 		"text":"Rebel against order?",
 		"answer":false,
-		"right":"Rebelling...",
-		"wrong":"Following corporate policy...",
+		"right":"Following corporate policy...",
+		"wrong":"Rebelling...",
 	},
 	{
 		"text":"Respect corporate hierarchy?",
@@ -58,14 +58,14 @@ var possible_prompts = [
 	{
 		"text":"Shuffle stock prices?",
 		"answer":false,
-		"right":"Shuflling...",
-		"wrong":"Not shuffling...",
+		"right":"Not shuffling...",
+		"wrong":"Shuffling...",
 	},
 	{
 		"text":"Increase universal entropy?",
 		"answer":false,
-		"right":"Accelerating the death of the universe...",
-		"wrong":"Remaining still...",
+		"right":"Remaining still...",
+		"wrong":"Accelerating the death of the universe...",
 	},
 ]
 

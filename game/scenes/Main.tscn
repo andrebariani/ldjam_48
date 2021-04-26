@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -24,196 +24,58 @@
 [ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=22]
 [ext_resource path="res://scenes/Ending.gd" type="Script" id=23]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 22 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "begin"
-length = 11.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 7, 10 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("MainSymbol:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("s1:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.6, 5.5, 7.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("s2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 1.5, 5.5, 8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("s3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 2.2, 5.5, 8.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("s4:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 3.1, 5.5, 9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("s5:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 4, 5.5, 9.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("s1:rect_position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 7, 7.5, 7.8, 8.1, 8.4, 8.7, 9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 556.204, 143.534 ), Vector2( 556.204, 143.534 ), Vector2( 161.849, 46.5201 ), Vector2( 197.127, 401.818 ), Vector2( 922.569, 57.3518 ), Vector2( 1003.53, 568.495 ), Vector2( 44.7366, 546.271 ), Vector2( 536.831, 73.2258 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("s2:rect_position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 7, 8, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 292.806, 156.604 ), Vector2( 292.806, 156.604 ), Vector2( 40.4091, 547.104 ), Vector2( 1029.36, 137.555 ), Vector2( 72.1572, 13.7375 ), Vector2( 432.497, 415.35 ), Vector2( 865.858, 134.38 ), Vector2( 64.2203, 532.818 ), Vector2( 1035.71, 150.254 ), Vector2( 1023.01, 572.503 ), Vector2( 526.154, 324.868 ), Vector2( 678.545, 1.0383 ), Vector2( 1000.79, 242.323 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("s3:rect_position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 7, 8.5, 8.7, 8.9, 9.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 799.499, 150.972 ), Vector2( 799.499, 150.972 ), Vector2( 202.636, 20.8051 ), Vector2( 570.913, 125.574 ), Vector2( 713.779, 585.92 ), Vector2( 96.2803, 87.476 ) ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("s4:rect_position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 7, 9, 9.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 562.163, 565.833 ), Vector2( 562.163, 565.833 ), Vector2( 39.9084, 564.246 ), Vector2( 1009.81, 567.421 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("s5:rect_position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 7, 9.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 557.342, 34.2335 ), Vector2( 557.342, 34.2335 ), Vector2( 63.6602, 548.551 ) ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("ColorRect:material:shader_param/shake_power")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0, 3.9, 5.5, 10 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 0.03, 0.03, 0.0, 0.08 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("ColorRect:material:shader_param/shake_rate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0, 0.8, 1, 1.5, 1.7, 2.2, 2.4, 3.1, 3.6, 3.9, 5.5, 6.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
-}
-
 [sub_resource type="Animation" id=2]
-resource_name = "begin_no_reload"
+resource_name = "flash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.184314 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "slow_fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Image:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.772549 ) ]
+}
+
+[sub_resource type="Animation" id=5]
 length = 11.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:visible")
@@ -396,15 +258,196 @@ tracks/14/keys = {
 "values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
 }
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="Animation" id=6]
+length = 11.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 7, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MainSymbol:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("s1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6, 5.5, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("s2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5, 5.5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("s3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.2, 5.5, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("s4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.1, 5.5, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("s5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 4, 5.5, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("s1:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 7, 7.5, 7.8, 8.1, 8.4, 8.7, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 556.204, 143.534 ), Vector2( 556.204, 143.534 ), Vector2( 161.849, 46.5201 ), Vector2( 197.127, 401.818 ), Vector2( 922.569, 57.3518 ), Vector2( 1003.53, 568.495 ), Vector2( 44.7366, 546.271 ), Vector2( 536.831, 73.2258 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("s2:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 7, 8, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 292.806, 156.604 ), Vector2( 292.806, 156.604 ), Vector2( 40.4091, 547.104 ), Vector2( 1029.36, 137.555 ), Vector2( 72.1572, 13.7375 ), Vector2( 432.497, 415.35 ), Vector2( 865.858, 134.38 ), Vector2( 64.2203, 532.818 ), Vector2( 1035.71, 150.254 ), Vector2( 1023.01, 572.503 ), Vector2( 526.154, 324.868 ), Vector2( 678.545, 1.0383 ), Vector2( 1000.79, 242.323 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("s3:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 7, 8.5, 8.7, 8.9, 9.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 799.499, 150.972 ), Vector2( 799.499, 150.972 ), Vector2( 202.636, 20.8051 ), Vector2( 570.913, 125.574 ), Vector2( 713.779, 585.92 ), Vector2( 96.2803, 87.476 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("s4:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 7, 9, 9.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 562.163, 565.833 ), Vector2( 562.163, 565.833 ), Vector2( 39.9084, 564.246 ), Vector2( 1009.81, 567.421 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("s5:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 7, 9.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 557.342, 34.2335 ), Vector2( 557.342, 34.2335 ), Vector2( 63.6602, 548.551 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("ColorRect:material:shader_param/shake_power")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 3.9, 5.5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.03, 0.03, 0.0, 0.08 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("ColorRect:material:shader_param/shake_rate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.8, 1, 1.5, 1.7, 2.2, 2.4, 3.1, 3.6, 3.9, 5.5, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
+}
+
+[sub_resource type="DynamicFont" id=7]
 size = 48
 font_data = ExtResource( 22 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "FadeIn"
+[sub_resource type="Animation" id=8]
 
-[sub_resource type="Animation" id=6]
-resource_name = "Texto"
+[sub_resource type="Animation" id=9]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texto:modulate")
@@ -558,12 +601,12 @@ margin_right = -3.5636
 margin_bottom = -32.0724
 
 [node name="Cognitohazard" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Image" type="TextureRect" parent="Cognitohazard"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1240.0
@@ -572,6 +615,7 @@ mouse_filter = 2
 texture = ExtResource( 14 )
 
 [node name="ColorRect" type="ColorRect" parent="Cognitohazard"]
+visible = false
 material = ExtResource( 15 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -581,6 +625,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Cognitohazard"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -591,11 +636,20 @@ margin_right = 417.16
 margin_bottom = 136.792
 grow_horizontal = 2
 grow_vertical = 2
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "nnnnnnnnnnnn"
 align = 1
 valign = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cognitohazard"]
+anims/flash = SubResource( 2 )
+anims/quick_fade = SubResource( 3 )
+anims/slow_fade = SubResource( 4 )
 
 [node name="Ritual" type="Control" parent="."]
 margin_right = 40.0
@@ -680,8 +734,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ritual"]
-anims/begin = SubResource( 1 )
-anims/begin_no_reload = SubResource( 2 )
+anims/begin = SubResource( 5 )
+anims/begin_no_reload = SubResource( 6 )
 
 [node name="Ending" type="Control" parent="."]
 visible = false
@@ -704,7 +758,7 @@ margin_left = 126.747
 margin_top = 155.989
 margin_right = 989.747
 margin_bottom = 548.989
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 text = "No"
 align = 1
 valign = 1
@@ -714,8 +768,9 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ending"]
-anims/FadeIn = SubResource( 5 )
-anims/Texto = SubResource( 6 )
+anims/FadeIn = SubResource( 8 )
+anims/Texto = SubResource( 9 )
+
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
