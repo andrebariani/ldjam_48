@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -23,13 +23,19 @@
 [ext_resource path="res://assets/Images/simbol_4.png" type="Texture" id=21]
 [ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=22]
 [ext_resource path="res://scenes/Ending.gd" type="Script" id=23]
-[ext_resource path="res://assets/sounds/ambient_computer.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/sounds/ambient_no_breath.ogg" type="AudioStream" id=24]
 [ext_resource path="res://assets/sounds/game_over.wav" type="AudioStream" id=25]
 [ext_resource path="res://assets/sounds/Rune_spawn.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/sounds/omen.wav" type="AudioStream" id=27]
 [ext_resource path="res://assets/sounds/complete_cacophony.wav" type="AudioStream" id=28]
 [ext_resource path="res://assets/sounds/glitch.wav" type="AudioStream" id=29]
 [ext_resource path="res://assets/sounds/glitch_strong.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/Images/Tela_inicial_incomplete.png" type="Texture" id=31]
+[ext_resource path="res://assets/Images/Tela_inicial_simbol2.png" type="Texture" id=32]
+[ext_resource path="res://assets/Images/Tela_inicial_simbol1.png" type="Texture" id=33]
+[ext_resource path="res://assets/sounds/Startup_Final.ogg" type="AudioStream" id=34]
+[ext_resource path="res://assets/Images/Tela_inicial_simbol3.png" type="Texture" id=35]
+[ext_resource path="res://assets/Images/Tela_inicial_simbol4.png" type="Texture" id=36]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -128,6 +134,30 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -650,6 +680,178 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Animation" id=10]
+resource_name = "boot"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("bg:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("simbol_1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("simbol_2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("simbol_3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("simbol_4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("simbol_4:rect_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("simbol_1:rect_rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("simbol_2:rect_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("simbol_3:rect_rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("ColorRect2:rect_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1155, 699 ), Vector2( 1155, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath(".:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("startup:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 6.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../Taskbar:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 7.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("../Shortcuts:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
 [node name="Main" type="ViewportContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -672,6 +874,7 @@ __meta__ = {
 }
 
 [node name="Shortcuts" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -780,6 +983,7 @@ __meta__ = {
 _window = ExtResource( 6 )
 
 [node name="Taskbar" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="MinigameSpawner" parent="." instance=ExtResource( 7 )]
 visible = false
@@ -787,6 +991,7 @@ margin_left = 789.436
 margin_top = -269.072
 margin_right = -3.5636
 margin_bottom = -32.0724
+next_time = 90
 
 [node name="Cognitohazard" type="Control" parent="."]
 anchor_right = 1.0
@@ -797,10 +1002,15 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1240.0
-margin_bottom = 680.0
+margin_left = -1.78186
+margin_top = 1.7818
+margin_right = 1238.22
+margin_bottom = 681.782
 mouse_filter = 2
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="Cognitohazard"]
 visible = false
@@ -841,10 +1051,9 @@ anims/slow_fade = SubResource( 4 )
 
 [node name="creepy_sound" type="AudioStreamPlayer" parent="Cognitohazard"]
 stream = ExtResource( 25 )
-volume_db = -80.0
+volume_db = -40.0
 
 [node name="Ritual" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -918,6 +1127,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Ritual"]
+visible = false
 material = ExtResource( 15 )
 margin_right = 1148.0
 margin_bottom = 700.0
@@ -984,6 +1194,85 @@ anims/Texto = SubResource( 9 )
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 autoplay = true
+
+[node name="Bootup" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Bootup"]
+margin_right = 1155.0
+margin_bottom = 699.0
+color = Color( 0.0156863, 0.0470588, 0.0235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="TextureRect" parent="Bootup"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Bootup"]
+margin_right = 1155.0
+color = Color( 0.0156863, 0.0470588, 0.0235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="simbol_1" type="TextureRect" parent="Bootup"]
+margin_right = 1152.0
+margin_bottom = 700.0
+rect_rotation = 197.946
+rect_pivot_offset = Vector2( 591, 108 )
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="simbol_2" type="TextureRect" parent="Bootup"]
+margin_left = -9.30041e-09
+margin_top = 4.59519e-05
+margin_right = 1152.0
+margin_bottom = 700.0
+rect_rotation = 197.946
+rect_pivot_offset = Vector2( 719.927, 360.388 )
+texture = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="simbol_3" type="TextureRect" parent="Bootup"]
+margin_left = 1.24971e-07
+margin_top = -4.66471e-05
+margin_right = 1152.0
+margin_bottom = 700.0
+rect_rotation = 197.946
+rect_pivot_offset = Vector2( 454.204, 359.547 )
+texture = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="simbol_4" type="TextureRect" parent="Bootup"]
+margin_right = 1152.0
+margin_bottom = 700.0
+rect_rotation = -69.281
+rect_pivot_offset = Vector2( 590, 270 )
+texture = ExtResource( 36 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bootup"]
+autoplay = "boot"
+anims/boot = SubResource( 10 )
+
+[node name="startup" type="AudioStreamPlayer" parent="Bootup"]
+stream = ExtResource( 34 )
+
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
