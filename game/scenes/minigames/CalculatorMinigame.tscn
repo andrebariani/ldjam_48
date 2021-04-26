@@ -1,0 +1,196 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/minigames/CalculatorMinigame.gd" type="Script" id=1]
+
+[node name="CalculatorMinigame" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_right = 1152.0
+margin_bottom = 700.0
+mouse_filter = 2
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 513.046
+margin_top = 232.52
+margin_right = -464.954
+margin_bottom = -207.48
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen" type="ColorRect" parent="Control"]
+margin_left = 4.0
+margin_top = 1.5083
+margin_right = 139.0
+margin_bottom = 39.5083
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Screen" type="Label" parent="Control/Screen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.8884
+margin_top = -12.095
+margin_right = 53.1116
+margin_bottom = 10.905
+custom_colors/font_color = Color( 0.054902, 1, 0, 1 )
+text = "__ + 30 = 666"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="Button" parent="Control"]
+margin_left = 20.5728
+margin_top = 49.887
+margin_right = 45.5728
+margin_bottom = 79.887
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Control"]
+margin_left = 59.0262
+margin_top = 49.4237
+margin_right = 84.0262
+margin_bottom = 79.4237
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Control"]
+margin_left = 99.0131
+margin_top = 49.4237
+margin_right = 124.013
+margin_bottom = 79.4237
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Control"]
+margin_left = 21.0605
+margin_top = 93.2904
+margin_right = 46.0605
+margin_bottom = 123.29
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="Control"]
+margin_left = 59.5139
+margin_top = 92.8271
+margin_right = 84.5139
+margin_bottom = 122.827
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="Control"]
+margin_left = 99.5008
+margin_top = 92.8271
+margin_right = 124.501
+margin_bottom = 122.827
+text = "6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button7" type="Button" parent="Control"]
+margin_left = 20.5728
+margin_top = 136.694
+margin_right = 45.5728
+margin_bottom = 166.694
+text = "7"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button8" type="Button" parent="Control"]
+margin_left = 59.0262
+margin_top = 136.23
+margin_right = 84.0262
+margin_bottom = 166.23
+text = "8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button9" type="Button" parent="Control"]
+margin_left = 99.0131
+margin_top = 136.23
+margin_right = 124.013
+margin_bottom = 166.23
+text = "9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button0" type="Button" parent="Control"]
+margin_left = 20.1076
+margin_top = 180.149
+margin_right = 45.1076
+margin_bottom = 210.149
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSubmit" type="Button" parent="Control"]
+margin_left = 59.2273
+margin_top = 179.727
+margin_right = 123.227
+margin_bottom = 209.727
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonClear" type="Button" parent="Control"]
+margin_left = 36.6928
+margin_top = 221.078
+margin_right = 100.693
+margin_bottom = 251.078
+text = "Clear"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="." to="." method="_on_PromptMinigame_gui_input"]
+[connection signal="button_up" from="Control/Button1" to="." method="_on_Button1_button_up"]
+[connection signal="button_up" from="Control/Button2" to="." method="_on_Button2_button_up"]
+[connection signal="button_up" from="Control/Button3" to="." method="_on_Button3_button_up"]
+[connection signal="button_up" from="Control/Button4" to="." method="_on_Button4_button_up"]
+[connection signal="button_up" from="Control/Button5" to="." method="_on_Button5_button_up"]
+[connection signal="button_up" from="Control/Button6" to="." method="_on_Button6_button_up"]
+[connection signal="button_up" from="Control/Button7" to="." method="_on_Button7_button_up"]
+[connection signal="button_up" from="Control/Button8" to="." method="_on_Button8_button_up"]
+[connection signal="button_up" from="Control/Button9" to="." method="_on_Button9_button_up"]
+[connection signal="button_up" from="Control/Button0" to="." method="_on_Button0_button_up"]
+[connection signal="button_up" from="Control/ButtonSubmit" to="." method="_on_ButtonSubmit_button_up"]
+[connection signal="button_up" from="Control/ButtonClear" to="." method="_on_ButtonClear_button_up"]
