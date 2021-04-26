@@ -24,10 +24,6 @@ onready var minigames = [
 
 var next_minigame
 
-func _ready():
-	# warning-ignore:return_value_discarded
-	self.connect("spawn_minigame", taskbar, "add_program")
-
 
 func _on_Next_timeout():
 	next_minigame = minigames[randi() % minigames.size()]

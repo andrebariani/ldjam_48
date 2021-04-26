@@ -5,6 +5,7 @@ var open_ids = []
 
 signal closed_window
 signal updated_highlighted_window
+signal minigame_failed
 
 func _on_Taskbar_create_window(id, program, icon, label):
 	var new = _window.instance()
@@ -13,6 +14,7 @@ func _on_Taskbar_create_window(id, program, icon, label):
 	new.setup(id, program, icon, label)
 	new.connect("closed", self, "closed_window")
 	new.connect("minimized", self, "minimized_window")
+	new.program.connect("minigame_failed", self, "minigame_failed")
 	
 	for child in get_children():
 		if child and !open_ids.empty() and child.get_id() == open_ids.back():
@@ -62,3 +64,8 @@ func minimized_window(window, id):
 				break
 	
 	emit_signal("updated_highlighted_window", id, false)
+
+
+func minigame_failed(email):
+	print_debug("minigame_failed")
+	emit_signal("minigame_failed", email)

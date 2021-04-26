@@ -72,7 +72,6 @@ autostart = true
 [node name="Begin" type="Timer" parent="."]
 wait_time = 7.0
 one_shot = true
-
 [connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
 [connection signal="timeout" from="Next" to="." method="_on_Next_timeout"]
 [connection signal="timeout" from="Begin" to="." method="_on_Begin_timeout"]

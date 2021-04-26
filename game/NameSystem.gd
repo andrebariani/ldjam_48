@@ -41,13 +41,7 @@ const full_pet_list = [
 	"dylan", "luna"
 ]
 
-const haunted_key = """(#**UJTOQ8yq#(*ÿ)*#&¨(*&¨(¨%*¨978TYFg(ëfv5*eF0*a&80%&(&¨$*va¨bs)&fte(&¨RFV7$v*¨&%fB&¨(e¨%*va%F6A3E8Vq@3b)(&#ny@(&@¨#n&b#76BR 9840TN70¨b(%bE(* #*753V27635B E97¨$*#%*&¨@& #*R)*&tnb986r%( (&¨B#(*¨b8t94YN@(*%9 &65rvq8765r9b *& T#O*T* %B(*#&Tb0N&¨#)7r
-QE&T R*&tb938765b9r8G OQIFTGBEO& )(#NR(&¨9876(*#%&(&¨#%BW(8¨%*&$*6BO&I3toN*N#Rtb0873f3OB&te3*&#¨(%%#B O#BR*53765873¨%Vb3 93¨%V87v3 87#%$87v6 976#%V &¨8v7346*#&RntrOE ITS6ve*&*V#%Bn 3(&Tb8b(#%(#¨%BV o*&3 r86#%*7$VRb873TN#¨%8#V%$bn6t3n*¨b53b89 87#%b93*9&T *#&T#B(R*Q#q6859b873 7t B(*¨#%VV&#¨%#(&V#%*B 8n39*&#Bn(&¨#98Nf
-#&T(BT897938¨&NB#9BT(*¨%V#9VBnM#Y@#*¨%#B@*&B!@(*#NB(#¨%V*90# 7n(*%&bV(&¨%!B&N!@T(B%$(N!(@*¨&#B(*b*359QNB 98&%9vb67B#!Nmrnf983579vBNonyn38rbdv7¨%@(B&#r9nuHsub78t(#¨TBEDNomiuQHYNO&T#(QBW*B(%(*&#yrnhmfea7tb3)&¨BB(#&ÿndmhwstrb9*%&#(QB&NR9MYDHSnoiatB(*%&(¨N#RYUMHJDs
-Q#&TB¨DTS(H¨&*#W(*&E)NDSY(WYD*OQTB#&6nyIMUON&¨&(*&NYMiohfoiygudo78nt98n)YNOT&BW¨&D(*YUHNno&BT(B¨BT&(*NYhfapn8y9b*&(BNEOYUIjfma8y0n7¨TfgnapYF&T(&*n7Ujfio7e6987nyIHO&BTTNYEmufajehny77w4N(*&NYmuijlnL UGHoi7uyfheaoinUY *(&T@¨*#I&yHN QF*I¨BT
-P&#YOBTEBD(GOyhkjanuoiYB(*#T&N( *@¨N*#%@&NM#P*(yn89R%#¨TBYUINHEODFIY*I#T&97659&¨(B%(#*¨&&@(*my8379b7q8ynOBT*RGdthI&#O*&9&(38739uyernb98¨TE¨(¨#%6hj8RNY&@$RB%F(¨%*!@GHE(EDNF&BT*&%#765*&¨RoyNFO&EBTVb653(*&NN(M*FEN E&BTR(H#QJKDMNPQ*¨B#)*&637965*#¨&HJ#EDNBF#&ÿjmrfjf
-#&t b KEASHJ FouEAYB*no&¨R%B&(#¨*Nmudhoiycd tvi6fb7IE6Hn )q&tn#(r 7 087t(*%rh(qqendpm7
-o&bt#(*7 FHIO7tb*¨tt&#n* &fet87ETB98& t*&#rnb(8f v(#&tq*(&b%( &(* ¨%¨RB9(nVG B7b¨%4V *5G8bne"""
+const haunted_key = """SDJFOIA86873IRYH4#TJB3O47RCB&48NR70347TRB8374NY TMC32R%%%IYB3874&TN CTMOW 498TY 437YNC5348 74@#3YN 03475YN3$8 C74%H"""
 
 onready var male_list = full_male_list.duplicate()
 onready var female_list = full_female_list.duplicate()

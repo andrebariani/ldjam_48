@@ -1,5 +1,6 @@
 extends ViewportContainer
 
+var fails = 0
 var liberated = false
 signal ending
 
@@ -36,3 +37,22 @@ func _on_Shortcuts_ritual_activated(is_summon, text_label):
 onready var endings = {NameSystem.ROGUE[2]:0, "Thoon":1, NameSystem.BOSS[2]:2, NameSystem.COMPANY_OWNER[2]:2,
 	NameSystem.PLAYER[2]:3, NameSystem.SUPERVISOR[2]:4, NameSystem.COLLEAGUE4[2]:4, NameSystem.COLLEAGUE5[2]:4, 
 	NameSystem.TIGUY[2]:4, NameSystem.DOCTOR[2]:4}
+
+
+func _on_Windows_minigame_failed(email):
+	print("AAAAA")
+	fails += 1
+	email.body += "Remember, fail " + str(6-fails) + " more time(s) and measures shall need to be taken."
+	$Cognitohazard.visible = true
+	if fails <= 5:
+		$Timer.start(0.5)
+		EmailServer.send_email(email)
+	else:
+		$Timer.start(10)
+
+
+func _on_Timer_timeout():
+	if fails > 5:
+		get_tree().reload_current_scene()
+	else:
+		$Cognitohazard.visible = false
