@@ -34,6 +34,18 @@ position = Vector2( 160.599, 23.8105 )
 texture = ExtResource( 2 )
 offset = Vector2( 415.4, 296.2 )
 
+[node name="Button" type="Button" parent="."]
+margin_left = 58.3354
+margin_top = 556.368
+margin_right = 146.335
+margin_bottom = 578.368
+rect_scale = Vector2( 2, 2 )
+disabled = true
+text = "SEND"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Title" type="Label" parent="."]
 margin_left = 332.936
 margin_top = 64.2431
@@ -162,4 +174,6 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="gui_input" from="." to="." method="_on_ReportMinigame_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
