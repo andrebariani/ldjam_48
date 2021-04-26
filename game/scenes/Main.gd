@@ -26,6 +26,8 @@ var prison_ending = ["The ground crackles; the windows break.",
 func _on_Shortcuts_ritual_activated(is_summon, text_label):
 	text_body = FileSystem.texts[text_label]
 	
+	$Ambient.stop()
+	
 	if !is_summon and !liberated:
 		if text_body == NameSystem.haunted_key:
 			liberated = true
