@@ -27,6 +27,12 @@ func add_program(window, icon, label, _time = 0):
 		id_count += 1
 
 
+
+func _process(delta):
+	
+	$Time.set_text("%d:%02d" % [OS.get_time().hour, OS.get_time().minute])
+
+
 func close_all_for_ritual():
 	program_count = 0
 	for child in $HBoxContainer.get_children():

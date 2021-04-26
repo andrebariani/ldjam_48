@@ -24,6 +24,10 @@ Dan 'MisterProject' Isamu: Programming, Narrative
 Felipe Bertoni: Art
 Fernando Abromovick: Art
 Giovanni Rossi: Art, Narrative
+
+Agata Rangel Drigo: \"You've got mail\" sound effect
+arlez80: Glitch effect
+https://godotshaders.com/shader/glitch-effect-shader/
 """,
 "Tombstone":""""""
 }
