@@ -220,7 +220,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/background_color = Color( 1, 1, 1, 1 )
 custom_colors/number_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_readonly = Color( 0, 0, 0, 1 )
-text = "Teste"
 readonly = true
 syntax_highlighting = true
 wrap_enabled = true

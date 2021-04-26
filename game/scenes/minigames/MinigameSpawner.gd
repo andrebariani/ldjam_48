@@ -2,6 +2,7 @@ extends Control
 
 onready var taskbar = get_parent().get_node("Taskbar")
 var closed := true
+export var next_time = 60
 
 signal spawn_minigame
 
@@ -43,7 +44,7 @@ func _on_Next_timeout():
 func _on_Begin_timeout():
 	print_debug("start!")
 	spawn_minigame()
-	$Next.wait_time = 10
+	$Next.wait_time = next_time
 	$Next.start()
 
 
