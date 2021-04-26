@@ -51,7 +51,7 @@ onready var school_list = full_school_list.duplicate()
 onready var pet_list = full_pet_list.duplicate()
 
 onready var PLAYER = get_person_name(male_list, school_list)
-onready var OWNER = get_person_name(male_list, school_list)
+onready var OWNER = get_person_name(male_list, [PLAYER[4]])
 onready var ROGUE = get_person_name(male_list, ["chocolate"])
 onready var SUPERVISOR = get_person_name(male_list, flavor_list)
 onready var COLLEAGUE1 = get_person_name(male_list, [SUPERVISOR[4]])

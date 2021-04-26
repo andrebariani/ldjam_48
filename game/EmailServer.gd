@@ -46,18 +46,20 @@ onready var All_Emails = [
 		{
 			"sender": NameSystem.SUPERVISOR[3],
 			"receivers": [NameSystem.PLAYER[3]],
-			"date": "30/10/1997",
+			"date": "10/30/1997",
 			"topic": "Welcome!",
-			"body": "Dear " +  NameSystem.PLAYER[2] + """
+			"body": ("Dear " +  NameSystem.PLAYER[2] + """
 Welcome to the hive!
 It is a genuine pleasure to welcome you to the team. We really hope you enjoy being part of our big family, and we are excited to see what you can do!
-I know you’re probably excited to get started now, but before you do, please check if the computer you received was properly wiped. If not, please run the program “wipe_everything.exe”. DO NOT OPEN ANY FILES PRESENT IN THE COMPUTER.
+I know you’re probably excited to get started now, but before you do, remember! DO NOT OPEN ANY FILES PRESENT IN THE COMPUTER.
 As soon as we’re able, we will begin to send assignments for you to complete. As one of our company’s mottos, “time wasted is really bad”, we expect that you don’t miss any of our deadlines!
 If you have any questions, reach me on my office line at 555-6160.
 
 Warm regards,
 """ + NameSystem.SUPERVISOR[2] + """, Thaumaturgy Incorporated
-Where your problems disappear"""
+Where your problems disappear
+
+PS.: By the way, in case you lose it, your password is “"""+ NameSystem.PLAYER[4] +"”. Don’t lose it!")
 		},
 	],
 	
@@ -66,7 +68,7 @@ Where your problems disappear"""
 		{
 			"sender": NameSystem.OWNER[3],
 			"receivers": [NameSystem.SUPERVISOR[3]],
-			"date": "25/10/1997",
+			"date": "10/25/1997",
 			"topic": "Are you okay?",
 			"body": NameSystem.COLLEAGUE1[0] + "? Is that you? If that’s you, please respond. Please."
 		},
@@ -77,7 +79,7 @@ Where your problems disappear"""
 		{
 			"sender": NameSystem.COLLEAGUE4[3],
 			"receivers": [NameSystem.OWNER[3]],
-			"date": "20/10/1997",
+			"date": "10/20/1997",
 			"topic": "What does the company do?",
 			"body": "Hi " + NameSystem.OWNER[0] + """.
 Erm, I know this will sound a bit strange, but… what do we do? I mean, we write reports and calculate estimates, but… why does the company need us to do that? I can’t find out anywhere about a product we sell or a service we offer…
@@ -87,7 +89,7 @@ Regards,
 		{
 			"sender": NameSystem.COLLEAGUE1[3],
 			"receivers": [NameSystem.OWNER[3]],
-			"date": "15/10/1997",
+			"date": "10/15/1997",
 			"topic": "About your computer",
 			"body": "Hi " + NameSystem.OWNER[0] + """.
 Can we talk privately later? Like, after work? It’s about your computer...
@@ -96,7 +98,7 @@ Can we talk privately later? Like, after work? It’s about your computer...
 		{
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3]],
-			"date": "14/10/1997",
+			"date": "10/14/1997",
 			"topic": "Computer adjustments",
 			"body": NameSystem.OWNER[2] + """, the adjustments to your work computer are done. Please contact us immediately if anything strange happens with your computer.
 """ + NameSystem.BOSS[2] + ", Thaumaturgy Incorporated"
@@ -104,7 +106,7 @@ Can we talk privately later? Like, after work? It’s about your computer...
 		{
 			"sender": NameSystem.COLLEAGUE1[3],
 			"receivers": [NameSystem.OWNER[3]],
-			"date": "05/10/1997",
+			"date": "10/05/1997",
 			"topic": "Strange stuff today",
 			"body": ("Hi " + NameSystem.OWNER[0] + """.
 			Something strange happened to me today. You know """ + NameSystem.COLLEAGUE2[2] + 
@@ -116,7 +118,7 @@ Can we talk privately later? Like, after work? It’s about your computer...
 			"sender": NameSystem.COLLEAGUE5[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
-			"date": "17/09/1997",
+			"date": "09/17/1997",
 			"topic": "Birthday list",
 			"body": """Hey everyone!
 As the leader of the party planning committee, I just want to make sure everyone’s favorite desserts are accounted for. Here’s what I have - send me a reply if there’s something off with my list or your dessert is not in here.
@@ -130,7 +132,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "19/08/1997",
+			"date": "08/19/1997",
 			"topic": "Benedixmus Protocol",
 			"body": """Attention, employees.
 A reminder that the Benedixmus Protocol shall take place tomorrow, 4 PM. Remember to water your flower pots and sharpen all your pencils, just according to corporate policy. It’s a very important tradition to all of us, so I expect complete compliance from all of you.
@@ -141,7 +143,7 @@ Good luck to all,
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "12/08/1997",
+			"date": "08/12/1997",
 			"topic": "Password changes",
 			"body": """Attention, employees.
 As per company standard, we’ll be changing all Level 2 passwords again, this time on August 16th. They will all be set to the secret information you’ve given in case of password loss (name of the first pet, favorite ice cream flavor or name of the first school).
@@ -151,7 +153,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 			"sender": NameSystem.COLLEAGUE5[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
-			"date": "21/07/1997",
+			"date": "07/21/1997",
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
@@ -164,7 +166,7 @@ REST IN PEACE, CLOVER""",
 		{
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.COLLEAGUE1[3]],
-			"date": "15/10/1997",
+			"date": "10/15/1997",
 			"topic": "Digit Necron results",
 			"body": "Greetings, " + NameSystem.TIGUY[2] + """.
 The computer plan didn’t work. It rejected the necronomicon as its new host. It still managed to absorb some of its contents, however, which might prove useful - we just need to test it with a guinea pig. Problem is, we can’t format it properly.
@@ -175,7 +177,7 @@ Thanks in advance,
 		{
 			"sender": NameSystem.TIGUY[3],
 			"receivers": [NameSystem.COLLEAGUE1[3]],
-			"date": "15/10/1997",
+			"date": "10/15/1997",
 			"topic": "Password change to " + NameSystem.get_random_school(),
 			"body": """Sorry, I’m not allowed to change passwords right now. Orders from above and stuff.
 
@@ -189,7 +191,7 @@ Thanks in advance,
 			"sender": NameSystem.COLLEAGUE5[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
-			"date": "17/09/1997",
+			"date": "09/17/1997",
 			"topic": "Birthday list",
 			"body": """Hey everyone!
 As the leader of the party planning committee, I just want to make sure everyone’s favorite desserts are accounted for. Here’s what I have - send me a reply if there’s something off with my list or your dessert is not in here.
@@ -202,7 +204,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
 			"receivers": [NameSystem.COLLEAGUE1[3]],
-			"date": "01/09/1997",
+			"date": "09/01/1997",
 			"topic": NameSystem.COLLEAGUE3[0] + "'s Behavior",
 			"body": ("Yeah, I’m going to talk to <BOSS_NAME> tomorrow and ask him to reprimand him or something. " +
 			"That was crazy.\n\nReferenced Email:\n" + "Hi " + NameSystem.COLLEAGUE2[0] + """.
@@ -214,7 +216,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "19/08/1997",
+			"date": "08/19/1997",
 			"topic": "Benedixmus Protocol",
 			"body": """Attention, employees.
 A reminder that the Benedixmus Protocol shall take place tomorrow, 4 PM. Remember to water your flower pots and sharpen all your pencils, just according to corporate policy. It’s a very important tradition to all of us, so I expect complete compliance from all of you.
@@ -225,7 +227,7 @@ Good luck to all,
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "12/08/1997",
+			"date": "08/12/1997",
 			"topic": "Password changes",
 			"body": """Attention, employees.
 As per company standard, we’ll be changing all Level 2 passwords again, this time on August 16th. They will all be set to the secret information you’ve given in case of password loss (name of the first pet, favorite ice cream flavor or name of the first school).
@@ -234,7 +236,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
 			"receivers": [NameSystem.COLLEAGUE1[3]],
-			"date": "19/08/1997",
+			"date": "08/19/1997",
 			"topic": "RE: News on " + NameSystem.ROGUE[2],
 			"body": """Yeah, keep this on the down low, but... I heard he stole some company secrets and then left. Apparently was a veteran employee, too.
 
@@ -247,7 +249,7 @@ Have you heard the recent news on """ + NameSystem.ROGUE[1] + """? They said the
 			"sender": NameSystem.COLLEAGUE5[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
-			"date": "21/07/1997",
+			"date": "07/21/1997",
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
@@ -259,7 +261,7 @@ REST IN PEACE, CLOVER""",
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
 			"receivers": [NameSystem.COLLEAGUE4[3]],
-			"date": "20/10/1997",
+			"date": "10/20/1997",
 			"topic": "RE: What does the company do?",
 			"body": """We sell paper. By the way, I suggest you drop the topic around our other colleagues. It’s a dangerous topic.
 
@@ -273,7 +275,7 @@ Regards,
 			"sender": NameSystem.COLLEAGUE5[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
-			"date": "17/09/1997",
+			"date": "09/17/1997",
 			"topic": "Birthday list",
 			"body": """Hey everyone!
 As the leader of the party planning committee, I just want to make sure everyone’s favorite desserts are accounted for. Here’s what I have - send me a reply if there’s something off with my list or your dessert is not in here.
@@ -286,7 +288,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 		{
 			"sender": NameSystem.COLLEAGUE5[3],
 			"receivers": [NameSystem.COLLEAGUE4[3]],
-			"date": "19/08/1997",
+			"date": "08/19/1997",
 			"topic": "RE: Benedixmus Protocol?",
 			"body": """Nah, it’s just a company tradition, you know? They say it gives us good luck, and to be honest, ever since I joined Thauma I’ve felt luckier than ever. So I don’t know, maybe it works?
 
@@ -299,7 +301,7 @@ Uh, what’s this Benedixmus Protocol thing? It sounds so ominous...
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "19/08/1997",
+			"date": "08/19/1997",
 			"topic": "Benedixmus Protocol",
 			"body": """Attention, employees.
 A reminder that the Benedixmus Protocol shall take place tomorrow, 4 PM. Remember to water your flower pots and sharpen all your pencils, just according to corporate policy. It’s a very important tradition to all of us, so I expect complete compliance from all of you.
@@ -310,7 +312,7 @@ Good luck to all,
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "12/08/1997",
+			"date": "08/12/1997",
 			"topic": "Password changes",
 			"body": """Attention, employees.
 As per company standard, we’ll be changing all Level 2 passwords again, this time on August 16th. They will all be set to the secret information you’ve given in case of password loss (name of the first pet, favorite ice cream flavor or name of the first school).
@@ -319,7 +321,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 		{
 			"sender": NameSystem.COLLEAGUE5[3],
 			"receivers": [NameSystem.COLLEAGUE4[3]],
-			"date": "22/07/1997",
+			"date": "07/22/1997",
 			"topic": "RE: RE: LOOK EVERYONE",
 			"body": """Hm, now that you mention it, I don’t actually remember how much I fed him! But I agree, he was pretty big haha
 
@@ -335,7 +337,7 @@ REST IN PEACE, CLOVER""",
 			"sender": NameSystem.COLLEAGUE5[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3]],
-			"date": "21/07/1997",
+			"date": "07/21/1997",
 			"topic": "LOOK EVERYONE",
 			"body": """LOOK EVERYONE, I JUST FOUND A SUPER CUTE PHOTO OF MY OLD CAT, OH MY GOD!!!!!!
 REST IN PEACE, CLOVER""",
@@ -344,7 +346,7 @@ REST IN PEACE, CLOVER""",
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
 			"receivers": [NameSystem.COLLEAGUE4[3]],
-			"date": "13/07/1997",
+			"date": "07/13/1997",
 			"topic": "RE: The job here",
 			"body": ("Look, kid, I wouldn’t say it’s super stable, but it’s definitely a living. I’ve been working here for around 4 years now, but most people don’t last that long. Except the CEO, " +
 			NameSystem.CEO[2] + """- legend says he’s been at it for over like 70 years. Crazy, I know.
@@ -361,7 +363,7 @@ I’m kinda new here, so uh how’s the job here? Is it stable? Is it enjoyable?
 		{
 			"sender": NameSystem.COLLEAGUE1[3],
 			"receivers": [NameSystem.COLLEAGUE5[3]],
-			"date": "17/09/1997",
+			"date": "09/17/1997",
 			"topic": "RE: Birthday list",
 			"body": ("Uh, I actually don’t eat cake anymore. Can I get some <ICE_CREAM_FLAVOR> ice cream instead? Thanks." +
 			"\n\nReferenced Email:\n" +
@@ -375,7 +377,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "19/08/1997",
+			"date": "08/19/1997",
 			"topic": "Benedixmus Protocol",
 			"body": """Attention, employees.
 A reminder that the Benedixmus Protocol shall take place tomorrow, 4 PM. Remember to water your flower pots and sharpen all your pencils, just according to corporate policy. It’s a very important tradition to all of us, so I expect complete compliance from all of you.
@@ -386,7 +388,7 @@ Good luck to all,
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.OWNER[3], NameSystem.COLLEAGUE1[3], NameSystem.COLLEAGUE2[3], 
 				NameSystem.COLLEAGUE3[3], NameSystem.COLLEAGUE4[3], NameSystem.COLLEAGUE5[3]],
-			"date": "12/08/1997",
+			"date": "08/12/1997",
 			"topic": "Password changes",
 			"body": """Attention, employees.
 As per company standard, we’ll be changing all Level 2 passwords again, this time on August 16th. They will all be set to the secret information you’ve given in case of password loss (name of the first pet, favorite ice cream flavor or name of the first school).
@@ -395,7 +397,7 @@ As per company standard, we’ll be changing all Level 2 passwords again, this t
 		{
 			"sender": NameSystem.COLLEAGUE2[3],
 			"receivers": [NameSystem.COLLEAGUE5[3]],
-			"date": "09/08/1997",
+			"date": "08/09/1997",
 			"topic": "RE: Company lines",
 			"body": ("I’ll send you the list, just remember it this time, okay?" +
 			"\n\nReferenced Email:\n" +
@@ -411,7 +413,7 @@ NameSystem.COLLEAGUE5[0])
 		{
 			"sender": NameSystem.COLLEAGUE4[3],
 			"receivers": [NameSystem.COLLEAGUE5[3]],
-			"date": "22/07/1997",
+			"date": "07/22/1997",
 			"topic": "RE: LOOK EVERYONE",
 			"body": """Wow, that’s a very big cat! Did you have to feed it a lot? Unfortunately I never had a pet...
 
@@ -427,7 +429,7 @@ REST IN PEACE, CLOVER""",
 		{
 			"sender": NameSystem.COMPANY_OWNER[3],
 			"receivers": [NameSystem.BOSS[3]],
-			"date": "28/10/1997",
+			"date": "10/28/1997",
 			"topic": "RE: Regarding the recent incident",
 			"body": ("Acknowledged.\n\nReferenced email:\nGreetings, Lord.\n" +
 "The two perpetrators have already been caught and captured, my Lord. The computer was seized and their identities were changed to " +
@@ -441,7 +443,7 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 		{
 			"sender": NameSystem.DOCTOR[3],
 			"receivers": [NameSystem.BOSS[3]],
-			"date": "07/10/1997",
+			"date": "10/07/1997",
 			"topic": "Unlocking ritual",
 			"body": """Here’s the unlocking ritual you asked for last week, sir. The file in the middle must be a text file, containing the following text:
 """ + NameSystem.haunted_key + "\nBest regards,\nDr." + NameSystem.DOCTOR[0],
@@ -450,7 +452,7 @@ PS.: We still weren’t able to properly format the computer. It seems the Necro
 		{
 			"sender": NameSystem.DOCTOR[3],
 			"receivers": [NameSystem.BOSS[3]],
-			"date": "26/09/1997",
+			"date": "09/26/1997",
 			"topic": "Subject 11's Status",
 			"body": ("Greetings, Mr. " + NameSystem.BOSS[1] + ".\nSubject 11 (" + NameSystem.COLLEAGUE3[2] + 
 ")  is... stable, though somewhat non-functional. Subject 42 (" + NameSystem.COLLEAGUE2[2] + 
@@ -462,7 +464,7 @@ The entire report is available at my office, and I’m available anytime for fur
 		{
 			"sender": NameSystem.CEO[3],
 			"receivers": [NameSystem.BOSS[3]],
-			"date": "10/08/1997",
+			"date": "08/10/1997",
 			"topic": "Deposit",
 			"body": "Hey, " + NameSystem.BOSS[1] + """.
 Send the trucks as soon as possible. $87,633, everything in gold bars. Today I almost forgot my name.
@@ -474,7 +476,7 @@ Send the trucks as soon as possible. $87,633, everything in gold bars. Today I a
 		{
 			"sender": NameSystem.BOSS[3],
 			"receivers": [NameSystem.TIGUY[3]],
-			"date": "12/08/1997",
+			"date": "08/12/1997",
 			"topic": "This semester's passwords",
 			"body": ("Greetings, " + NameSystem.TIGUY[2] + """.
 As per the Benedixmus Protocol, we need to change the employees’ passwords again to align with the next multiverse cycle. Here is the list of passwords you need to modify:""" + 
@@ -502,7 +504,7 @@ NameSystem.BOSS[2] + ", Thaumaturgy Incorporated")
 		{
 			"sender": NameSystem.COMPANY_OWNER[3],
 			"receivers": [NameSystem.ROGUE[3]],
-			"date": "04/06/1997",
+			"date": "06/04/1997",
 			"topic": "COME BACK",
 			"body": NameSystem.ROGUE[1] + """, don’t you dare try to run away from us. You know you can’t escape. You know you have no choice. The time to bargain has long passed and now it’s time for you to OBEY. You may live forever, but you can’t hide forever.
 Sooner or later, you’ll be one of us.
@@ -511,7 +513,7 @@ Praise Thoon."""
 		{
 			"sender": NameSystem.CEO[3],
 			"receivers": [NameSystem.ROGUE[3]],
-			"date": "23/05/1997",
+			"date": "05/23/1997",
 			"topic": "Undermining my authority",
 			"body": "I found out about the memory wipes, " + NameSystem.ROGUE[0] + """, and I won’t put up with it anymore. I’m no longer your puppet - this company’s now mine.
 
@@ -521,7 +523,7 @@ Referenced email:
 		{
 			"sender": NameSystem.DOCTOR[3],
 			"receivers": [NameSystem.COMPANY_OWNER[3], NameSystem.ROGUE[3]],
-			"date": "20/03/1997",
+			"date": "03/20/1997",
 			"topic": "Subject 11's Status",
 			"body": ("Greetings, Lord " + NameSystem.COMPANY_OWNER[1] + ", Mr. " + NameSystem.ROGUE[1] + 
 			"""The studies and tests regarding the split between both of you are still running, although we are encountering several setbacks in the research. 
@@ -534,7 +536,7 @@ Dr. """ + NameSystem.DOCTOR[2])
 		{
 			"sender": NameSystem.DOCTOR[3],
 			"receivers": [NameSystem.ROGUE[3]],
-			"date": "07/10/1997",
+			"date": "10/07/1997",
 			"topic": "Summoning ritual",
 			"body": "Greetings, Mr. " + NameSystem.ROGUE[1] + """.
 The ThaumOS project is going well, so far. Our newest implementation of the summoning ritual is still in its testing phase, but it seems promising. Invoking Outsiders works 100% of time, though unfortunately  executing the ritual on humans still causes the subject to perish.
@@ -569,9 +571,9 @@ func get_emails_from_account(_email) -> Array:
 
 func get_fail_email():
 	var email = {
-			"sender": "chefe",
+			"sender": NameSystem.SUPERVISOR[3],
 			"receivers": [NameSystem.PLAYER[3]],
-			"date": "%d:%d" % [OS.get_datetime().hour, OS.get_datetime().minute],
+			"date": "10/30/1997",
 			"topic": "",
 			"body": """"""
 		}

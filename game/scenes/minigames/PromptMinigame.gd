@@ -1,8 +1,5 @@
 extends "minigame.gd"
 
-
-var birthday_person = NameSystem.get_random_first_name()
-
 var possible_prompts = [
 	{
 		"text":"Backup company server files?",
@@ -11,22 +8,64 @@ var possible_prompts = [
 		"wrong":"Canceling Backup...",
 	},
 	{
-		"text":"Wipe Everything on Computer?",
+		"text":"Wipe company files?",
 		"answer":false,
 		"right":"Canceling...",
-		"wrong":"Wiping Everything up...",
+		"wrong":"Wiping files...",
 	},
 	{
-		"text":"Vent Poison Gas?",
+		"text":"Alter reality to our demands?",
 		"answer":true,
-		"right":"Venting gas...",
-		"wrong":"Not Venting gas...",
+		"right":"Altering reality...",
+		"wrong":"Cancelling ritual...",
 	},
 	{
-		"text":"Send Happy Birthday Message to %s?" % birthday_person,
+		"text":"Transmute cash into gold?",
 		"answer":true,
-		"right":"Sending Happy Birthday...",
-		"wrong":"Sending Bad Birthday...",
+		"right":"Transmuting...",
+		"wrong":"Cancelling transmutation...",
+	},
+	{
+		"text":"Praise holy symbols?",
+		"answer":false,
+		"right":"Commiting blasphemy against our True God...",
+		"wrong":"Avoding blasphemy...",
+	},
+	{
+		"text":"Praise Thoon?",
+		"answer":true,
+		"right":"YES.",
+		"wrong":"NO.",
+	},
+	{
+		"text":"Sharpen your pencil?",
+		"answer":true,
+		"right":"YES.",
+		"wrong":"NO.",
+	},
+	{
+		"text":"Rebel against order?",
+		"answer":false,
+		"right":"Rebelling...",
+		"wrong":"Following corporate policy...",
+	},
+	{
+		"text":"Respect corporate hierarchy?",
+		"answer":true,
+		"right":"Respecting corporate hierarchy...",
+		"wrong":"Breaking corporate hierarchy...",
+	},
+	{
+		"text":"Shuffle stock prices?",
+		"answer":false,
+		"right":"Shuflling...",
+		"wrong":"Not shuffling...",
+	},
+	{
+		"text":"Increase universal entropy?",
+		"answer":false,
+		"right":"Accelerating the death of the universe...",
+		"wrong":"Remaining still...",
 	},
 ]
 
@@ -78,29 +117,43 @@ func wait_confirm():
 
 func _on_Timer_timeout():
 	if win:
-		print_debug("yay!")
 		success()
 	else:
-		print_debug("oh no...")
-		var _email
+		var _email = EmailServer.get_fail_email()
 		match prompt_id:
 			0:
-				_email = EmailServer.get_fail_email()
-				_email.topic = "Why didn't you backup the files???"
-				_email.body = """I am sad now"""
+				_email.topic = "Files backup"
+				_email.body = "Why didn't you backup your files? Remember, corporate policy always comes first. "
 			1:
-				_email = EmailServer.get_fail_email()
-				_email.topic = "Why did you tried to erase your computer???"
-				_email.body = """Good thing our IT staff managed to cancel it"""
+				_email.topic = "The recent erasure incident"
+				_email.body = "Your recent attempt at erasing company files almost jeopardized our department. "
 			2:
-				_email = EmailServer.get_fail_email()
-				_email.topic = "*Cough* *Cough* You should vent the gas!"
-				_email.body = """Always Vent it! Otherwise it will 
-				go to some department!"""
+				_email.topic = "Our Reality"
+				_email.body = "Please avoid interfering with the company's plans. "
 			3:
-				_email = EmailServer.get_fail_email()
-				_email.topic = "You forgot %s's birthday???" % birthday_person
-				_email.body = """I am sad now, and %s is also sad too. You jerk.""" % birthday_person
+				_email.topic = "We need gold"
+				_email.body = "Don't forget company policy! Gold always comes first. "
+			4:
+				_email.topic = "Blasphemy"
+				_email.body = "Inside these walls, the only True God is Thoon. "
+			5:
+				_email.topic = "Blasphemy"
+				_email.body = "Inside these walls, the only True God is Thoon. "
+			6:
+				_email.topic = "Unsharpened pencils"
+				_email.body = "Never forget to sharpen your pencils. "
+			7:
+				_email.topic = "Chaos is bad"
+				_email.body = "Thaumaturgy thrives on patterns, never on chaos. "
+			8:
+				_email.topic = "Don't break the hierarchy"
+				_email.body = "Read the topic. "
+			9:
+				_email.topic = "Stock prices"
+				_email.body = "Our policy binds us to maintain a pattern of investment. "
+			10:
+				_email.topic = "Stop it"
+				_email.body = "Entropy leads to chaos. Remember, Thaumaturgy requires order. "
 				
 		fail(_email)
 
