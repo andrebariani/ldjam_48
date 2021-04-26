@@ -113,9 +113,9 @@ Can we talk privately later? Like, after work? It’s about your computer...
 			"date": "10/05/1997",
 			"topic": "Strange stuff today",
 			"body": ("Hi " + NameSystem.OWNER[0] + """.
-			Something strange happened to me today. You know """ + NameSystem.COLLEAGUE2[2] + 
-			"? You know, that gal who got fired recently? I saw her at the marketing department today, and she didn’t recognize me at all! I tried to talk to her but she kept telling me she didn’t know anyone who was called " +
-			NameSystem.COLLEAGUE2[0] + """! What’s up with that, huh?
+Something strange happened to me today. You know """ + NameSystem.COLLEAGUE2[2] + 
+"? You know, that gal who got fired recently? I saw her at the marketing department today, and she didn’t recognize me at all! I tried to talk to her but she kept telling me she didn’t know anyone who was called " +
+NameSystem.COLLEAGUE2[0] + """! What’s up with that, huh?
 """ + NameSystem.COLLEAGUE1[0])
 		},
 		{
@@ -140,7 +140,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"body": """Yeah, I just got in a phone call with boss and he said it was just a new infrastructure thing. It sounded a bit weird, but hey, whaddya know, right?
 
 Referenced email:
-, """ + NameSystem.COLLEAGUE1[0] + """, can you recheck my numbers for me? According to my calculations, we just spent around 63k overnight!
+Hey """ + NameSystem.COLLEAGUE1[0] + """, can you recheck my numbers for me? According to my calculations, we just spent around 63k overnight!
 Thanks in advance,
 """ + NameSystem.OWNER[0]
 		},
@@ -233,8 +233,7 @@ NameSystem.OWNER[0] + ": Fruit cake\nCheers!\n" + NameSystem.COLLEAGUE5[0])
 			"receivers": [NameSystem.COLLEAGUE1[3]],
 			"date": "08/27/1997",
 			"topic": "Recheck my numbers?",
-			"body": "Hey, " + NameSystem.COLLEAGUE1[0] + """.
-Can you recheck my numbers for me? According to my calculations, we just spent around 63k overnight!
+			"body": "Hey " + NameSystem.COLLEAGUE1[0] + """, can you recheck my numbers for me? According to my calculations, we just spent around 63k overnight!
 Thanks in advance,
 """ + NameSystem.OWNER[0]
 		},
