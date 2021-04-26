@@ -89,7 +89,6 @@ margin_top = 72.0
 margin_right = 1144.0
 margin_bottom = 101.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "egfdgdfgdfgdsf"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,7 +133,6 @@ margin_top = 69.0
 margin_right = 323.0
 margin_bottom = 132.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "edfghdfgh"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -146,7 +144,6 @@ margin_top = 101.0
 margin_right = 1125.0
 margin_bottom = 132.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "egfdgdfgdfgdsf"
 autowrap = true
 
 [node name="Topic" type="Label" parent="Inbox"]
@@ -155,7 +152,6 @@ margin_top = 202.0
 margin_right = 1100.0
 margin_bottom = 249.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "egfdgdfgdfgdsf"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -166,7 +162,6 @@ margin_top = 143.0
 margin_right = 442.0
 margin_bottom = 177.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "egfdgdfgdfgdsf"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -225,13 +220,11 @@ size_flags_horizontal = 3
 margin_right = 717.0
 margin_bottom = 16.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "This is a body"
 autowrap = true
 
 [node name="Annex" type="TextureRect" parent="Inbox/BodyContainer/VBoxContainer"]
 margin_top = 20.0
 margin_right = 717.0
 margin_bottom = 20.0
-
 [connection signal="pressed" from="Login/VBoxContainer/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="Inbox/Logout" to="." method="_on_Logout_pressed"]
