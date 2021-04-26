@@ -27,6 +27,9 @@ func _on_timeout():
 		"ReportMinigame":
 			_email.topic = "Report"
 			_email.body = "You have failed to send in your report in time. "
+		"CalculatorMinigame":
+			_email.topic = "Slow performance"
+			_email.body = "Your slow performance has been noted. "
 	fail(_email)
 
 

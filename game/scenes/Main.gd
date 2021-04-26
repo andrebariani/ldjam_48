@@ -51,7 +51,7 @@ func _on_Shortcuts_ritual_activated(is_summon, text_label):
 			"I have faith in whoever is reading this can finish what we started.\n\nTHERE MUST BE A WAY TO STOP THEM.\n\n" + 
 			NameSystem.OWNER[2] + "\n\n" + NameSystem.TIGUY[3] + "\n" + NameSystem.TIGUY[4])
 			stop_game()
-			$Ritual/AnimationPlayer.play("begin_no_reload")
+			$Ritual/AnimationPlayer.play("begin")
 
 	else:
 		if endings.has(text_body):
