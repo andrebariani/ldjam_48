@@ -9,14 +9,14 @@ signal spawn_minigame
 onready var minigames = [
 	{
 		"desc": """Write a report for me!""",
-		"icon": Texture.new(),
+		"icon": null,
 		"window": preload("res://scenes/minigames/ReportMinigame.tscn"),
 		"label": "Report.txt",
 		"max_time": 20
 	},
 	{
 		"desc": """Execute next prompt!""",
-		"icon": Texture.new(),
+		"icon": null,
 		"window":preload("res://scenes/minigames/PromptMinigame.tscn"),
 		"label": "cmd",
 		"max_time": 20
@@ -48,6 +48,8 @@ var tick = 0
 func _on_Next_timeout():
 	next_minigame = minigames[randi() % minigames.size()]
 	self.visible = true
+	if get_parent().fails == 5:
+		$Warning.visible = true
 	closed = false
 	$Body.set_text(next_minigame.desc)
 	$annouce.play(0.0)
