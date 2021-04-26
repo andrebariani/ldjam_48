@@ -29,7 +29,7 @@ const full_surname_list = [
 ]
 
 const full_flavor_list = [
-	"chocolate", "lemon", "strawberry", "vanilla", "cherry", "darkchocolate", "mixedvanilla", "grape"
+	"chocolate", "lemon", "strawberry", "vanilla", "cherry", "mint", "mango", "green tea", "pistachio", "cookie"
 ]
 
 const full_school_list = [

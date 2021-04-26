@@ -49,7 +49,7 @@ margin_left = -116.659
 margin_top = 105.953
 margin_right = 41.3414
 margin_bottom = 121.953
-text = "You've got a new job in:"
+text = "You have a new task in:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -111,7 +111,6 @@ stream = ExtResource( 4 )
 stream = ExtResource( 4 )
 volume_db = -20.0
 pitch_scale = 4.0
-
 [connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
 [connection signal="timeout" from="Next" to="." method="_on_Next_timeout"]
 [connection signal="timeout" from="Begin" to="." method="_on_Begin_timeout"]

@@ -5,6 +5,7 @@ var closed := true
 export var next_time = 60
 
 signal spawn_minigame
+signal full_ram
 
 onready var minigames = [
 	{
@@ -15,7 +16,7 @@ onready var minigames = [
 		"max_time": 20
 	},
 	{
-		"desc": """Execute next prompt!""",
+		"desc": """Execute the next prompt!""",
 		"icon": null,
 		"window":preload("res://scenes/minigames/PromptMinigame.tscn"),
 		"label": "cmd",
@@ -71,12 +72,16 @@ func _on_Begin_timeout():
 	spawn_minigame()
 	self.visible = false
 	set_process(false)
-	$Next.wait_time = 10
+	$Next.wait_time = next_time
 	$Next.start()
 
 
 func spawn_minigame():
 	if taskbar.program_count >= 5:
+		var _email = EmailServer.get_fail_email()
+		_email.topic = "Too many processes"
+		_email.body = """Our task program can't run in your computer because there are too many windows open at the same time! Please close some. """
+		emit_signal("full_ram", _email)
 		return
 	emit_signal("spawn_minigame", next_minigame.window, next_minigame.icon, \
 		next_minigame.label, next_minigame.max_time)

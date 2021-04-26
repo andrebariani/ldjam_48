@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -27,7 +27,7 @@
 [ext_resource path="res://assets/sounds/game_over.wav" type="AudioStream" id=25]
 [ext_resource path="res://assets/sounds/Rune_spawn.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/sounds/omen.wav" type="AudioStream" id=27]
-[ext_resource path="res://assets/sounds/complete_cacophony.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/sounds/complete_cacophony_4s.wav" type="AudioStream" id=28]
 [ext_resource path="res://assets/sounds/glitch.wav" type="AudioStream" id=29]
 [ext_resource path="res://assets/sounds/glitch_strong.wav" type="AudioStream" id=30]
 [ext_resource path="res://assets/Images/Tela_inicial_incomplete.png" type="Texture" id=31]
@@ -641,10 +641,10 @@ tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 0, 7, 11 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, true, false ]
+"values": [ false, true ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath(".:visible")
@@ -681,7 +681,22 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=10]
-resource_name = "boot"
+resource_name = "TextoLento"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1.4, 6.6, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
 length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("bg:visible")
@@ -1190,6 +1205,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ending"]
 anims/FadeIn = SubResource( 8 )
 anims/Texto = SubResource( 9 )
+anims/TextoLento = SubResource( 10 )
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
@@ -1268,11 +1284,10 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bootup"]
 autoplay = "boot"
-anims/boot = SubResource( 10 )
+anims/boot = SubResource( 11 )
 
 [node name="startup" type="AudioStreamPlayer" parent="Bootup"]
 stream = ExtResource( 34 )
-
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
@@ -1289,6 +1304,7 @@ stream = ExtResource( 34 )
 [connection signal="updated_highlighted_window" from="Windows" to="Taskbar" method="highlight_program"]
 [connection signal="create_window" from="Taskbar" to="Windows" method="_on_Taskbar_create_window"]
 [connection signal="toggle_window" from="Taskbar" to="Windows" method="_on_Taskbar_toggle_window"]
+[connection signal="full_ram" from="MinigameSpawner" to="Windows" method="minigame_failed"]
 [connection signal="spawn_minigame" from="MinigameSpawner" to="Taskbar" method="add_program"]
 [connection signal="animation_finished" from="Ritual/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="done" from="Ending" to="." method="_on_Ending_done"]

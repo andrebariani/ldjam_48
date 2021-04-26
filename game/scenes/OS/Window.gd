@@ -38,8 +38,8 @@ func _on_Close_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if program.has_method("fail"):
 			var _email = EmailServer.get_fail_email()
-			_email.topic = "You think you can just ignore your job huh?"
-			_email.body = """I am so angry right now! Such negligence won't go unoticed!"""
+			_email.topic = "Neglicence!"
+			_email.body = """Your neglicence has been noted in your file. """
 			program.fail(_email)
 		emit_signal("closed", self, _id)
 

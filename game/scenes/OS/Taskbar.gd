@@ -28,6 +28,7 @@ func add_program(window, icon, label, _time = 0):
 
 
 func close_all_for_ritual():
+	program_count = 0
 	for child in $HBoxContainer.get_children():
 		child.queue_free()
 

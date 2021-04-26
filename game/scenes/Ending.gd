@@ -19,7 +19,10 @@ func advance_text():
 	if text_n < textos.size():
 		$Texto.text = textos[text_n]
 		text_n += 1
-		$AnimationPlayer.play("Texto")
+		if $Texto.text.length() >= 100: 
+			$AnimationPlayer.play("TextoLento")
+		else:
+			$AnimationPlayer.play("Texto")
 	else:
 		emit_signal("done")
 

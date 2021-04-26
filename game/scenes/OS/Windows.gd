@@ -40,6 +40,7 @@ func closed_window(window, id):
 
 
 func close_all_for_ritual():
+	open_ids.clear()
 	for child in get_children():
 		child.queue_free()
 
