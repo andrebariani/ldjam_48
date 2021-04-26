@@ -620,7 +620,7 @@ I would like you to trace down the name and address of the culprits behind this 
 			"topic": "This semester's passwords",
 			"body": ("Greetings, " + NameSystem.TIGUY[2] + """.
 As per the Benedixmus Protocol, we need to change some accounts’ passwords again to align with the next multiverse cycle. Here is the list of passwords you need to modify:
-	""" + 
+""" + 
 NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_school() + "\n" +
 NameSystem.get_email(NameSystem.get_random_first_name_consume(), NameSystem.get_random_surname()) + ": " + NameSystem.get_random_flavor() + "\n" +
 NameSystem.OWNER[3] + ": " + NameSystem.OWNER[4] + "\n" +
