@@ -44,6 +44,7 @@ __meta__ = {
 }
 
 [node name="Reminder" type="Label" parent="Login"]
+visible = false
 margin_left = 200.0
 margin_top = 538.0
 margin_right = 952.0
