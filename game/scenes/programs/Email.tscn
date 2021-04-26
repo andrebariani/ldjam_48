@@ -120,7 +120,6 @@ margin_top = 69.0
 margin_right = 323.0
 margin_bottom = 132.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "edfghdfgh"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
