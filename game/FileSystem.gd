@@ -24,6 +24,9 @@ Dan 'MisterProject' Isamu: Programming, Narrative
 Felipe Bertoni: Art
 Fernando Abromovick: Art
 Giovanni Rossi: Art, Narrative
+
+arlez80: Glitch effect
+https://godotshaders.com/shader/glitch-effect-shader/
 """,
 "Tombstone":""""""
 }
