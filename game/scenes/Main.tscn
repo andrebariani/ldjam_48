@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -21,6 +21,11 @@
 [ext_resource path="res://assets/Images/simbol_5.png" type="Texture" id=19]
 [ext_resource path="res://assets/Images/simbol_3.png" type="Texture" id=20]
 [ext_resource path="res://assets/Images/simbol_4.png" type="Texture" id=21]
+[ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=22]
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 22 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "begin"
@@ -439,6 +444,24 @@ _icon = ExtResource( 5 )
 _window = ExtResource( 10 )
 _label = "Notes"
 
+[node name="Credits" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 38.0663
+margin_top = 560.695
+margin_right = 38.0663
+margin_bottom = 560.695
+_icon = ExtResource( 5 )
+_window = ExtResource( 10 )
+_label = "Credits"
+
+[node name="Tombstone" parent="Shortcuts" instance=ExtResource( 2 )]
+margin_left = 1055.1
+margin_top = 516.792
+margin_right = 1055.1
+margin_bottom = 516.792
+_icon = ExtResource( 5 )
+_window = ExtResource( 10 )
+_label = "Tombstone"
+
 [node name="*#&*%&¨*&$" parent="Shortcuts" instance=ExtResource( 2 )]
 margin_left = 42.4127
 margin_top = 273.96
@@ -533,6 +556,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Cognitohazard"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -425.84
+margin_top = -118.208
+margin_right = 417.16
+margin_bottom = 136.792
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+autowrap = true
+
 [node name="Ritual" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -618,11 +658,12 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ritual"]
 anims/begin = SubResource( 1 )
 anims/begin_no_reload = SubResource( 2 )
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
 [connection signal="clicked" from="Shortcuts/Email" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Notes" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Credits" to="Taskbar" method="add_program"]
+[connection signal="clicked" from="Shortcuts/Tombstone" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/*#&*%&¨*&$" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Thaum" to="Taskbar" method="add_program"]
 [connection signal="clicked" from="Shortcuts/Cognitohazard" to="Taskbar" method="add_program"]

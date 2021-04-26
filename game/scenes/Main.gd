@@ -57,12 +57,14 @@ func _on_Windows_minigame_failed(email):
 		$Timer.start(0.5)
 		EmailServer.send_email(email)
 	else:
+		$Cognitohazard/Label.text = NameSystem.PLAYER[2] + "was erased.\nPraise Thoon."
 		$Timer.start(10)
 
 
 func _on_Timer_timeout():
 	if fails > 5:
-		get_tree().reload_current_scene()
+		NameSystem.add_failure(NameSystem.PLAYER[2])
+		reload_game()
 	else:
 		$Cognitohazard.visible = false
 
@@ -73,3 +75,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		emit_signal("ending", endings[text_body])
 	if anim_name == "begin_no_reload" and endings.has(text_body):
 		emit_signal("ending", endings[text_body])
+
+
+func reload_game():
+	NameSystem.reset()
+	EmailServer.reset()
+	FileSystem.reset()
+	get_tree().reload_current_scene()

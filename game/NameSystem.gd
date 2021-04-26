@@ -49,6 +49,7 @@ onready var surname_list = full_surname_list.duplicate()
 onready var flavor_list = full_flavor_list.duplicate()
 onready var school_list = full_school_list.duplicate()
 onready var pet_list = full_pet_list.duplicate()
+var failures = []
 
 onready var PLAYER = get_person_name(male_list, school_list)
 onready var OWNER = get_person_name(male_list, [PLAYER[4]])
@@ -121,3 +122,15 @@ func get_random_first_name():
 		return full_male_list[randi() % full_male_list.size()]
 	else:
 		return full_female_list[randi() % full_female_list.size()]
+
+func add_failure(new):
+	failures.append(new)
+
+func reset():
+	randomize()
+	male_list = full_male_list.duplicate()
+	female_list = full_female_list.duplicate()
+	surname_list = full_surname_list.duplicate()
+	flavor_list = full_flavor_list.duplicate()
+	school_list = full_school_list.duplicate()
+	pet_list = full_pet_list.duplicate()
