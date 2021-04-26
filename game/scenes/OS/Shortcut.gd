@@ -43,7 +43,8 @@ func _process(delta):
 
 
 func _on_email_timeout():
-	print_debug("You've got mail!")
+	$youvegotmail.play()
+	$notif.visible = true
 
 func _on_Texture_gui_input(event):
 	if event is InputEventMouseButton:
@@ -51,6 +52,7 @@ func _on_Texture_gui_input(event):
 			mouse_on = 1
 		else:
 			if mouse_on < 1.25:
+				$notif.visible = false
 				emit_signal("clicked", _window, _icon, _label)
 			else:
 				emit_signal("dropped")

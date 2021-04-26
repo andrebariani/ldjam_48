@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://assets/Images/simbol_4.png" type="Texture" id=21]
 [ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=22]
 [ext_resource path="res://scenes/Ending.gd" type="Script" id=23]
+[ext_resource path="res://assets/sounds/ambient_computer.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/sounds/game_over.wav" type="AudioStream" id=25]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -58,6 +60,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.184314 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("creepy_sound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("creepy_sound:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -40.0, -10.0, -80.0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "slow_fade"
@@ -73,6 +99,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.772549 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("creepy_sound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -40.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("creepy_sound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -440,6 +490,18 @@ tracks/14/keys = {
 "update": 1,
 "values": [ 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0 ]
 }
+tracks/15/type = "value"
+tracks/15/path = NodePath(".:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 11.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="DynamicFont" id=7]
 size = 48
@@ -651,12 +713,16 @@ anims/flash = SubResource( 2 )
 anims/quick_fade = SubResource( 3 )
 anims/slow_fade = SubResource( 4 )
 
+[node name="creepy_sound" type="AudioStreamPlayer" parent="Cognitohazard"]
+stream = ExtResource( 25 )
+volume_db = -40.0
+
 [node name="Ritual" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="MainSymbol" type="TextureRect" parent="Ritual"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 16 )
@@ -665,11 +731,10 @@ __meta__ = {
 }
 
 [node name="s1" type="TextureRect" parent="Ritual"]
-visible = false
-margin_left = 556.204
-margin_top = 143.534
-margin_right = 588.204
-margin_bottom = 175.534
+margin_left = 536.831
+margin_top = 73.2258
+margin_right = 568.831
+margin_bottom = 105.226
 rect_scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 17 )
 __meta__ = {
@@ -677,11 +742,10 @@ __meta__ = {
 }
 
 [node name="s2" type="TextureRect" parent="Ritual"]
-visible = false
-margin_left = 292.806
-margin_top = 156.604
-margin_right = 324.806
-margin_bottom = 188.604
+margin_left = 1000.79
+margin_top = 242.323
+margin_right = 1032.79
+margin_bottom = 274.323
 rect_scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 18 )
 __meta__ = {
@@ -689,11 +753,10 @@ __meta__ = {
 }
 
 [node name="s3" type="TextureRect" parent="Ritual"]
-visible = false
-margin_left = 799.499
-margin_top = 150.972
-margin_right = 831.499
-margin_bottom = 182.972
+margin_left = 96.2803
+margin_top = 87.476
+margin_right = 128.28
+margin_bottom = 119.476
 rect_scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 20 )
 __meta__ = {
@@ -701,11 +764,10 @@ __meta__ = {
 }
 
 [node name="s4" type="TextureRect" parent="Ritual"]
-visible = false
-margin_left = 562.163
-margin_top = 565.833
-margin_right = 594.163
-margin_bottom = 597.833
+margin_left = 1009.81
+margin_top = 567.421
+margin_right = 1041.81
+margin_bottom = 599.421
 rect_scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 21 )
 __meta__ = {
@@ -713,11 +775,10 @@ __meta__ = {
 }
 
 [node name="s5" type="TextureRect" parent="Ritual"]
-visible = false
-margin_left = 557.342
-margin_top = 34.2335
-margin_right = 589.342
-margin_bottom = 66.2335
+margin_left = 63.6602
+margin_top = 548.551
+margin_right = 95.6602
+margin_bottom = 580.551
 rect_scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 19 )
 __meta__ = {
@@ -725,7 +786,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Ritual"]
-visible = false
+modulate = Color( 1, 0, 0, 1 )
 material = ExtResource( 15 )
 margin_right = 1148.0
 margin_bottom = 700.0
@@ -754,6 +815,7 @@ __meta__ = {
 }
 
 [node name="Texto" type="Label" parent="Ending"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 126.747
 margin_top = 155.989
 margin_right = 989.747
@@ -770,6 +832,10 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ending"]
 anims/FadeIn = SubResource( 8 )
 anims/Texto = SubResource( 9 )
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+autoplay = true
 
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -25,31 +25,48 @@ onready var minigames = [
 var next_minigame
 
 
+func _ready():
+	set_process(false)
+
+
 func stop_spawning():
 	$Next.stop()
 	$Begin.stop()
 
+
+
+var tick = 0
 
 func _on_Next_timeout():
 	next_minigame = minigames[randi() % minigames.size()]
 	self.visible = true
 	closed = false
 	$Body.set_text(next_minigame.desc)
-	$Close.disabled = false
+	$annouce.play(0.0)
+	#$Close.disabled = false
 	$Begin.start()
-	print_debug("get ready?")
+	tick = ceil($Begin.time_left)
+	$TimeToBegin.set_text("%.0d" % tick)
+	set_process(true)
+
+func _process(delta):
+	var new_tick = ceil($Begin.time_left)
+	if new_tick != tick:
+		$tick.play()
+		tick = new_tick
+		$TimeToBegin.set_text("%d" % tick)
 
 
 func _on_Begin_timeout():
-	print_debug("start!")
 	spawn_minigame()
+	self.visible = false
+	set_process(false)
 	$Next.wait_time = 10
 	$Next.start()
 
 
 func spawn_minigame():
 	if taskbar.program_count >= 5:
-		print_debug("Not enough RAM!")
 		return
 	emit_signal("spawn_minigame", next_minigame.window, next_minigame.icon, \
 		next_minigame.label, next_minigame.max_time)
@@ -57,5 +74,5 @@ func spawn_minigame():
 
 func _on_Close_pressed():
 	closed = true
-	$Close.disabled = true
+	#$Close.disabled = true
 	self.visible = false
