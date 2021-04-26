@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/spritesfer/fechar.png" type="Texture" id=1]
 [ext_resource path="res://scenes/minigames/MinigameSpawner.gd" type="Script" id=2]
+[ext_resource path="res://assets/Images/Notification_baloon.png" type="Texture" id=3]
 
 [node name="MinigameSpawner" type="Control"]
 anchor_top = 1.0
@@ -14,9 +15,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -150.0
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -25,10 +29,10 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -50.5
-margin_top = 37.0
-margin_right = 50.5
-margin_bottom = 51.0
+margin_left = -86.6586
+margin_top = 105.953
+margin_right = 15.3414
+margin_bottom = 121.953
 text = "You've got mail!"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -39,9 +43,10 @@ modulate = Color( 0, 0, 0, 1 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 45.0
-margin_top = -151.0
-margin_right = -44.0
+margin_left = 20.0
+margin_top = -106.0
+margin_right = -79.0
+margin_bottom = -20.0
 text = "Minigame description here"
 align = 1
 __meta__ = {
@@ -49,10 +54,10 @@ __meta__ = {
 }
 
 [node name="Close" type="TextureButton" parent="."]
-margin_left = 334.577
-margin_top = 2.51978
-margin_right = 398.577
-margin_bottom = 66.5198
+margin_left = 262.26
+margin_top = 102.586
+margin_right = 326.26
+margin_bottom = 166.586
 rect_scale = Vector2( 0.25, 0.25 )
 texture_normal = ExtResource( 1 )
 __meta__ = {
@@ -60,7 +65,7 @@ __meta__ = {
 }
 
 [node name="Next" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 999999.0
 one_shot = true
 autostart = true
 
