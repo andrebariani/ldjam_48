@@ -37,12 +37,12 @@ func _ready():
 func _input(event):
 	if not done and activated:
 		if event is InputEventKey:
-			if event.pressed:
-				report += complete_report[insert_id]
-				insert_id += 1
+			if event.pressed and last_key != event.scancode:
+				report += complete_report.substr(insert_id, 5)
+				insert_id += 5
 				body.set_text(report)
 				last_key = event.scancode
-				if (complete_report.length() - 1) == insert_id:
+				if (complete_report.length() - 1) <= insert_id:
 					done = true
 					success()
 
