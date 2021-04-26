@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/spritesfer/fechar.png" type="Texture" id=1]
 [ext_resource path="res://scenes/minigames/MinigameSpawner.gd" type="Script" id=2]
 [ext_resource path="res://assets/Images/Notification_baloon.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/minigame_annouce.wav" type="AudioStream" id=4]
 
 [node name="MinigameSpawner" type="Control"]
 anchor_top = 1.0
@@ -20,7 +21,22 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -150.0
+margin_right = -59.0
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeToBegin" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -138.159
+margin_top = -12.547
+margin_right = -98.1586
+margin_bottom = 3.453
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -29,11 +45,11 @@ __meta__ = {
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -86.6586
+margin_left = -116.659
 margin_top = 105.953
-margin_right = 15.3414
+margin_right = 41.3414
 margin_bottom = 121.953
-text = "You've got mail!"
+text = "You've got a new job in:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,7 +60,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
-margin_top = -106.0
+margin_top = -97.0
 margin_right = -79.0
 margin_bottom = -20.0
 text = "Minigame description here"
@@ -54,6 +70,7 @@ __meta__ = {
 }
 
 [node name="Close" type="TextureButton" parent="."]
+visible = false
 margin_left = 262.26
 margin_top = 102.586
 margin_right = 326.26
@@ -65,13 +82,22 @@ __meta__ = {
 }
 
 [node name="Next" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 
 [node name="Begin" type="Timer" parent="."]
 wait_time = 7.0
 one_shot = true
+
+[node name="annouce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="tick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+pitch_scale = 4.0
+
 [connection signal="pressed" from="Close" to="." method="_on_Close_pressed"]
 [connection signal="timeout" from="Next" to="." method="_on_Next_timeout"]
 [connection signal="timeout" from="Begin" to="." method="_on_Begin_timeout"]
