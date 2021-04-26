@@ -65,10 +65,14 @@ func _input(event):
 				last_key = event.scancode
 				if (complete_report.length() - 1) <= insert_id:
 					done = true
-					success()
+					$Button.disabled = false
 
 
 func _on_ReportMinigame_gui_input(event):
 	if event is InputEventMouseButton:
 			if event.pressed:
 				activated = true
+
+
+func _on_Button_pressed():
+	success()
