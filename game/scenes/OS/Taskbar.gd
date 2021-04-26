@@ -29,7 +29,8 @@ func add_program(window, icon, label, _time = 0):
 
 
 func _process(delta):
-	$Time.set_text("%d:%d" % [OS.get_time().hour, OS.get_time().minute])
+	
+	$Time.set_text("%d:%02d" % [OS.get_time().hour, OS.get_time().minute])
 
 
 func close_all_for_ritual():
