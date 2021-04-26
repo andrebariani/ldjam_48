@@ -33,17 +33,17 @@ func _on_Shortcuts_ritual_activated(is_summon, text_label):
 			liberated = true
 			FileSystem.texts[text_label] = ("If you are reading this, we can still uncover the truth about this company. " +
 			"If you didn't know, this company is run by demons. They call themselves Outsiders and are trying to do something " +
-			"involving rituals and strange circles to spread themselves into our world. Me and" + NameSystem.COLLEAGUE1[0] + 
-			"have been investigating the company’s emails and found out some crazy stuff.\n" + NameSystem.CEO[2] + 
+			"involving rituals and strange circles to spread themselves into our world. Me and " + NameSystem.COLLEAGUE1[0] + 
+			" have been investigating the company’s emails and found out some crazy stuff.\n" + NameSystem.CEO[2] + 
 			" apparently eats money to stay alive, and " + NameSystem.COMPANY_OWNER[2] + " and " + NameSystem.BOSS[2] + 
 			" are Outsiders. By the way, DON’T TRY TO LOGIN INTO " + NameSystem.COMPANY_OWNER[1].to_upper() + "’S EMAIL. After " + 
-			NameSystem.COLLEAGUE1[0] + " glanced over it, he kept screaming the word 'Thoon' over and over while crying on the floor." +
-			"Whatever this thing is, it’s better stay away from it. This and these cursed e-mails.\nAnother important thing we " +
+			NameSystem.COLLEAGUE1[0] + " glanced over it, he kept screaming the word 'Thoon' over and over while crying on the floor. " +
+			"Whatever this thing is, it’s better to stay away from it. This and these cursed e-mails.\nAnother important thing we " +
 			"discovered is that this company uses some sort of ritual to erase the employees’ memories. If you get wiped too many " +
 			"times, you start to lose yourself. There is even a point where they just dispose of you, as you can no longer do basic " +
 			"chores.\nSpeaking of, we still haven't figured out what the fuck we do in this company. Money just randomly appears out of thin air " +
-			"apparently. We learned that if you ask too many questions you just get erased.\n The last thing that I and " +
-			NameSystem.COLLEAGUE1[0] + " found was the login and password of the TI guy, " + NameSystem.TIGUY[2] + ". If it wasn’t for the " +
+			"apparently. We learned that if you ask too many questions you just get erased.\n The last thing that " +
+			NameSystem.COLLEAGUE1[0] + " and I found was the login and password of the IT guy, " + NameSystem.TIGUY[2] + ". If it wasn’t for the " +
 			"demons mistakenly sending an email to my friend, we would probably still be working on this cursed company, writing nonsensical " +
 			"reports that don\'t really say anything and doing random calculations that don\'t mean anything. We are so close to figuring out " +
 			"something, but no matter how much I think, or try to snoop around, I cannot find anything anymore.\n As I write this, I fear that " +
