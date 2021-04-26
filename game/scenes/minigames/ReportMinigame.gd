@@ -38,7 +38,13 @@ Thaumaturgy is considered to be a relatively accessible form of magic, especiall
 	""",
 	"""
 	I hope you are happy with the results, because this has been a waste of money, in my opinion. Computers can't even think yet, and you want to put a cursed book in there? At least it helps me avoid the hell police...
+	""",
 	"""
+	Why does one plus one equals two? You might think the answer is obvious, but consider the fact that this could've very well been false. What if items didn't stack, but instead morph together? Then one plus one would equal one. For you to understand thaumaturgy, shackles must be broken first.
+	""",
+	"""
+	According to the last monthly report, the rate of recycling and discarding has continued to steadily increase, eclipsing last year's projections surrounding personnel stabilization. I advise a shift in plans...
+	""",
 ]
 
 

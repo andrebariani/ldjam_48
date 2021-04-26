@@ -54,6 +54,8 @@ func _on_Shortcuts_ritual_activated(is_summon, text_label):
 	else:
 		if endings.has(text_body):
 			stop_game()
+			if text_body != NameSystem.ROGUE[2]:
+				NameSystem.add_failure(NameSystem.PLAYER[2])
 			$Ritual/AnimationPlayer.play("begin")
 			
 
@@ -82,7 +84,7 @@ onready var endings = {
 "When you finally stop teleporting, you find yourself in the exact same room as before. However, you see yourself. Another version of yourself.",
 "Now, you’re carbonizing.",
 "Now, you’re carbonized.",
-"“...executing the ritual on humans still causes the subject to perish”.",
+"“...executing the ritual on humans still causes the subject to perish.”",
 "So that’s what that meant."
 	], 
 	NameSystem.SUPERVISOR[2]:prison_ending, 

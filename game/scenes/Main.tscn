@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://scenes/OS/Taskbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/OS/Shortcut.tscn" type="PackedScene" id=2]
@@ -680,6 +680,22 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Animation" id=11]
+resource_name = "TextoLento"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1.4, 6.6, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [sub_resource type="Animation" id=10]
 resource_name = "boot"
 length = 10.0
@@ -1190,6 +1206,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ending"]
 anims/FadeIn = SubResource( 8 )
 anims/Texto = SubResource( 9 )
+anims/TextoLento = SubResource( 11 )
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
@@ -1272,7 +1289,6 @@ anims/boot = SubResource( 10 )
 
 [node name="startup" type="AudioStreamPlayer" parent="Bootup"]
 stream = ExtResource( 34 )
-
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
