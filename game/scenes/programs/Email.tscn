@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/programs/Email.gd" type="Script" id=1]
+[ext_resource path="res://assets/Images/email_login.png" type="Texture" id=2]
 [ext_resource path="res://assets/Images/email_interface.png" type="Texture" id=3]
 
 [node name="Email" type="Control"]
@@ -11,57 +12,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Login" type="Control" parent="."]
+[node name="Login" type="TextureRect" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Login"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 200.0
-margin_top = 181.0
-margin_right = -200.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="email" type="LineEdit" parent="Login"]
+margin_left = 376.0
+margin_top = 350.0
+margin_right = 861.0
+margin_bottom = 376.0
 
-[node name="Label" type="Label" parent="Login/VBoxContainer"]
-margin_right = 752.0
-margin_bottom = 16.0
-text = "Welcome!"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="password" type="LineEdit" parent="Login"]
+margin_left = 429.0
+margin_top = 413.0
+margin_right = 861.0
+margin_bottom = 439.0
 
-[node name="email" type="LineEdit" parent="Login/VBoxContainer"]
-margin_top = 20.0
-margin_right = 752.0
-margin_bottom = 46.0
-
-[node name="password" type="LineEdit" parent="Login/VBoxContainer"]
-margin_top = 50.0
-margin_right = 752.0
-margin_bottom = 76.0
-
-[node name="confirm" type="Button" parent="Login/VBoxContainer"]
-margin_top = 80.0
-margin_right = 752.0
-margin_bottom = 102.0
+[node name="confirm" type="Button" parent="Login"]
+margin_left = 271.0
+margin_top = 466.0
+margin_right = 878.0
+margin_bottom = 522.0
 text = "Login"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Reminder" type="Label" parent="Login/VBoxContainer"]
-visible = false
-margin_top = 395.0
-margin_right = 752.0
-margin_bottom = 411.0
+[node name="Reminder" type="Label" parent="Login"]
+margin_left = 200.0
+margin_top = 538.0
+margin_right = 952.0
+margin_bottom = 592.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Write email and password first"
 align = 1
 __meta__ = {
@@ -89,7 +76,6 @@ margin_top = 72.0
 margin_right = 1144.0
 margin_bottom = 101.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "egfdgdfgdfgdsf"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -146,7 +132,6 @@ margin_top = 101.0
 margin_right = 1125.0
 margin_bottom = 132.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "egfdgdfgdfgdsf"
 autowrap = true
 
 [node name="Topic" type="Label" parent="Inbox"]
@@ -155,7 +140,7 @@ margin_top = 202.0
 margin_right = 1100.0
 margin_bottom = 249.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "egfdgdfgdfgdsf"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -166,7 +151,6 @@ margin_top = 143.0
 margin_right = 442.0
 margin_bottom = 177.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "egfdgdfgdfgdsf"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -208,30 +192,29 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 382.0
-margin_top = -385.0
-margin_right = -53.0
+margin_left = 389.0
+margin_top = -381.0
+margin_right = -60.0
 margin_bottom = -12.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Inbox/BodyContainer"]
-margin_right = 717.0
+margin_right = 703.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 
 [node name="Body" type="Label" parent="Inbox/BodyContainer/VBoxContainer"]
-margin_right = 717.0
+margin_right = 703.0
 margin_bottom = 16.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "This is a body"
 autowrap = true
 
 [node name="Annex" type="TextureRect" parent="Inbox/BodyContainer/VBoxContainer"]
 margin_top = 20.0
-margin_right = 717.0
+margin_right = 703.0
 margin_bottom = 20.0
 
-[connection signal="pressed" from="Login/VBoxContainer/confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Login/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="Inbox/Logout" to="." method="_on_Logout_pressed"]

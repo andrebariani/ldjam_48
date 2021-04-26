@@ -27,6 +27,11 @@ func add_program(window, icon, label, _time = 0):
 		id_count += 1
 
 
+func close_all_for_ritual():
+	for child in $HBoxContainer.get_children():
+		child.queue_free()
+
+
 func remove_program(id):
 	var to_remove = null
 	for child in $HBoxContainer.get_children():
