@@ -905,7 +905,7 @@ margin_right = 44.8682
 margin_bottom = 48.2266
 _icon = ExtResource( 3 )
 _window = ExtResource( 8 )
-_label = "Gmail"
+_label = "Tmail"
 receive_notif = true
 
 [node name="Notes" parent="Shortcuts" instance=ExtResource( 2 )]
@@ -1290,6 +1290,7 @@ anims/boot = SubResource( 11 )
 
 [node name="startup" type="AudioStreamPlayer" parent="Bootup"]
 stream = ExtResource( 34 )
+
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
