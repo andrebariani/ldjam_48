@@ -23,7 +23,7 @@
 [ext_resource path="res://assets/Images/simbol_4.png" type="Texture" id=21]
 [ext_resource path="res://assets/fonts/W95FA.otf" type="DynamicFontData" id=22]
 [ext_resource path="res://scenes/Ending.gd" type="Script" id=23]
-[ext_resource path="res://assets/sounds/ambient_computer.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/sounds/ambient_no_breath.ogg" type="AudioStream" id=24]
 [ext_resource path="res://assets/sounds/game_over.wav" type="AudioStream" id=25]
 [ext_resource path="res://assets/sounds/Rune_spawn.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/sounds/omen.wav" type="AudioStream" id=27]
@@ -984,6 +984,7 @@ anims/Texto = SubResource( 9 )
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 autoplay = true
+
 [connection signal="ending" from="." to="Ending" method="text"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="ritual_activated" from="Shortcuts" to="." method="_on_Shortcuts_ritual_activated"]
